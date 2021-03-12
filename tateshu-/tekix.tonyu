@@ -1,0 +1,204 @@
+extends DxChar;
+randomize();
+life=200;  //ライフ
+base=5;    //無敵時間
+base2=base;
+ko=9;
+ko2=13;
+$tamanokakudo=0;
+f=0;
+ko=rnd(13)+1;
+ko=ko2;
+while(ko==ko2) {
+  ko2=rnd(13)+1;
+}
+f=0;
+c=0;
+o=0;
+b=1;
+kakuninn=0;
+while(1) {
+  if (f>0) {
+    angle=f/300*360;
+  }
+  if (f==300 && kakuninn==0) {
+    ko=rnd(14)+1;
+    ko=ko2;
+    while(ko==ko2) {
+      ko2=rnd(14)+1;
+    }
+    f=0;
+  }
+  if (f==300 && kakuninn==1) {
+    f=0;
+    o+=1;
+  }
+  if (ko==1 || ko2==1 ) {
+    $tamanokakudo=f*10;
+    appear(new tekix_tama1(x,y,$pat_Sample+15));
+  }
+  if (ko==2 || ko2==2 ) {
+    if (f%8==0) appear(new tama2(x,y,$pat_Sample+15));
+  }
+  if (ko==3 && f==0 || ko2==3 && f==0) {
+    appear(new tekix_1(100,240,$pat_Sample+2));
+    appear(new tekix_1(200,40,$pat_Sample+2));
+    appear(new tekix_1(500,40,$pat_Sample+2));
+    appear(new tekix_1(600,240,$pat_Sample+2));
+  }
+  if (ko==4  || ko2==4 ) {
+    if (f%30==0) {
+      kaisuu=1;
+      appear(new tekitama(6,0,$pat_Sample+1));
+      while (kaisuu< $screenWidth/110+1) {
+        appear(new tekitama(kaisuu*110,0,$pat_Sample+1));
+        kaisuu=kaisuu+1;
+      }
+    }
+  }
+  if (ko==5  || ko2==5 ) {
+    if (f%5==0) appear(new tama3(x,y,$pat_Sample+15));
+  }
+  if (ko==6  || ko2==6 ) {
+    if (f%150==0) appear(new teki6_1(662,558,$pat_Sample+10));
+    if (f%150==75) appear(new teki6_2(18,558,$pat_Sample+10));
+  }
+  if (ko==7  || ko2==7 ) {
+    if (f%30==0) appear(new teki7(rnd($screenHeight),y,$pat_Sample+2));
+  }
+  if (ko==8  || ko2==8 ) {
+    for (t in $chars ) {
+      if ( t is ziki && f%30==0) {
+        appear(new tekitama(t.x,0,$pat_Sample+1));
+        appear(new tekitama(t.x+30,0,$pat_Sample+1));
+        appear(new tekitama(t.x-30,0,$pat_Sample+1));
+        appear(new tekitama(t.x+60,0,$pat_Sample+1));
+        appear(new tekitama(t.x-60,0,$pat_Sample+1));
+      }
+    }
+  }
+  if (ko==9  || ko2==9 ) {
+    if (f%10==0) appear(new tekix_tama2($screenWidth,118,$pat_Sample+1));
+  }
+  if (ko==10  || ko2==10 ) {
+    if (f%150==0) appear(new teki6_1(662,558,$pat_Sample+10));
+    if (f%150==75) appear(new teki6_2(18,558,$pat_Sample+10));
+  }
+  if (ko==11  || ko2==11 ) {
+    if (f%2==0)appear(new tama5(x,y,$pat_Sample+0)); 
+  }
+  if (ko==12  || ko2==12 ) {
+    $tamanokakudo=f/150*360;
+    if (f%10==0) {
+      appear(new tekix_tama1(600,160,$pat_Sample+15));
+      appear(new tekix_tama1(100,450,$pat_Sample+15));
+      appear(new tekix_tama1(600,450,$pat_Sample+15));
+      appear(new tekix_tama1(100,160,$pat_Sample+15));
+    }
+  }
+  if (ko==13  || ko2==13 ) {
+    if (f%50==0) {
+      kaisuu=0;
+      while (kaisuu< $screenWidth/40+1) {
+        appear(new tama2(kaisuu*40,0,$pat_Sample+15));
+        kaisuu=kaisuu+1;
+      }
+    }
+  }
+  if (ko==14  || ko2==14 ) {
+    if (f%60==0) {
+      appear(new tekix_tama3(rnd($screenWidth),rnd($screenHeight),$pat_Sample+2));
+    }
+  }
+  if (ko==15  || ko2==15 ) { 
+    if (o%3==0) {
+      if (f%20==0) {
+        kaisuu=0;
+        r2=rnd(10);
+        while(kaisuu<18) {
+          r=new tama6(x,y,$pat_Sample+15);
+          r.k=kaisuu*20+r2;
+          r.s=4;
+          appear(r);
+          kaisuu=kaisuu+1;
+        }
+      } 
+    }
+    if (o%3==1) {
+      if (f%10==0) {
+        kaisuu=0;
+        r2+=8;
+        while(kaisuu<12) {
+          r=new tama6(x,y,$pat_Sample+15);
+          r.k=kaisuu*30+r2;
+          r.s=4;
+          appear(r);
+          kaisuu=kaisuu+1;
+        }
+      }
+    }
+      if (f%80==0) {
+        r=new tama6($screenWidth,rnd($screenHeight),$pat_Sample+15);
+        r.k=270;
+        r.s=4;
+        appear(r);
+        r=new tama6(0,rnd($screenHeight),$pat_Sample+15);
+        r.k=90;
+        r.s=4;
+        appear(r);
+        r=new tama6(rnd($screenWidth),$screenHeight,$pat_Sample+15);
+        r.k=0;
+        r.s=4;
+        appear(r);
+        r=new tama6(rnd($screenWidth),0,$pat_Sample+15);
+        r.k=180;
+        r.s=4;
+        appear(r);
+      }
+    if (o%3==2) {
+      if (f%1==0) {
+        kaisuu=0;
+        r2+=13;
+        r=new tama6(x,y,$pat_Sample+15);
+        r.k=rnd(360);
+        r.s=4;
+        appear(r);
+      } 
+    }
+    if (y<250) y+=5;
+  }
+  //tamaと当たったらlifeを1減らす
+  for (t in $chars ) {
+    if ( t is tama && crashTo(t) && base<=0 ) {
+      life=life-1;
+      base=base2;
+      $mplayer.play($se_good);
+    }
+  }
+  //ライフが0より小さかったら
+  if (life<=0 && kakuninn==0) {
+    kakuninn=1;
+    life=200;
+    ko=0;
+    ko2=15;
+    $ziki_2.life=9;
+    f=0;
+  }
+  if (life<=0 && kakuninn==1) {
+    //ライフをゼロに戻して
+    life=0;
+    //やられる
+    die();
+    appear(new stageclear(18,154,"STAGECLEAR",$clWhite,70));
+    for (t in $chars) {
+      if ( t is teki8_life ) {
+        t.die();
+      }
+    }
+    appear(new bakuhatu(x,y,$pat_Sample+11));
+    $mplayer.play($se_good);
+  }
+  base=base-1;
+  f=f+1;
+  update();
+}

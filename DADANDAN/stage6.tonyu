@@ -1,0 +1,63 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(k,h) {
+  cc1=new tama1(rnd($screenHeight),-49,ccl);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1000;
+time=0;
+x=$screenWidth/2;
+while(time<150) {
+  ij=rnd(7)+1;
+  if (ij==1) {
+    ccl=$clBlue;
+  }
+  if (ij==2) {
+    ccl=$clRed;
+  }
+  if (ij==3) {
+    ccl=$clYellow;
+  }
+  if (ij==4) {
+    ccl=color(255, 183, 76);
+  }
+  if (ij==5) {
+    ccl=color(15, 84, 116);
+  }
+  if (ij==6) {
+    ccl=$clGreen;
+  }
+  if (ij==7) {
+    ccl=color(167, 87, 168);
+  }
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"“ø",ccl,12+rnd(100)));
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"“ø",ccl,12+rnd(100)));
+  time++;
+  update();
+}
+while(1) {
+  for(t in $chars) {
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        life--;
+      }
+    }
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+      if (t is stage6_1) {
+        t.die();
+      }
+    }
+    die();
+  }
+  time++;
+  update();
+}

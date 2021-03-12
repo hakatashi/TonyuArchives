@@ -1,0 +1,14 @@
+extends TextChar;
+
+//zikiを追いかける敵を表示させる敵のライフを表示
+
+while(1) {
+  for (t in $chars) {
+    if ( t is teki8 ) {
+      x=t.x+30;
+      y=t.y+30;
+      text=t.life;
+    }
+  }
+  update();
+}

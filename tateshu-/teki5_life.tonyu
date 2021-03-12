@@ -1,0 +1,11 @@
+extends TextChar;
+while(1) {
+  for (t in $chars) {
+    if ( t is teki5 ) {
+      x=t.x;
+      y=t.y;
+      text=t.life;
+    }
+  }
+  update();
+}

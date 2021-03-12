@@ -1,0 +1,17 @@
+extends TextChar;
+for (t in $chars) {
+  if ( t is ziki ) {
+    life=t.life;
+  }
+}
+while(1) {
+  for (t in $chars) {
+    if ( t is ziki ) {
+      if (t.life<0) t.life=0;
+      text="Life:"+t.life;
+      col=color(255-255/life*t.life,0,255/life*t.life);
+    }
+  }
+  if (getkey(65)==1) $projectManager.loadPage($page_title);
+  update();
+}

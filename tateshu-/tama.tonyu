@@ -1,0 +1,69 @@
+extends SpriteChar;
+a=100;  //’e‚Ì“®‚­‘¬‚³
+t=0;
+e=0;
+base=0;
+while(tamasyu==1) {
+  y=y-a;
+  if(y<0) die();
+  update();
+}
+while(tamasyu==2) {
+  x=x+10;
+  y=y-a;
+  if(y<0) die();
+  update();
+}
+while(tamasyu==3) {
+  x=x-10;
+  y=y-a;
+  if(y<0) die();
+  update();
+}
+for (t in $chars ) {
+  if ( t is teki1 || t is teki2 || t is teki3 || t is teki3_2 || t is teki4 || t is teki5 || t is teki6 || t is teki7 || t is teki8 || t is teki9 || t is tekix || t is teki10 || t is teki11 || t is teki11 ) {
+    e=t;
+  }
+}
+if (e==0) die();
+update();
+b=5;
+say=0;
+while(tamasyu==4 && say<6) {
+  if (e.x==0 && e.y==0) {
+    for (t in $chars ) {
+      if ( t is teki1 || t is teki2 || t is teki3 || t is teki3_2 || t is teki4 || t is teki5 || t is teki6 || t is teki7 || t is teki8 || t is teki9 || t is tekix || t is teki10 || t is teki11 || t is teki11 ) {
+        e=t;
+        say++;
+      }
+    }
+    if (e.x==0 && e.y==0) {
+      say==10;
+    }
+  }
+  
+    a=dist(x-e.x, y-e.y);
+    c=e.x-x;
+    d=e.y-y;
+    vx=b/a*c*10;
+    vy=b/a*d*10;
+    x=x+vx;
+    y=y+vy;
+  
+  if (vx==0 && vy==0) say==10;
+  if (x<0 || x>$screenWidth || y<0 || y>$screenHeight) die();
+  if ( crashTo(e) && base==0 ) base=5;
+  if (base>0) base-=1;
+  if (base==1) die();
+  update();
+}
+while(1) {
+  if (vx<2 && vx>-2) vx+=0.1;
+  if (vy<2 && vy>-2) vy+=0.1;
+  if (vx==null) vx=0.1;
+  if (vy==null) vy=0.1;
+  x=x+vx;
+  y=y+vy;
+  if (x<0 || x>$screenWidth || y<0 || y>$screenHeight) die();
+  update();
+}

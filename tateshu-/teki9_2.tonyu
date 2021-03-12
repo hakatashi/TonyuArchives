@@ -1,0 +1,28 @@
+extends SpriteChar;
+
+//1‚Â‚¾‚¯‚ª–{•¨‚Ì“G‚Ì‚É‚¹•¨1
+
+x=350;
+y=70;
+base2=base;
+iti=$teki9.iti;
+while(iti == $teki9.iti) {
+  iti=rnd(4)+1;
+}
+while(1) {
+  if ($time%30==0) appear(new tama2(x,y,$pat_Sample+15));
+  if (iti==1 && $time/$c%4==0) x=x+(2*$a);
+  if (iti==1 && $time/$c%4==3) x=x-(2*$a);
+  if (iti==2 && $time/$c%4==0) x=x+$a;
+  if (iti==2 && $time/$c%4==3) x=x-$a;
+  if (iti==3 && $time/$c%4==0) x=x-$a;
+  if (iti==3 && $time/$c%4==3) x=x+$a;
+  if (iti==4 && $time/$c%4==0) x=x-(2*$a);
+  if (iti==4 && $time/$c%4==3) x=x+(2*$a);
+  if(x==350) {
+    while(iti==$teki9.iti) {
+      iti=rnd(4)+1;
+    }
+  }
+  update();
+}

@@ -1,0 +1,59 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+if ($level==1) {
+  su1=3;    //玉を出す間隔
+  su2=0.2;  //もとの球の速さ
+  su3=1.02; //玉の加速度
+}
+if ($level==2) {
+  su1=2;    //玉を出す間隔
+  su2=0.5;  //もとの球の速さ
+  su3=1.03; //玉の加速度
+}
+if ($level==3) {
+  su1=1;    //玉を出す間隔
+  su2=1.0;  //もとの球の速さ
+  su3=1.05; //玉の加速度
+}
+function tama1make(k,h) {
+  cc1=new tama1(rnd($screenWidth),-49,$pat_S+2);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1000;
+time=0;
+x=$screenWidth/2;
+y=74;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"雨",$clBlue,12+rnd(150)));
+  time++;
+  update();
+}
+while(1) {
+  if (time%su1==0) {
+    tama1make(180,su2);
+  }
+  for(t in $chars) {
+    if (t is tama1) {
+      t.h=t.h*su3;
+    }
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        life--;
+      }
+    }
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    die();
+  }
+  time++;
+  update();
+}

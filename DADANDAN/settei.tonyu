@@ -1,0 +1,4 @@
+extends TextChar;
+while(1) {
+  update();
+}

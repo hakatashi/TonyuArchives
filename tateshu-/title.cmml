@@ -1,0 +1,15 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="title_idou" name="$title_idou" inst_pat="17" inst_x="282" inst_y="186"/>
+<generator className="text" name="$text" inst_x="50" inst_y="50" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_col="$clWhite" inst_size="20" inst_text="%22”ŽšƒL[‚ð‰Ÿ‚µ‚Ä‚Ë%22"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="1017"/>
+  <globalvalue name="$screenHeight" value="706"/>
+ </resourcelist>
+</resourcelist>

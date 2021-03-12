@@ -1,0 +1,32 @@
+extends SpriteChar;
+a=6;    //“G‚ª‰¡•ûŒü‚É“®‚­‘¬‚³
+b=0.5;  //“G‚ª—Ž‚¿‚Ä‚­‚é‘¬‚³
+if (rnd(2)==1) a=-a;
+while(1) {
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ð1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,$ziki.life,$clWhite,150));
+    }
+  }
+  //tama‚Æ“–‚½‚Á‚½‚ç‚â‚ç‚ê‚é
+  for (t in $chars) {
+    if ( t is tama && crashTo(t) ) {
+      die();
+      appear(new bakuhatu(x,y,$pat_Sample+11));
+      $mplayer.play($se_good);
+    }
+  }
+  //ˆê”Ô‰º‚Ü‚Å‚«‚½‚çÁ‚¦‚é
+  if (y>$screenHeight) die();
+  //—¼’[‚É“–‚½‚Á‚½‚ç’µ‚Ë•Ô‚é
+  if(x<0) a=-a;
+  if(x>$screenWidth) a=-a;
+  //“G‚ð“®‚©‚·
+  x=x-a;
+  y=y+b;
+  update();
+}

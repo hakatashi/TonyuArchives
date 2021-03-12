@@ -1,0 +1,61 @@
+extends SpriteChar;
+life=9;    //ライフ
+a=7;   //普通に動くスピード
+b=30;  //突進のスピード
+c=5;   //弾を撃つ間隔
+d=20;  //高速移動のスピード
+e=0;
+f=0;
+base=40;   //無敵時間
+base2=base;
+while(1) {
+  if(f==0) {
+    //普通に動く処理
+    if (getkey(39)>0 && x<$screenWidth) x=x+a;
+    if (getkey(38)>0 && y>0) y=y-a;
+    if (getkey(37)>0 && x>0) x=x-a;
+    if (getkey(40)>0 && y<$screenHeight) y=y+a;
+    //高速移動
+    if (getkey(16)>0 && getkey(39)>0 && x<$screenWidth) x=x+d;
+    if (getkey(16)>0 && getkey(38)>0 && y>0) y=y-d;
+    if (getkey(16)>0 && getkey(37)>0 && x>0) x=x-d;
+    if (getkey(16)>0 && getkey(40)>0 && y<$screenHeight) y=y+d;
+    //突進の処理
+    if (getkey(66)==1) {
+      while(y>b) {
+        y=y-b;
+        update();
+      }
+    }
+    //弾を撃つ処理
+    /*if (getkey(32)%c==1) {
+      e=new tama(x,y,$pat_Sample+1);
+      e.tamasyu=1 ;
+      appear(e);
+    }
+    if (getkey(32)%15==1 && life<7) {
+      e=new tama(x,y,$pat_Sample+1);
+      e.tamasyu=2;
+      appear(e);
+      e=new tama(x,y,$pat_Sample+1);
+      e.tamasyu=3;
+      appear(e);
+    }*/
+    if (getkey(32)>0 && life<300) {
+      e=new tama(x,y,$pat_Sample+15);
+      e.tamasyu=4;
+      appear(e);
+    }
+  }
+  //ライフが0より小さかったら
+  if (life<0) {
+    //ライフをゼロに戻して
+    life=0;
+    //やられる
+    die();
+    appear(new bakuhatu(x,y,$pat_Sample+11));
+    $mplayer.play($se_die);
+  }
+  base=base-1;
+  update();
+}

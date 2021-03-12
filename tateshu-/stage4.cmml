@@ -1,0 +1,20 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki_2" inst_p="$pat_Sample+0" inst_x="306" inst_y="442"/>
+<generator className="life" name="$life_1" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clred" inst_size="40" inst_x="448" inst_y="497"/>
+<generator className="base1" name="$base1_1" inst_pat="17" inst_x="294" inst_y="126"/>
+<generator className="gamec" name="$gamec_1" inst_pat="17" inst_x="86" inst_y="142"/>
+<generator className="teki7" name="$teki7" inst_x="70" inst_y="70" inst_p="$pat_Sample+2"/>
+<generator className="teki8" name="$teki8" inst_p="$pat_Sample+3" inst_x="314" inst_y="42"/>
+<generator className="teki8_life" name="$teki8_life" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="374" inst_y="78"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="692"/>
+  <globalvalue name="$screenHeight" value="575"/>
+ </resourcelist>
+</resourcelist>

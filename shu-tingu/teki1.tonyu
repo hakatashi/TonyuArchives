@@ -1,0 +1,22 @@
+extends SpriteChar;
+life=20;
+muteki=0;
+sinu=0;
+while(1) {
+  for (t in $chars) {
+    if ( t is tama && muteki<0 && crashTo(t) ) {
+      life-=1;
+      muteki=10;
+    }
+  }
+  if (life<=0) {
+    if (life<=0 && sinu==0) {
+      sinu=1;
+    appear(new bomu(x,y,$pat_bomb+0));
+  }
+  }
+  if (sinu>0) sinu+=1;
+  if (sinu>=40) die();
+  muteki-=1;
+  update();
+}

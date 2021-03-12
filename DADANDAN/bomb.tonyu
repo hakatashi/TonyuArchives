@@ -1,0 +1,6 @@
+extends DxChar;
+while(alpha>0) {
+  alpha-=5;
+  scaleX+=0.1;
+  update();
+}

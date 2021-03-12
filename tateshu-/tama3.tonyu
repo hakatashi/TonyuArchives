@@ -1,0 +1,22 @@
+extends SpriteChar;
+a=rnd(360);
+vx=5;
+vy=5;
+while(1){
+  if(y<0) vy=-vy;
+  if(x<0 || x>$screenWidth) vx=-vx;
+  if(y>$screenHeight) die();
+  x+=sin(a)*vx;
+  y+=cos(a)*vy;
+  if ($time%300==3) die();
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ð1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+  update();
+}

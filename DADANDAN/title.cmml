@@ -1,0 +1,36 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_write" src="write.bmp"/>
+<cpattern name="$pat_1" src="1.BMP"/>
+<cpattern name="$pat_2" src="2.BMP"/>
+<cpattern name="$pat_3" src="3.BMP"/>
+<cpattern name="$pat_5" src="5.BMP"/>
+<cpattern name="$pat_4" src="4.BMP"/>
+<cpattern name="$pat_6" src="6.BMP"/>
+<cpattern name="$pat_7" src="7.BMP"/>
+<cpattern name="$pat_8" src="8.BMP"/>
+<cpattern name="$pat_10" src="10.BMP"/>
+<cpattern name="$pat_11" src="11.BMP"/>
+<cpattern name="$pat_9" src="9.BMP"/>
+<cpattern name="$pat_12" src="12.BMP"/>
+<cpattern name="$pat_13" src="13.BMP"/>
+<cpattern name="$pat_14" src="14.BMP"/>
+<cpattern name="$pat_15" src="15.BMP"/>
+<cpattern name="$pat_16" src="16.BMP"/>
+<cpattern name="$pat_17" src="17.BMP"/>
+<cpattern name="$pat_18" src="18.BMP"/>
+<cpattern name="$pat_19" src="19.BMP"/>
+<cpattern name="$pat_20" src="20.BMP"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="gtitle" name="$gtitle" inst_p="5" inst_x="279" inst_y="118" inst_alpha="180" inst_scaleX="1"/>
+<generator className="settei" name="$settei" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_font="%22ＭＳ 明朝%22" inst_x="-342" inst_y="394"/>
+<generator className="setumei" name="$setumei" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="75" inst_y="353"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="415"/>
+ </resourcelist>
+</resourcelist>

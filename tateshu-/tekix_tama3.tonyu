@@ -1,0 +1,14 @@
+extends DxChar;
+a=0;
+while(a<45) {
+  scaleX+=0.1;
+  a+=1;
+  update();
+}
+scaleX=0;
+a=0;
+while(a<11) {
+  appear(new tama5(x,y,$pat_Sample+0));
+  a=a+1;
+  update();
+}

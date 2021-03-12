@@ -1,0 +1,42 @@
+extends DXChar;
+
+//ƒTƒCƒh‚©‚ç“G‚ğ•\¦‚³‚¹‚é“G
+
+a=64;      //ƒTƒCƒh‚Ì“G‚ğ•\¦‚·‚éŠÔŠÔŠu
+b=30;      //ziki—U“±‚Ì’e‚ğ”­Ë‚·‚éŠÔŠÔŠu
+c=60;      //ziki—U“±‚Ì’e‚ğ”­Ë‚·‚éxŠÔŠu
+life=150;  //ƒ‰ƒCƒt
+base=6;    //–³“GŠÔ
+base2=base;
+while(1) {
+  if ($time%(2*a)==0) appear(new teki6_1(662,558,$pat_Sample+10));
+  if ($time%(2*a)==a) appear(new teki6_2(18,558,$pat_Sample+10));
+  if ($time%b==0) appear(new tama2(x+c,y,$pat_Sample+15));
+  if ($time%b==0) appear(new tama2(x-c,y,$pat_Sample+15));
+  if ($time%b==0) appear(new tama2(x,y,$pat_Sample+15));
+  //tama‚Æ“–‚½‚Á‚½‚çlife‚ğ1Œ¸‚ç‚·
+  for (t in $chars ) {
+    if ( t is tama && crashTo(t) && base<=0 ) {
+      life=life-1;
+      base=base2;
+      $mplayer.play($se_good);
+    }
+  }
+  //ƒ‰ƒCƒt‚ª0‚æ‚è¬‚³‚©‚Á‚½‚ç
+  if (life<=0) {
+    //ƒ‰ƒCƒt‚ğƒ[ƒ‚É–ß‚µ‚Ä
+    life=0;
+    //‚â‚ç‚ê‚é
+    die();
+    appear(new stageclear(18,154,"STAGECLEAR",$clWhite,70));
+    for (t in $chars) {
+      if ( t is teki6_life ) {
+        t.die();
+      }
+    }
+    appear(new bakuhatu(x,y,$pat_Sample+11));
+    $mplayer.play($se_good);
+  }
+  base=base-1;
+  update();
+}

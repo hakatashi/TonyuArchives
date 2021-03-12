@@ -1,0 +1,18 @@
+extends SpriteChar;
+vx=5;
+t=1;
+time=0;
+times=1.89;
+if (y==1) {vx=10; times=1.43;}
+if (tipe==0) {p=$pat_block+0; y=$screenHeight-50; h=$screenHeight-100;}
+if (tipe==1) {p=$pat_block+1; y=$screenHeight-100; h=$screenHeight-200;}
+if (tipe==2) {p=$pat_block+4; y=50; h=100;}
+if (tipe==3) {p=$pat_block+5; y=100; h=200;}
+while(1) {
+  if (time<=90) x=x-vx;
+  if (110<time) x=x-vx;
+  if (t==1 && x<62 && $ziki.x != 0) {$point+=100000000*times*($hupoint/29+1)*($osipoint/137+1)/(abs($ziki.y-h)+1); t=0;}
+  if (x<-30) die();
+  time++;
+  update();
+}

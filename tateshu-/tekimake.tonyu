@@ -1,0 +1,35 @@
+extends SecretChar;
+
+/* enemyLives=1;
+while (enemyLives==1) {
+  enemyLives=0;
+  for (e in $chars) {
+    if (e is teki2) enemyLives=1;
+  }
+  update();
+}
+
+appear(new teki3(284,212,$pat_Sample+10));
+appear(new teki3life (310, 238 , "text",$clWhite)) ;
+
+enemyLives=1;
+while (enemyLives==1) {
+  enemyLives=0;
+  for (e in $chars) {
+    if (e is teki3) enemyLives=1;
+  }
+  update();
+}
+
+appear(new teki3_2(146,194,$pat_Sample+10));
+appear(new teki3_2life (310, 238 , "text",$clWhite)) ;
+
+enemyLives=1;
+while (enemyLives==1) {
+  enemyLives=0;
+  for (e in $chars) {
+    if (e is teki3_2) enemyLives=1;
+  }
+  update();
+}
+appear(new stageclear(18,154,"STAGECLEAR",$clWhite,70)); */

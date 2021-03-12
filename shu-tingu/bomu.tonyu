@@ -1,0 +1,10 @@
+extends DxChar;
+
+// ”š”­
+scaleX=0.5;
+zOrder=-1000;
+while (scaleX<20) {
+  scaleX+=0.2; // ‘å‚«‚­‚·‚é
+  alpha=(20-scaleX)*255; // “§–¾‚É‚µ‚Ä‚¢‚­    
+  update();
+}  

@@ -1,0 +1,14 @@
+extends SpriteChar;
+
+//¶ƒTƒCƒh‚ğã‚É—¬‚ê‚Ä‚¢‚­“G
+
+a=30;  //‰¡‚É“®‚­’e‚ğ”­Ë‚·‚éŠÔŠÔŠu
+b=100; //ziki—U“±‚Ì’e‚ğ”­Ë‚·‚éŠÔŠÔŠu
+c=5;   //ã‚É“®‚­‘¬“x
+while(1){
+  if ($time%a==0) appear(new tekitama2_1(x,y,$pat_Sample+1));
+  if ($time%b==0) appear(new tama2(x,y,$pat_Sample+15));
+  if (y<0) die();
+  y-=c;
+  update();
+}

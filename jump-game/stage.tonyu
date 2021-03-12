@@ -1,0 +1,125 @@
+extends SecretChar;
+randomize();
+$map.setBGColor($clwhite);
+function make(pet,speadup){
+  if (pet<=6) {
+    if (pet<4) pet2=pet-1;
+    if (pet>3) pet2=pet;
+    if (speadup==1) how=1;
+    if (speadup==null || speedup==0) how=0;
+    appear(new block(700,how,$pat_block+pet2));
+  }
+  if (pet>6 && pet<=10) {
+    pet2=pet-7;
+    nn=new block2(700,0,0);
+    nn.tipe=pet2;
+    appear(nn);
+  }
+  if (pet>10) {
+    pet2=pet-11;
+    nn=new block3(650,0,0);
+    nn.tipe=pet2;
+    appear(nn);
+  }
+}
+wait(30);
+while(1) {
+  case=rnd(2)+1;
+  if (case==1) {
+    ca=rnd(14)+1;
+    p=rnd(5)+2;
+    if (rnd(4)==0) {
+      sp=1;
+    } else {
+      sp=null;
+    }
+    wa=(rnd(6)+3)*6;
+    for(t=0;t<p;t++) {
+      make(ca,sp);
+      wait(wa);
+    }
+    if (wa==10) wait(10);
+    if (wa==5) wait(20);
+    if (ca>10) wait(10);
+  }
+  if (case==2) {
+    p=rnd(5)+2;
+    if (rnd(4)==0) {
+      sp=1;
+    } else {
+      sp=null;
+    }
+    if (rnd(4)==0) {
+      sp2=1;
+    } else {
+      sp2=null;
+    }
+    if (sp==null) {
+      ca1=rnd(14)+1;
+    } else {
+      if (rnd(2)==0) {ca1=rnd(2)+1;} else {ca1=rnd(2)+3;}
+    }
+    if (sp2==null) {
+      ca2=rnd(14)+1;
+    } else {
+      if (rnd(2)==0) {ca2=rnd(2)+1;} else {ca2=rnd(2)+3;}
+    }
+    wa1=(rnd(6)+3)*5;
+    wa2=(rnd(6)+3)*5;
+    for(t=0;t<p;t++) {
+      make(ca1,sp);
+      wait(wa1);
+      if (ca1>10) wait(10);
+      make(ca2,sp2);
+      wait(wa2);
+      if (ca2>10) wait(10);
+    }
+    if (wa2==20) wait(10);
+    if (wa2==15) wait(20);
+  }
+}
+/*for(t=0;t<3;t++) {
+}
+for(t=0;t<2;t++) {
+  wait(30);
+  make(1);
+  wait(30);
+  make(4);
+}
+wait(30);
+make(2);
+wait(90);
+for(t=0;t<3;t++) {
+  wait(9);
+  //make(1);
+  make(4);
+}
+wait(60);
+for(t=0;t<10;t++) {
+  wait(10);
+  make(1,1);
+}
+for(t=0;t<10;t++) {
+  wait(10);
+  make(6,1);
+}
+make(1);
+for(t=0;t<7;t++) {
+  wait(40);
+  make(1);
+  make(1,1);
+  make(4);
+  make(4,1);
+}
+wait(50);
+make(1);
+wait(3);
+make(2);
+wait(3);
+make(3);
+for(t=0;t<5;t++) {
+  make(3);
+  wait(20);
+  make(4);
+  wait(60);
+}*/

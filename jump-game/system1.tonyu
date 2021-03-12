@@ -1,0 +1,18 @@
+extends SecretChar;
+time=0;
+b=new FileReader("highscore.txt");
+ha=b.readLn();
+if (ha != null) {$highpoint=valueOf(ha);} else {$highpoint=0;}
+b.close();
+print (ha);
+while(1) {
+  if (getkey(1)>0) $System.exit();
+  if (getkey(32)==1) $projectManager.loadPage($page_index);
+  if (time%100==99) {
+    a=new FileWriter("highscore.txt");
+    a.writeLn(trunc($highpoint));
+    a.close();
+  }
+  time++;
+  update();
+}

@@ -1,0 +1,16 @@
+extends SpriteChar;
+a=5;   //’e‚Ì‘¬‚³
+while(1) {
+  y=y+a;
+  if (y>$screenHeight) die();
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ð1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+  update();
+}

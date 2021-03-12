@@ -1,0 +1,6 @@
+extends SpriteChar;
+zOrder=20;
+while(y>-50) {
+  y-=a;
+  update();
+}

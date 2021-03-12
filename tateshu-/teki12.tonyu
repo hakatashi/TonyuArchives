@@ -1,0 +1,63 @@
+extends SpriteChar;
+life=80;  //ライフ
+base=10;    //無敵時間
+base2=base;
+a=0;
+function kaitenn(ax,ay,kannkaku,sokudo){
+  if (a==0) {
+    kakudonow=$time*sokudo;
+    kakudonow2=kakudonow;
+    while( kakudonow-kakudonow2 <= 360 ){
+      vx=sin(kakudonow)*1000;
+      vy=-cos(kakudonow)*1000;
+      drawLine(ax,ay,vx,vy,$clRed);
+      kakudonow+=kannkaku;
+    }
+  }
+  if (a==1) {
+    while( kakudonow-kakudonow2 <= 360 ){
+      vx=sin(kakudonow)*1000;
+      vy=-cos(kakudonow)*1000;
+      drawLine(ax,ay,vx,vy,$clRed);
+      tama=new tama6(ax,ay,$pat_Sample+15);
+      $tama.k=kakudonow;
+      $tama.s=3;
+      kakudonow+=kannkaku;
+    }
+    a=0;
+  }
+}
+while(1) {
+  kaitenn(100,100,10,0.3);
+  if ($time==50) a=1;
+  //tamaと当たったらlifeを1減らす
+  for (t in $chars ) {
+    if ( t is tama && crashTo(t) && base<=0 ) {
+      life=life-1;
+      base=base2;
+      $mplayer.play($se_good);
+    }
+  }
+  //ライフが0より小さかったら
+  if (life<=0) {
+    //ライフをゼロに戻して
+    life=0;
+    //やられる
+    die();
+    for (t in $chars) {
+      if ( t is teki12_life ) {
+        t.die();
+      }
+    }
+    appear(new stageclear(18,154,"STAGECLEAR",$clWhite,70));
+    for (t in $chars) {
+      if ( t is teki12_life ) {
+        t.die();
+      }
+    }
+    appear(new bakuhatu(x,y,$pat_Sample+11));
+    $mplayer.play($se_good);
+  }
+  base=base-1;
+  update();
+}

@@ -1,0 +1,5 @@
+extends TextChar;
+while(1) {
+  text="ハイスコア"+trunc($highpoint)+"点";
+  update();
+}

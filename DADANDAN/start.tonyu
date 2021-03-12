@@ -1,0 +1,77 @@
+extends SecretChar;
+$map.setBGColor($clWhite);
+$screenWidth=600;
+time2=0;
+su=8;
+function waiten(a) {
+  for(k1=0;k1<a;k1++) {
+    if (getkey(90)>0) {k2=su;} else {k2=1;}
+    if (time2%k2==0) update();
+    time2++;
+  }
+}
+waiten(15);
+te="漢字弾幕シューティング";
+for(t=0;t<12;t++) {
+  $panel.drawText(112,222,te.substring(0,t),$clBlack,24);
+  waiten(3);
+}
+waiten(40);
+te="by";
+for(t=0;t<3;t++) {
+  $panel.drawText(x,y,te.substring(0,t),$clBlack,24);
+  waiten(20);
+}
+waiten(40);
+te="koyi";
+for(t=0;t<5;t++) {
+  $panel.drawText(x+50,y,te.substring(0,t),$clBlack,24);
+  waiten(3);
+}
+waiten(20);
+for(t=255;t>0;t-=2) {
+  $map.setBGColor(color(t,t,t));
+    if (getkey(90)>0) {k2=su;} else {k2=1;}
+    if (time2%k2==0) update();
+    time2++;
+}
+$panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+time=0;
+a=200;
+a2=100;
+while(time<50) {
+  if (time%1==0) {
+    appear(new write(47,time*3+100,$pat_write+1));
+    appear(new write2(47,time*3+100,$pat_write+2));
+    appear(new write(229,time*3+100,$pat_write+1));
+    appear(new write2(229,time*3+100,$pat_write+2));
+    appear(new write(522,time*3+100,$pat_write+1));
+    appear(new write2(522,time*3+100,$pat_write+2));
+  }
+  time++;
+  if (getkey(90)>0) {k2=su;} else {k2=1;}
+  if (time2%k2==0) update();
+  time2++;
+}
+waiten(100);
+$map.setBGColor($clWhite);
+for(t=0;t<60;t++) {
+  $map.setBGColor(color(255/60*t,255/60*t,255/60*t));
+  if (getkey(90)>0) {k2=su;} else {k2=1;}
+  if (time2%k2==0) update();
+  time2++;
+}
+for(t in $chars) {
+  if (t is write2) t.die();
+}
+$map.setBGColor(color(0,0,0));
+appear(new ttl(x,226,1));
+waiten(100);
+for(t=0;t<150;t++) {
+  $map.scrollTo(0,t*4);
+  if (getkey(90)>0) {k2=su;} else {k2=1;}
+  if (time2%k2==0) update();
+  time2++;
+}
+$projectManager.loadPage($page_title);
+update();

@@ -1,0 +1,11 @@
+extends TextChar;
+$hupoint=0;
+while(1) {
+  if ($ziki.y==$screenHeight-14 || $ziki.y==30 || $ziki.x==0) {
+    $hupoint=0;
+  } else {
+    $hupoint++;
+  }
+  text="浮遊ポイント"+$hupoint+"ポイント";
+  update();
+}

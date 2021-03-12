@@ -1,0 +1,23 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_teki" src="teki.bmp"/>
+<cpattern name="$pat_tekibuhinn1" src="tekibuhinn1.bmp"/>
+<cpattern name="$pat_ziki" src="ziki.bmp"/>
+<cpattern name="$pat_bomb" src="bomb.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="teki1" name="$teki1" inst_p="$pat_teki+0" inst_x="279" inst_y="73"/>
+<generator className="houdai1" name="$houdai1" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_p="$pat_tekibuhinn1+11" inst_x="58" inst_y="130"/>
+<generator className="houdai1" name="$houdai1_1" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_p="$pat_tekibuhinn1+11" inst_x="138" inst_y="130"/>
+<generator className="houdai1" name="$houdai1_2" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_p="$pat_tekibuhinn1+11" inst_x="410" inst_y="130"/>
+<generator className="houdai1" name="$houdai1_3" inst_angle="0" inst_alpha="255" inst_scalex="1" inst_p="$pat_tekibuhinn1+11" inst_x="482" inst_y="130"/>
+<generator className="ziki" name="$ziki" inst_p="$pat_ziki+0" inst_x="254" inst_y="323"/>
+<generator className="tama" name="$tama" inst_p="$pat_tekibuhinn1+4" inst_x="257" inst_y="281"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="565"/>
+  <globalvalue name="$screenHeight" value="491"/>
+ </resourcelist>
+</resourcelist>

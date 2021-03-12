@@ -1,0 +1,6 @@
+extends TextChar;
+$pp=0;
+while(1) {
+  if (pp==1) die();
+  update();
+}
