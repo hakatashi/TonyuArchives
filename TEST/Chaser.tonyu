@@ -1,0 +1,8 @@
+extends SpriteChar;
+while(1) {
+ if (x< $Cursor .x) x+=2.5;
+ if (x> $Cursor .x) x-=2.5;
+ if (y< $Cursor .y) y+=1;
+ if (y> $Cursor .y) y-=1;
+ update();
+}

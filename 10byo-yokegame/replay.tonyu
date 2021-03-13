@@ -1,0 +1,23 @@
+extends SpriteChar;
+a=new FileReader("stage1.txt");
+l=a.readLn();
+b=l.split(";");
+e=0;
+f=0;
+g=0;
+while(1) {
+  for (e in b) {
+    c=l.split("!");
+    for (f in c) {
+      d=l.split(",");
+      k=0;
+      for (g in d) {
+        if (k==0) g1=g;
+        if (k==1) g2=g;
+        if (k==2) appear(new tama6(g1,g2,g));
+        k+=1;
+      }
+    }
+    update();
+  }
+}

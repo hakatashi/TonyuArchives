@@ -1,0 +1,28 @@
+extends SpriteChar;
+function onDie() {
+  appear(new Bomb(x , y ,$pat_Sample+4));
+}
+function atariHantei() {
+  for (t in $chars) {
+   if ( t is Tama && crashTo(t) )  {
+     die();
+     $score=$score+10;
+   } 
+  }
+  if (crashTo($myChar)) $myChar.die();
+}
+nexty=rnd(50)+100;
+while (y<nexty) {
+  y=y+2;
+  atariHantei();
+  update();
+}
+if (x<$myChar.x) vx=2; else vx=-2;
+while (y<$screenHeight) {
+  y=y+3;
+  x=x+vx;
+  atariHantei();
+  update();
+}
+
+

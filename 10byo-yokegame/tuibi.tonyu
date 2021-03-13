@@ -1,0 +1,4 @@
+extends SpriteChar;
+while(1) {
+  update();
+}

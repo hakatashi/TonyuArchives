@@ -1,0 +1,10 @@
+extends SecretChar;
+enemyLives=1;
+while (enemyLives==1) {
+  enemyLives=0;
+  for (e in $chars) {
+    if (e is Enemy) enemyLives=1;
+  }
+  update();
+}
+$projectManager.loadPage( $page_stage2 );

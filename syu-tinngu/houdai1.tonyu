@@ -1,0 +1,8 @@
+extends DxChar;
+hassya=1; //1‚È‚ç‹Ê‚ð”­ŽË
+while(1) {
+  if (hassya==1) {
+    appear(new tama(x,y,$pat_tekibuhinn1+4));
+  }
+  update();
+}

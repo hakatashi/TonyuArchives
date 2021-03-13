@@ -1,0 +1,65 @@
+extends SpriteChar;
+time=0;
+f=180; //Œ»Ý‚Ì–Ú“IŠp“x
+df=0;
+a=20; //•
+b=0; //‚¸‚ê
+function tamamake(a,b) {
+  rr=new tama1(x,y,$pat_Rs+9);
+  rr.k=a;
+  rr.h=b;
+  appear(rr);
+}
+while(1) {
+  da=40; //’e‚ðo‚·”
+  db=0; //ŒJ‚è•Ô‚µ•Ï”
+  while(da>db) {
+    rr=new tama1(x,$screenHeight/da*db+3,$pat_Rs+9);
+    rr.k=db;
+    rr.h=0;
+    db+=1;
+    appear(rr);
+  }
+  while(time<20) {
+    time+=1;
+    update();
+  }
+  for (t in $chars) {
+    if ( t is tama1 && t.k%2==0) {
+      t.k=15;
+      t.h=2;
+    }
+    if ( t is tama1 && t.k%2==1) {
+      t.k=90;
+      t.h=2;
+    }
+  }
+  wait(20);
+  for (t in $chars) {
+    if ( t is tama1 ) {
+      t.k=da;
+      t.h=0;
+      da+=1;
+    }
+  }
+  wait(50);
+  for (t in $chars) {
+    if ( t is tama1 && t.k%4==0) {
+      t.k=0;
+      t.h=2;
+    }
+    if ( t is tama1 && t.k%4==1) {
+      t.k=180;
+      t.h=2;
+    }
+    if ( t is tama1 && t.k%4==2) {
+      t.k=90;
+      t.h=2;
+    }
+    if ( t is tama1 && t.k%4==3) {
+      t.k=270;
+      t.h=6;
+    }
+  }
+  time=0;
+}

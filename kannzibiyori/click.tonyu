@@ -1,0 +1,10 @@
+extends SpriteChar;
+pyu=0;
+while(1) {
+  if (getkey(1)==1 && $mouseX<x+32 && $mouseX>x-32 && $mouseY<y+32 && $mouseY>y-32 && $henkan.nyu<31) {
+    $p.set($henkan.nyu,1,nrk);
+    $henkan.nyu+=1;
+    pyu+=1;
+  }
+  update();
+}

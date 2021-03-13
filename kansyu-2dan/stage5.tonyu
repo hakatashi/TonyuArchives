@@ -1,0 +1,104 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(k,h) {
+  cc1=new tama1(rnd($screenWidth),-45,$pat_S+9);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+if ($level==1) {
+  pp1=300;  //ˆêƒ^[ƒ“‚²‚Æ‚ÌŠÔŠu
+  pp2=280;  //’e‚ğo‚µ‚Ä‚¢‚éŠÔ
+  pp3=7;    //’e‚ğo‚·ŠÔŠu
+  pp4=2;    //’e‚Ì‘¬‚³
+}
+if ($level==2) {
+  pp1=300;  //ˆêƒ^[ƒ“‚²‚Æ‚ÌŠÔŠu
+  pp2=280;  //’e‚ğo‚µ‚Ä‚¢‚éŠÔ
+  pp3=4;    //’e‚ğo‚·ŠÔŠu
+  pp4=3;    //’e‚Ì‘¬‚³
+}
+if ($level==3) {
+  pp1=150;  //ˆêƒ^[ƒ“‚²‚Æ‚ÌŠÔŠu
+  pp2=130;  //’e‚ğo‚µ‚Ä‚¢‚éŠÔ
+  pp3=3;    //’e‚ğo‚·ŠÔŠu
+  pp4=4;    //’e‚Ì‘¬‚³
+}
+life=1000;
+time=0;
+x=$screenWidth/2;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"á",color(150,150,150),12+rnd(100)));
+  time++;
+  update();
+}
+ty=3;
+while(1) {
+  if (time%pp3==0 && time%pp1<pp2) {
+    tama1make(100+rnd(90),pp4);
+  }
+  for(t in $chars) {
+    if (time%pp1<pp2) {
+      if (t is tama1 && 100<t.y && t.y<150 ) {
+        t.k-=3;
+      }
+      if (t is tama1 && 150<t.y && t.y<200 ) {
+        t.k+=1;
+      }
+      if (t is tama1 && 200<t.y && t.y<250 ) {
+        t.k-=3;
+      }
+      if (t is tama1 && 250<t.y && t.y<300 ) {
+        t.k+=1;
+      }
+      if (t is tama1 && 300<t.y && t.y<350 ) {
+        t.k-=3;
+      }
+      if (t is tama1 && 350<t.y && t.y<400 ) {
+        t.k+=1;
+      }
+      if (t is tama1 && 400<t.y && t.y<450 ) {
+        t.k-=3;
+      }
+      if (t is tama1 && 450>t.y && t.y<500 ) {
+        t.k+=1;
+      }
+    }
+    if (t is tama1 && time%pp1>pp2 ) {
+      t.h=0;
+    }
+    if (t is tama1 && time%pp1==0 ) {
+      t.h=pp4;
+    }
+    if (t is tama1 && time%(pp1*2)<100 ) {
+      t.x+=pp4;
+    }
+    if (t is tama1 && time%(pp1*4)<100 ) {
+      t.x-=pp4*2;
+    }
+    if (t is tama1 && time%(pp1*6)<100 ) {
+      t.x-=pp4;
+      t.h=pp4*2;
+    }
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+        life--;
+      }
+    }
+  }
+  
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+    die();
+  }
+  time++;
+  update();
+}

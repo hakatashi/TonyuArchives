@@ -1,0 +1,16 @@
+extends DxChar;
+myx=0;
+myy=0;
+myz=0;
+syokidai=scaleX;
+z=0;
+a=0;
+b=0;
+while(1) {
+  z=sqrt(syokidai*syokidai+(myz-$zikiz)*(myz-$zikiz));
+  a=cos(syokidai/2)*z;
+  b=90-a;
+  scaleX=b/90*syokidai;
+  if (scaleX<0) scaleX=0;
+  update();
+}

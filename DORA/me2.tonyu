@@ -1,0 +1,6 @@
+extends SpriteChar;
+while(1) {
+  if (getkey(39)==1) x+=160;
+  if (getkey(37)==1) x-=160;
+  update();
+}

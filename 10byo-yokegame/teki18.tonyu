@@ -1,0 +1,18 @@
+extends SpriteChar;
+randomize();
+a=0;
+b=0;
+time=0;
+function tamamake(a,b) {
+  c=new tama8(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  if (time%7==0) {
+    tamamake(rnd(360),3);
+  }
+  time+=1;
+  update();
+}

@@ -1,0 +1,67 @@
+extends SpriteChar;
+
+//ziki‚ğ’Ç‚¢‚©‚¯‚é“G
+
+e=30;   //ziki‚ğ’Ç‚¢‚©‚¯‚éŠÔ
+b=11;   //ziki‚ğ’Ç‚¢‚©‚¯‚é‘¬‚³
+f=20;   //ziki—U“±‚Ì‹Ê‚ğo‚·xŠÔŠu
+g=7;    //‰º‚É—‚¿‚Ä‚¢‚­‘¬‚³
+base=0;
+while (base<e) {
+  for (t in $chars) {
+    if ( t is ziki) {
+      a=dist(x-t.x, y-t.y);
+      c=t.x-x;
+      d=t.y-y;
+    }
+  }
+  vx=b/a*c;
+  vy=b/a*d;
+  x=x+vx;
+  y=y+vy;
+  if (x<0 || x>$screenWidth || y<0 || y>$screenHeight) die();
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ğ1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+  for (t in $chars) {
+    if ( t is tama && crashTo(t) ) {
+      t.die();
+      die();
+      $mplayer.play($se_bad);
+      appear(new bakuhatu(x,y,$pat_Sample+11));
+    }
+  }
+  base=base+1;
+  update();
+}
+appear(new tama2(x+f,y,$pat_Sample+15));
+appear(new tama2(x-f,y,$pat_Sample+15));
+appear(new tama2(x,y,$pat_Sample+15));
+while(y<$screenWidth) {
+  y=y+g;
+    //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ğ1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+    for (t in $chars) {
+    if ( t is tama && crashTo(t) ) {
+      t.die();
+      die();
+      $mplayer.play($se_bad);
+      appear(new bakuhatu(x,y,$pat_Sample+11));
+    }
+  }
+  update();
+  
+}

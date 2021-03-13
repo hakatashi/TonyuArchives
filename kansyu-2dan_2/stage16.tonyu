@@ -1,0 +1,83 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(k,h) {
+  cc1=new tama1(x,y,$pat_S+9);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1000;
+time=0;
+x=$screenWidth/2;
+y=74;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"‹È",$clBlue,12+rnd(150)));
+  time++;
+  update();
+}
+if ($level==1) {
+  su1=2; //’e‚ðo‚·ŠÔŠu
+  su2=5; //’e‚ÌÅ‰‚Ì‘¬‚³
+  su3=50; //’e‚ðo‚µ‚Ä‚¢‚éŽžŠÔ
+  su4=120; //‹È‚°‚éŽžŠÔ
+  su5=3; //•Ï‰»‚µ‚½‚ ‚Æ‚Ì‘‚³
+  su6=1; //ˆê“x‚É’e‚ðo‚·”
+  su7=1; //‹È‚°‹ï‡
+}
+if ($level==2) {
+  su1=2; //’e‚ðo‚·ŠÔŠu
+  su2=5; //’e‚ÌÅ‰‚Ì‘¬‚³
+  su3=100; //’e‚ðo‚µ‚Ä‚¢‚éŽžŠÔ
+  su4=120; //‹È‚°‚éŽžŠÔ
+  su5=3; //•Ï‰»‚µ‚½‚ ‚Æ‚Ì‘‚³
+  su6=3; //ˆê“x‚É’e‚ðo‚·”
+  su7=1; //‹È‚°‹ï‡
+}
+if ($level==3) {
+  su1=2; //’e‚ðo‚·ŠÔŠu
+  su2=5; //’e‚ÌÅ‰‚Ì‘¬‚³
+  su3=100; //’e‚ðo‚µ‚Ä‚¢‚éŽžŠÔ
+  su4=70; //‹È‚°‚éŽžŠÔ
+  su5=4; //•Ï‰»‚µ‚½‚ ‚Æ‚Ì‘‚³
+  su6=3; //ˆê“x‚É’e‚ðo‚·”
+  su7=2.5; //‹È‚°‹ï‡
+}
+while(1) {
+  if (time%(su3+su4)<su3) {
+    for(t=0;t<su6;t++) {
+      if (time%su1==0) tama1make(rnd(360),su2);
+    }
+  }
+  for(t in $chars) {
+    if (t is ziki) zki=t;
+    if (time%(su3+su4)>su3) {
+      if (t is tama1 && angle(t.x-zki.x,t.y-zki.y)+270-t.k>10) {
+        t.k+=su7;
+      }
+      if (t is tama1 && -angle(t.x-zki.x,t.y-zki.y)-270+t.k>10) {
+        t.k-=su7;
+      }
+    }
+    if (t is tama1 && time%(su3+su4)==su3) t.h=su5;
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+        life--;
+      }
+    }
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+    die();
+    $stageend=1;
+  }
+  time++;
+  update();
+}

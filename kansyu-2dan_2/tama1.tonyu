@@ -1,0 +1,88 @@
+//kで角度、hで速さを設定。
+extends DXChar;
+if ($nowbomm==1 && $ziki.bomtipe==0) die();
+randomize();
+zOrder=10;
+angle=k;
+time=0;
+rd1=rnd();
+auk=k;
+px=sin(k);
+py=cos(k);
+//if(rnd(1)==0)$mplayer.play($se_se_sad07,0,30);
+times=1;
+if ($hande1==2) times=1.2;
+if ($hande1==3) times=1.5;
+if ($hande1==4) times=2;
+if (tr1==null) tr1=0;
+if (tr2==null) tr2=0;
+if (tr3==null) tr3=0;
+p2=p;
+sx=x;
+sy=y;
+sinko=0;
+if (scaleX>1) {
+  scap=scaleX;
+  scaleX=0;
+}
+if (scap==null) a=50; else a=scap*50;//スクリーンはみ出し死亡ライン
+while(x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) {
+  if (sw==null) {
+    x+=px*h;
+    y-=py*h;
+  }
+  if (auk!=k) {
+    px=sin(k);
+    py=cos(k);
+  }
+  if (p==$pat_S+32) angle=rnd(360); else angle=k;
+  if (h2==3) die();
+  if (bomdie==1) {
+    wait(15);
+    appear(new bomb(x,y,$pat_bomb+0));
+    die();
+  }
+  if (time>100) die();
+  time++;
+  update();
+}
+while(1) {
+  if (sw==null && mod==null && stop==null) {
+    x+=px*h*times;
+    y-=py*h*times;
+  }
+  if (auk!=k) {
+    px=sin(k);
+    py=cos(k);
+  }
+  if (p==$pat_S+32) angle=rnd(360); else angle=k;
+  if (h2==3) die();
+  if (x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) die();
+  if (mod==1 && tims>=sinko && stop==null) {
+    sinka=tims-sinko;
+    x=sx+(1-(sinka*sinka)/(tims*tims))*(mx-sx);
+    y=sy+(1-(sinka*sinka)/(tims*tims))*(my-sy);
+    sinko++;
+  }
+  /*if (mode==null) p=p2;
+  if (mode==1) p=900;*/
+  if (bomdie==1) {
+    if (scap==null) {
+    wait(15);
+    appear(new bomb(x,y,$pat_bomb+0));
+    die();
+  } else {
+    for(i=0;i<20;i++) {
+      scaleX=scap*(20-i-1)/20;
+      update();
+    }
+    die();
+  }
+  }
+  if (time<20 && scap != null) scaleX=scap*time/20;
+  if (time>=20 && scap != null) scaleX=scap;
+  zOrder=abs(k%360)*1.5+abs(h)*-200+abs(time);
+  if (zOrder>100000) zOrder=zOrder/1000;
+  time++;
+  update();
+}

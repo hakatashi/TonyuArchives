@@ -1,0 +1,27 @@
+extends SpriteChar;
+randomize();
+time=0;
+
+if ($level=="e") times=0.8; //easy
+if ($level=="g") times=0.9; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=1.1; //hard
+if ($level=="d") times=1.2; //difficult
+if ($level=="u") times=1.3; //ultra
+
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(time<75) {
+  x+=sin(g)*h*times;
+  y-=cos(g)*h*times;
+  time+=h;
+  update();
+}
+a=rnd(120);
+tamamake(a,2.4);
+tamamake(a+120,2.4);
+tamamake(a+240,2.4);

@@ -1,0 +1,17 @@
+extends SpriteChar;
+function appearEnemy() {
+   if (rnd(50)==0) appear(new Enemy(x,y,$pat_Sample+2));
+}
+
+while(1) {
+ while(x<$screenWidth) {
+   x=x+2;
+   appearEnemy();
+   update();
+ }
+ while(x>0) {
+   x=x-2;
+   appearEnemy();
+   update();
+ }
+}

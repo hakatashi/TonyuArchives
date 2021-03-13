@@ -1,0 +1,22 @@
+extends TextChar;
+time=0;
+timex=0;
+while(1) {
+  enemyLives=0;
+  for (e in $chars) {
+    if (e is ziki) enemyLives=1;
+  }
+  if ( enemyLives==0 )timex=1;
+  text=time;
+  if (timex==0) {
+    time+=85829;    
+    size=time/2000000+5;
+    color(rnd(256),rnd(256),rnd(256));
+  }
+  if ($ziki.x==528 && $ziki.y==176) {
+    timex=1;
+    size=200;
+    col=$clRed;
+  }
+  update();
+}

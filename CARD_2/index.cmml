@@ -1,0 +1,14 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_card" src="card.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="main" name="$main" inst_pat="17" inst_x="490" inst_y="282"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="839"/>
+  <globalvalue name="$screenHeight" value="562"/>
+ </resourcelist>
+</resourcelist>

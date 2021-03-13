@@ -1,0 +1,47 @@
+extends SecretChar;
+randomize();
+time=0;
+wait(5);
+while(1) {
+  if (time%300==1) {
+    /*fonter=rnd(2);
+    if (fonter==0) fft="‚l‚r ƒSƒVƒbƒN";
+    if (fonter==1) fft="‚l‚r –¾’©";*/
+    for(t in $chars) {
+      if (t is ziguso) t.die();
+    }
+    a=$kl.size();
+    $ar=rnd(a);
+    jun=new Array();
+    jun.add(1);
+    jun.add(2);
+    jun.add(3);
+    jun.add(4);
+    jun.add(5);
+    jun.add(6);
+    jun.add(7);
+    jun.add(8);
+    jun.add(9);
+    for(t=0;t<8;t++) {
+      clc=jun.get(t);
+      bcb=rnd(8-t)+t+1;
+      jun.delete(t);
+      jun.insert(t,jun.get(bcb-1));
+      jun.delete(bcb);
+      jun.insert(bcb,clc);
+    }
+    for(t=0;t<9;t++) {
+      app=new ziguso(0,0);
+      app.kind=t+1;
+      app.jun=jun.get(t);
+      //app.font=fft;
+      appear(app);
+    }
+  }
+  if (time%300==250) {
+    $panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    $panel.drawText(600,500,"“š‚¦F"+$kl.get($ar),$clBlack,45);
+  }
+  time++;
+  update();
+}

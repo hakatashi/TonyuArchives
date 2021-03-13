@@ -1,0 +1,21 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_index" src="index.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="374484"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="block" src="block.tonyu" category=""/>
+  <class name="ziki" src="ziki.tonyu" category=""/>
+  <class name="stage" src="stage.tonyu" category=""/>
+  <class name="pointchar" src="pointchar.tonyu" category=""/>
+  <class name="high" src="high.tonyu" category=""/>
+  <class name="huyuu" src="huyuu.tonyu" category=""/>
+  <class name="osippa" src="osippa.tonyu" category=""/>
+  <class name="block2" src="block2.tonyu" category=""/>
+  <class name="block3" src="block3.tonyu" category=""/>
+ </resourcelist>
+</resourcelist>

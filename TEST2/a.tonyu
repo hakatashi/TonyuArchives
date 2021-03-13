@@ -1,0 +1,45 @@
+//extends SpriteChar;
+extends SpriteChar;
+while (1) {
+ i=0; while(i<255) {
+   if (getkey(i)) drawText(i,10,i,color(255,255,255));
+   i=i+1;
+ }
+ update();
+}
+function circle(cx,cy,angle,maxis,frate) {
+  x=cx+maxis*cos(angle);
+  y=cy+maxis*frate*sin(angle);
+}
+function deltoid(sx,sy,angle,rate) {
+  x=sx+rate*(2*cos(angle)+cos(2*angle));
+  y=sy+rate*(2*sin(angle)-sin(2*angle));
+}
+function cardioid(mx,my,a,angle) {
+  x=mx-(2*a*sin(angle)-a*sin(2*angle));
+  y=my-(2*a*cos(angle)-a*cos(2*angle));
+}
+function cycoloid(mx,my,r,angle) {
+  x=mx+r*(angle/180*3.1415-sin(angle));
+  y=my-r*(1-cos(angle));
+}
+function lemniscate(sx,sy,ang,rate) {
+  if(1+sin(ang)==0) ang++;
+  x=sx+rate*(cos(ang)/(1 +(sin(ang))*(sin(ang))));
+  y=sy+rate*(sin(ang)*cos(ang)/(1 +sin(ang))*(1 +sin(ang)));
+}
+function asteroid(ax,ay,ang,maxis,frate){
+  y=ax+maxis*cos(ang)*cos(ang)*cos(ang);
+  x=ay+maxis*frate+maxis*frate*sin(ang)*sin(ang)*sin(ang);
+}
+t=0;
+while(1) {
+  //circle($screenWidth/2,$screenHeight/2,t,100,0.5);
+  //deltoid($screenWidth/2,$screenHeight/2,t,60);
+  cardioid($screenWidth/2,$screenHeight/2,60,t);
+  //cycoloid(0,$screenHeight/2,30,t);
+  //lemniscate($screenWidth/2,$screenHeight/2,t,180);
+  //asteroid($screenHeight/2,70,t,4,50);
+  t+=3;
+  update();
+}

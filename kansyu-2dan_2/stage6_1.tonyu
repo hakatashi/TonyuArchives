@@ -1,0 +1,155 @@
+extends SpriteChar;
+time=0;
+zOrder=5;
+for(t in $chars) {
+  if (t is stage6) mik=t;
+}
+function tama1make(k,h) {
+  cc1=new tama1(x,y,ccl);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+if ($level==1) {
+  su1=9; //—•‚ª’e‚ðo‚·ŠÔŠu
+  su2=3;  //—•‚Ì’e‚Ì‘¬‚³
+  su3=15; //Ô‚ª’e‚ðo‚·ŠÔŠu
+  su4=3;  //Ô‚Ì’e‚Ì‘¬‚³
+  su5=63; //‰©‚ª’e‚ðo‚·ŠÔŠu
+  su6=10; //‰©‚ªˆê“x‚Éo‚·’e‚Ì”
+  su7=3;  //‰©‚Ì’e‚Ì‘¬‚³
+  su8=30; //žò‚ª’e‚ðo‚·ŠÔŠu
+  su9=3;  //žò‚ªˆê“x‚Éo‚·’e‚Ì”
+  su10=3; //žò‚Ì’e‚Ì‘¬‚³
+  su11=40;//Â‚ª’e‚ðo‚·ŠÔŠu
+  su12=5; //Â‚ªˆê“x‚É’e‚ðo‚·”
+  su13=4; //Â‚Ì’e‚Ì‘¬‚³
+  su14=13;//—Î‚ª’e‚ðo‚·ŠÔŠu
+  su15=1; //—Î‚ªˆê“x‚Éo‚·’e‚Ì”
+  su16=2; //—Î‚Ì’e‚Ì‘¬‚³
+  su17=47;//Ž‡‚ª’e‚ðo‚·ŠÔŠu
+  su18=3; //Ž‡‚Ì’e‚Ì‘¬‚³
+  su19=5;//Ž‡‚ªˆê“x‚Éo‚·’e‚Ì”
+  speed=4;
+}
+if ($level==2) {
+  su1=11; //—•‚ª’e‚ðo‚·ŠÔŠu
+  su2=3;  //—•‚Ì’e‚Ì‘¬‚³
+  su3=10; //Ô‚ª’e‚ðo‚·ŠÔŠu
+  su4=3;  //Ô‚Ì’e‚Ì‘¬‚³
+  su5=43; //‰©‚ª’e‚ðo‚·ŠÔŠu
+  su6=18; //‰©‚ªˆê“x‚Éo‚·’e‚Ì”
+  su7=3;  //‰©‚Ì’e‚Ì‘¬‚³
+  su8=8;  //žò‚ª’e‚ðo‚·ŠÔŠu
+  su9=3;  //žò‚ªˆê“x‚Éo‚·’e‚Ì”
+  su10=3; //žò‚Ì’e‚Ì‘¬‚³
+  su11=40;//Â‚ª’e‚ðo‚·ŠÔŠu
+  su12=10;//Â‚ªˆê“x‚É’e‚ðo‚·”
+  su13=4; //Â‚Ì’e‚Ì‘¬‚³
+  su14=5; //—Î‚ª’e‚ðo‚·ŠÔŠu
+  su15=1; //—Î‚ªˆê“x‚Éo‚·’e‚Ì”
+  su16=3; //—Î‚Ì’e‚Ì‘¬‚³
+  su17=37;//Ž‡‚ª’e‚ðo‚·ŠÔŠu
+  su18=3; //Ž‡‚Ì’e‚Ì‘¬‚³
+  su19=10;//Ž‡‚ªˆê“x‚Éo‚·’e‚Ì”
+  speed=4;
+}
+if ($level==3) {
+  su1=2; //—•‚ª’e‚ðo‚·ŠÔŠu
+  su2=5;  //—•‚Ì’e‚Ì‘¬‚³
+  su3=4; //Ô‚ª’e‚ðo‚·ŠÔŠu
+  su4=5;  //Ô‚Ì’e‚Ì‘¬‚³
+  su5=43; //‰©‚ª’e‚ðo‚·ŠÔŠu
+  su6=30; //‰©‚ªˆê“x‚Éo‚·’e‚Ì”
+  su7=5;  //‰©‚Ì’e‚Ì‘¬‚³
+  su8=4;  //žò‚ª’e‚ðo‚·ŠÔŠu
+  su9=5;  //žò‚ªˆê“x‚Éo‚·’e‚Ì”
+  su10=5; //žò‚Ì’e‚Ì‘¬‚³
+  su11=25;//Â‚ª’e‚ðo‚·ŠÔŠu
+  su12=20;//Â‚ªˆê“x‚É’e‚ðo‚·”
+  su13=5; //Â‚Ì’e‚Ì‘¬‚³
+  su14=4; //—Î‚ª’e‚ðo‚·ŠÔŠu
+  su15=1; //—Î‚ªˆê“x‚Éo‚·’e‚Ì”
+  su16=5; //—Î‚Ì’e‚Ì‘¬‚³
+  su17=23;//Ž‡‚ª’e‚ðo‚·ŠÔŠu
+  su18=5; //Ž‡‚Ì’e‚Ì‘¬‚³
+  su19=10;//Ž‡‚ªˆê“x‚Éo‚·’e‚Ì”
+  speed=7;
+}
+kl=0;
+while(1) {
+  ij=kind;
+  if (ij==1) {
+    ccl=$pat_S+5;
+  }
+  if (ij==2) {
+    ccl=$pat_S+3;
+  }
+  if (ij==3) {
+    ccl=$pat_S+1;
+  }
+  if (ij==4) {
+    ccl=$pat_S+14;
+  }
+  if (ij==5) {
+    ccl=$pat_S+2;
+  }
+  if (ij==6) {
+    ccl=$pat_S+4;
+  }
+  if (ij==7) {
+    ccl=$pat_S+12;
+  }
+  x=mik.x+sin(time*speed+kind*360/7)*100;
+  y=mik.y-cos(time*speed+kind*360/7)*100;
+  if (time>150) {
+    if (kind==1) {
+      if (time%su1==0) {
+        tama1make((time*speed+kind*360/7),su2);
+      }
+    }
+    if (kind==2) {
+      if (time%su3==0) {
+        tama1make((time*speed+kind*360/7)+180+12,su4);
+        tama1make((time*speed+kind*360/7)+180-12,su4);
+      }
+    }
+    if (kind==3) {
+      if (time%su5==0) {
+        for(kul=0;kul<su6;kul++) {
+          tama1make(kul*(360/su6),su7);
+        }
+      }
+    }
+    if (kind==4) {
+      if (time%su8==0) {
+        tama1make(kl*29-3,su10);
+        tama1make(kl*29,su10);
+        tama1make(kl*29+3,su10);
+        kl++;
+      }
+    }
+    if (kind==5) {
+      if (time%su11<su12) {
+        tama1make((time*speed+kind*360/7),su13);
+      }
+    }
+    if (kind==6) {
+      if (time%su14==0) {
+        aa2=su15;
+        for(kul=0;kul<aa2;kul++) {
+          tama1make(kul*(360/aa2)+180,su16);
+        }
+      }
+    }
+    if (kind==7) {
+      if (time%su17==1) {
+        for(kul=0;kul<su19;kul++) {
+          tama1make((time*speed+kind*360/7)-15+kul*(30/su19),su18);
+        }
+      }
+    }
+  }
+  time++;
+  update();
+}

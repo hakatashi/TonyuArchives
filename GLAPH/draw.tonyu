@@ -1,0 +1,18 @@
+extends SecretChar;
+bky=0;
+aty=0;
+nowx=-$screenWidth/2;
+su1=1.5;
+while(1) {
+  nowx+=su1;
+  bky=aty;
+  aty=nowx*nowx/200;
+  /*bky2=aty2;
+  aty2=-sqrt(-nowx*nowx+500);*/
+  $panel.drawLine($screenWidth/2+nowx-su1,$screenHeight/2-bky,$screenWidth/2+nowx,$screenHeight/2-aty,$clWhite);
+  //$panel.drawLine($screenWidth/2+nowx-su1,$screenHeight/2-bky2,$screenWidth/2+nowx,$screenHeight/2-aty2,$clWhite);
+  drawLine($screenWidth/2,0,$screenWidth/2,$screenHeight,$clGreen);
+  drawLine($screenWidth/2+nowx,0,$screenWidth/2+nowx,$screenHeight,$clGreen);
+  drawLine(0,$screenHeight/2,$screenWidth,$screenHeight/2,$clGreen);
+  update();
+}

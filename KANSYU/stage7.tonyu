@@ -1,0 +1,79 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+for (t in $chars) {
+  if (t is ziki) zk=t;
+}
+if ($level==1) {
+  su1=8;  //’e‚ğo‚·ŠÔŠu
+  su2=5;  //’e‚Ì‘¬‚³
+  a=50;  //’e‚ğo‚·‹——£
+  su3=180;//•ûŒü“]Š·‚·‚éŠÔŠu
+}
+if ($level==2) {
+  su1=4;  //’e‚ğo‚·ŠÔŠu
+  su2=8;  //’e‚Ì‘¬‚³
+  a=100;  //’e‚ğo‚·‹——£
+  su3=120;//•ûŒü“]Š·‚·‚éŠÔŠu
+}
+if ($level==3) {
+  su1=4;  //’e‚ğo‚·ŠÔŠu
+  su2=10;  //’e‚Ì‘¬‚³
+  a=100;  //’e‚ğo‚·‹——£
+  su3=180;//•ûŒü“]Š·‚·‚éŠÔŠu
+}
+function tama1make(k,h,tipe) {
+  if (tipe==1) {
+    cc1=new tama1(1+a,1+a,$pat_S+3);
+  }
+  if (tipe==2) {
+    cc1=new tama1(1+a,$screenHeight-a,$pat_S+5);
+  }
+  if (tipe==3) {
+    cc1=new tama1($screenWidth-a,1+a,$pat_S+4);
+  }
+  if (tipe==4) {
+    cc1=new tama1($screenHeight-a,$screenWidth-a,$pat_S+11);
+  }
+  cc1.k=angle(zk.x-cc1.x,zk.y-(cc1.y-10))+90;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1000;
+time=0;
+x=$screenWidth/2;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"’Ç",$clWhite,12+rnd(100)));
+  time++;
+  update();
+}
+while(1) {
+  if (time%su1==0) {
+    tama1make(rnd(360),su2,1);
+    tama1make(rnd(360),su2,3);
+    tama1make(rnd(360),su2,2);
+    tama1make(rnd(360),su2,4);
+  }
+  for(t in $chars) {
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        life--;
+      }
+    }
+    if (time%su3==0 && t is tama1) t.k+=180;
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+      if (t is stage6_1) {
+        t.die();
+      }
+    }
+    die();
+  }
+  time++;
+  update();
+}

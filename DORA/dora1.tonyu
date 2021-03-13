@@ -1,0 +1,24 @@
+extends SpriteChar;
+while(1) {
+  if (getkey(40)==1) {wait(5);
+y=y+35;
+wait(5);
+y=y+35;
+wait(5);
+y=y+35;
+wait(5);
+y=y+35;
+wait(5);
+}
+  if (getkey(38)==1) {wait(5);
+y=y-35;
+wait(5);
+y=y-35;
+wait(5);
+y=y-35;
+wait(5);
+y=y-35;
+wait(5);
+}
+  update();
+}

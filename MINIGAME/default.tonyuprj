@@ -1,0 +1,17 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_index" src="index.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="5515156"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="main1" src="main1.tonyu" category=""/>
+  <class name="time" src="time.tonyu" category=""/>
+  <class name="teki1" src="teki1.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+ </resourcelist>
+</resourcelist>

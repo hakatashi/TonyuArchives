@@ -1,0 +1,26 @@
+extends SpriteChar;
+while(1) {
+  if ($map.getAt(x+4,y+4)==$pat_maze+1 && $map.getAt(x-4,y-4)==$pat_maze+1) {
+    if (getkey(39)==1) x+=32;
+    if (getkey(37)==1) x-=32;
+    if (getkey(40)==1) y+=32; 
+    if (getkey(38)==1) y-=32;
+  } else if ($map.getAt(x+4,y)==$pat_maze+0) {
+    die();
+    appear(new si(x,y,$pat_Sample+4));
+    $time.timex=1;
+  } else if ($map.getAt(x-4,y)==$pat_maze+0) {
+    die();
+    appear(new si(x,y,$pat_Sample+4));
+    $time.timex=1;
+  } else if ($map.getAt(x,y+4)==$pat_maze+0) {
+    die();
+    appear(new si(x,y,$pat_Sample+4));
+    $time.timex=1;
+  } else if ($map.getAt(x,y-4)==$pat_maze+0) {
+    die();
+    appear(new si(x,y,$pat_Sample+4));
+    $time.timex=1;
+  }
+  update();
+}

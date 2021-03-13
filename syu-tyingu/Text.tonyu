@@ -1,0 +1,6 @@
+extends TextChar;
+$score=0;
+while(1) {
+  text="Score:"+$score;
+  update();
+}

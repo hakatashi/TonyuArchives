@@ -1,0 +1,22 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki" inst_p="$pat_Sample+0" inst_x="338" inst_y="426"/>
+<generator className="teki1" name="$teki1" inst_p="$pat_Sample+2" inst_x="498" inst_y="34"/>
+<generator className="life" name="$life" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_text="%22ƒeƒLƒXƒg%22" inst_col="$clred" inst_size="40" inst_x="456" inst_y="513"/>
+<generator className="base1" name="$base1" inst_pat="17" inst_x="262" inst_y="94"/>
+<generator className="teki1make" name="$teki1make" inst_pat="17" inst_x="170" inst_y="66"/>
+<generator className="gamec" name="$gamec" inst_x="70" inst_y="70" inst_pat="17"/>
+<generator className="teki2_life" name="$teki2_life" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_text="%22ƒeƒLƒXƒg%22" inst_col="$clWhite" inst_size="20" inst_x="468" inst_y="93"/>
+<generator className="tekimake" name="$tekimake" inst_pat="17" inst_x="146" inst_y="106"/>
+<generator className="newlife" name="$newlife" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_col="$clWhite" inst_x="606" inst_y="526" inst_size="150" inst_text="%229%22"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="692"/>
+  <globalvalue name="$screenHeight" value="575"/>
+ </resourcelist>
+</resourcelist>

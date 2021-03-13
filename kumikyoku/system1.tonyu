@@ -1,0 +1,57 @@
+extends SecretChar;
+$map.setBGColor($clBlack);
+wait(100);
+time=0;
+pat=0;
+function onUpdate() {
+  time++;  
+}
+text1="test";
+hyouzi=40;
+ox=234;
+oy=58;
+while(time<hyouzi) {
+  p2=trunc(255/hyouzi*time);
+  col=color(p2,p2,p2);
+  for(t2=0;t2<7;t2++) {
+    drawText(ox+(t2-3)*(hyouzi-time),oy,text1,col,40);
+  }
+  update();
+}
+$panel.drawText(ox,oy,text1,$clWhite,40);
+
+text1="「testtesttesttest」";
+hyourui+=hyouzi;
+hyouzi=40;
+ox=70;
+oy=124;
+while(time-hyourui<hyouzi) {
+  p2=trunc(255/hyouzi*(time-hyourui));
+  col=color(p2,p2,p2);
+  for(t2=0;t2<7;t2++) {
+    drawText(ox+(t2-3)*(hyouzi-(time-hyourui))*3,oy,text1,col,40);
+  }
+  update();
+}
+$panel.drawText(ox,oy,text1,$clWhite,40);
+
+text1="31testtestでテストしてみた";
+hyourui+=hyouzi;
+hyouzi=40;
+ox=60;
+oy=274;
+si=30;
+while(time-hyourui<hyouzi) {
+  p2=trunc(255/hyouzi*(time-hyourui));
+  col=color(p2,p2,p2);
+  for(t2=0;t2<7;t2++) {
+    drawText(ox+(t2-3)*(hyouzi-(time-hyourui))*3,oy,text1,col,si);
+  }
+  update();
+}
+$panel.drawText(ox,oy,text1,$clWhite,si);
+
+updateEx(100);
+
+$panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+

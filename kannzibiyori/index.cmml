@@ -1,0 +1,58 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_" src="–³‘è.bmp"/>
+<cpattern name="$pat_map" src="map.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="kakidate" name="$kakidate" inst_pat="17" inst_p="4" inst_text="%22ƒeƒLƒXƒg%22" inst_col="$clBlack" inst_font="%22‚l‚r –¾’©%22" inst_x="323" inst_y="130"/>
+<generator className="click" name="$click" inst_p="$pat_+0" inst_nrk="1" inst_x="192" inst_y="32"/>
+<generator className="click" name="$click_1" inst_p="$pat_+4" inst_nrk="5" inst_y="288" inst_x="192"/>
+<generator className="click" name="$click_2" inst_p="$pat_+1" inst_nrk="2" inst_x="192" inst_y="96"/>
+<generator className="click" name="$click_3" inst_p="$pat_+2" inst_nrk="3" inst_y="160" inst_x="192"/>
+<generator className="click" name="$click_4" inst_p="$pat_+3" inst_nrk="4" inst_x="192" inst_y="224"/>
+<generator className="click" name="$click_5" inst_p="$pat_+5" inst_nrk="6" inst_y="352" inst_x="192"/>
+<generator className="click" name="$click_6" inst_p="$pat_+6" inst_nrk="7" inst_x="192" inst_y="416"/>
+<generator className="click" name="$click_7" inst_p="$pat_+7" inst_nrk="8" inst_y="480" inst_x="192"/>
+<generator className="hyou" name="$hyou" inst_jj="1" inst_p="4" inst_x="272" inst_y="48"/>
+<generator className="hyou" name="$hyou_1" inst_p="4" inst_jj="3" inst_y="48" inst_x="336"/>
+<generator className="hyou" name="$hyou_2" inst_p="4" inst_jj="2" inst_x="304" inst_y="48"/>
+<generator className="hyou" name="$hyou_3" inst_p="4" inst_jj="9" inst_x="528" inst_y="48"/>
+<generator className="hyou" name="$hyou_4" inst_p="4" inst_jj="8" inst_x="496" inst_y="48"/>
+<generator className="hyou" name="$hyou_5" inst_p="4" inst_jj="7" inst_x="464" inst_y="48"/>
+<generator className="hyou" name="$hyou_6" inst_p="4" inst_jj="12" inst_x="624" inst_y="48"/>
+<generator className="hyou" name="$hyou_7" inst_p="4" inst_jj="11" inst_x="592" inst_y="48"/>
+<generator className="hyou" name="$hyou_8" inst_p="4" inst_jj="10" inst_x="560" inst_y="48"/>
+<generator className="hyou" name="$hyou_9" inst_p="4" inst_jj="6" inst_x="432" inst_y="48"/>
+<generator className="hyou" name="$hyou_10" inst_p="4" inst_jj="5" inst_x="400" inst_y="48"/>
+<generator className="hyou" name="$hyou_11" inst_p="4" inst_jj="4" inst_y="48" inst_x="368"/>
+<generator className="hyou" name="$hyou_12" inst_p="4" inst_jj="13" inst_x="656" inst_y="48"/>
+<generator className="hyou" name="$hyou_13" inst_p="4" inst_jj="20" inst_x="400" inst_y="80"/>
+<generator className="hyou" name="$hyou_14" inst_p="4" inst_jj="23" inst_x="496" inst_y="80"/>
+<generator className="hyou" name="$hyou_15" inst_p="4" inst_jj="15" inst_x="720" inst_y="48"/>
+<generator className="hyou" name="$hyou_16" inst_p="4" inst_jj="21" inst_x="432" inst_y="80"/>
+<generator className="hyou" name="$hyou_17" inst_p="4" inst_jj="22" inst_x="464" inst_y="80"/>
+<generator className="hyou" name="$hyou_18" inst_p="4" inst_jj="16" inst_x="272" inst_y="80"/>
+<generator className="hyou" name="$hyou_19" inst_p="4" inst_jj="18" inst_x="336" inst_y="80"/>
+<generator className="hyou" name="$hyou_20" inst_p="4" inst_jj="14" inst_x="688" inst_y="48"/>
+<generator className="hyou" name="$hyou_21" inst_p="4" inst_jj="17" inst_y="80" inst_x="304"/>
+<generator className="hyou" name="$hyou_22" inst_p="4" inst_jj="19" inst_x="368" inst_y="80"/>
+<generator className="hyou" name="$hyou_23" inst_p="4" inst_jj="24" inst_x="528" inst_y="80"/>
+<generator className="mondai" name="$mondai" inst_pat="17" inst_x="658" inst_y="194"/>
+<generator className="hyou" name="$hyou_24" inst_p="4" inst_x="624" inst_y="80" inst_jj="27"/>
+<generator className="hyou" name="$hyou_25" inst_p="4" inst_x="560" inst_y="80" inst_jj="25"/>
+<generator className="hyou" name="$hyou_26" inst_p="4" inst_x="592" inst_y="80" inst_jj="26"/>
+<generator className="hyou" name="$hyou_27" inst_p="4" inst_x="656" inst_y="80" inst_jj="28"/>
+<generator className="hyou" name="$hyou_28" inst_p="4" inst_x="688" inst_y="80" inst_jj="29"/>
+<generator className="hyou" name="$hyou_29" inst_p="4" inst_x="720" inst_y="80" inst_jj="30"/>
+<generator className="henkan" name="$henkan" inst_p="5" inst_x="494" inst_y="278"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="768"/>
+  <globalvalue name="$screenHeight" value="512"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="index.map" inst_width="24" inst_height="26" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

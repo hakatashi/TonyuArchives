@@ -1,0 +1,133 @@
+/*************************
+** メインのオブジェクト **
+*************************/
+
+extends SecretChar;
+start=0;  //1ならゲームスタート,2なら自機始動
+ax=0;  //スタート前の準備mapX座標
+ay=0;  //スタート前の準備mapY座標
+p=0;  //パターン番号を入れる
+k=25;  //スタート画面で画面が変わる間隔
+zx=4;  //自機のmapX座標
+c=0;
+while(1) {
+  start=0;
+  l=new FileReader("topmozi.txt");
+  a=l.readLn();
+  while(start==0) {
+    if (getkey(32)==1) start=1; //スペースキーを押したらstartは1になる。
+    if ($time/k%16==0 || $time/k%16==2 || $time/k%16==4 || $time/k%16==6) {
+      ax=0;
+      while(ax<10) {
+        ay=0;
+        while(ay<10) {
+          if ((ax+ay)%2==0) {
+            p=$pat_maze+1;
+          } else {
+            p=$pat_maze+0;
+          }
+          $map.set(ax,ay,p);
+          ay+=1;
+        }
+        ax+=1;
+      }
+    }
+    if ($time/k%16==1 || $time/k%16==3 || $time/k%16==5 || $time/k%16==7) {
+      ax=0;
+      while(ax<10) {
+        ay=0;
+        while(ay<10) {
+          if ((ax+ay)%2==0) {
+            p=$pat_maze+0;
+          } else {
+            p=$pat_maze+1;
+          }
+          $map.set(ax,ay,p);
+          ay+=1;
+        }
+        ax+=1;
+      }
+    }
+    if ($time/k%16>=8 && $time/k%16<=15) {
+      //マップを全面空白にする
+      ax=0;
+      while(ax<10) {
+        ay=0;
+        while(ay<10) {
+          $map.set(ax,ay,$pat_maze+1);
+          ay+=1;
+        }
+        ax+=1;
+      }
+      //topmozi.txtからデータを読み取る
+      ax=0;
+      while(ax<9) {
+        ay=0;
+        while(ay<9) {
+          if (a.substring(($time/k%16-8)*81+ay*9+ax,($time/k%16-8)*81+ay*9+ax+1)=="0") { //所定の文字列が0ならpは$pet_maze+1
+            p=$pat_maze+0;
+          } else {
+            p=$pat_maze+1;
+          }
+          $map.set(ax,ay,p);
+          ay+=1;
+        }
+        ax+=1;
+      }
+    }
+    update();
+  }
+  l.close();
+  //マップを空白にする
+  ax=0;
+  while(ax<10) {
+    ay=0;
+    while(ay<10) {
+      $map.set(ax,ay,$pat_maze+1);
+      ay+=1;
+    }
+    ax+=1;
+  }
+  $time=0;
+  start=2;
+  l=new FileReader("start.txt");
+  a=l.readLn();
+  while($time<=125) {
+    ax=0;
+    while(ax<9) {
+      ay=0;
+      while(ay<9) {
+        if (a.substring(($time/k%5)*81+ay*9+ax,($time/k%5)*81+ay*9+ax+1)=="0") { //所定の文字列が0ならpは$pet_maze+1
+          p=$pat_maze+0;
+        } else {
+          p=$pat_maze+1;
+        }
+        $map.set(ax,ay,p);
+        ay+=1;
+      }
+      ax+=1;
+    }
+    update();
+  }
+  //マップを空白にする
+  ax=0;
+  while(ax<10) {
+    ay=0;
+    while(ay<10) {
+      $map.set(ax,ay,$pat_maze+1);
+      ay+=1;
+    }
+    ax+=1;
+  }
+  while(c==0) {
+    $map.set(zx,9,$pat_maze+0);
+    $map.set(zx-1,9,$pat_maze+1);
+    $map.set(zx+1,9,$pat_maze+1);
+    if (getkey(37)==1 && zx>0) zx-=1; //左を押すと左へ移動
+    if (getkey(39)==1 && zx<9) zx+=1; //右を押すと右へ移動
+    if ($time%30==0) appear(new teki1(rnd(10)*36+18,0));
+    update();
+  }
+  
+  update();
+}

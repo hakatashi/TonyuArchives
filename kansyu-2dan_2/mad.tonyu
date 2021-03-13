@@ -1,0 +1,11 @@
+extends DxChar;
+alpha=0;
+time=60;
+stime=time;
+while(scaleX>0) {
+  scaleX=15*(time*time)/(stime*stime);
+  alpha=90*(1-(time*time)/(stime*stime));
+  angle+=43;
+  time--;
+  update();
+}

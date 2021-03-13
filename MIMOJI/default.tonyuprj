@@ -1,0 +1,10 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_title" src="title.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="12753718"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+ </resourcelist>
+</resourcelist>

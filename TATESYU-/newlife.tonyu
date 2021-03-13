@@ -1,0 +1,7 @@
+extends TextChar;
+while (size>0) {
+  if (text==null) text="0";
+  if (text<0) text="";
+  size=size-5;
+  update();
+}

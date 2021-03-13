@@ -1,0 +1,33 @@
+extends SpriteChar;
+a=2;
+nf=new FileWriter("stage1.txt");
+while(1) {
+    for (t in $chars) {
+    nf.writeStr(t.p);
+    nf.writeStr(",");
+    nf.writeStr(t.x);
+    nf.writeStr(",");
+    nf.writeStr(t.y);
+    nf.writeStr("!");
+  }
+  if (getkey(16)>0) a=a*0.2;
+  if (getkey(37)>0 && x-a>0) x-=a;
+  if (getkey(38)>0 && y-a>0) y-=a;
+  if (getkey(39)>0 && x+a<$screenWidth) x+=a;
+  if (getkey(40)>0 && y+a<$screenHeight) y+=a;
+  a=2;
+  for (t in $chars) {
+    if (t is tama1 && crashTo(t) || t is tama2 && crashTo(t) 
+    || t is tama5 && crashTo(t) || t is tama6 && crashTo(t)
+    || t is tama8 && crashTo(t)) {
+      die();
+      for (t in $chars) {
+        if ( t is time ) t.stop=1;
+      }
+      appear(new kuria(50,52,"GAMEOVER",$clRed,30));
+      nf.close();
+    }
+  }
+  nf.writeStr(";");
+  update();
+}

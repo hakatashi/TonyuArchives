@@ -1,0 +1,13 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="xmake" name="$xmake" inst_x="50" inst_y="50" inst_pat="17"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

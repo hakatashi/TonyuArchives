@@ -1,0 +1,20 @@
+extends DxChar;
+
+//¶‚É”ò‚ñ‚Å‚¢‚­’e
+
+angle=90;
+a=10;  //’e‚Ì‘¬“x
+while(1){
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ğ1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+  x-=a;
+  if (x<0) die();
+  update();
+}

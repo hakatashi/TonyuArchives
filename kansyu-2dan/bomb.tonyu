@@ -1,0 +1,9 @@
+extends DxChar;
+p=$pat_tr+0;
+time=9;
+scaleX=1.5;
+while(time>0) {
+  time--;
+  p++;
+  wait(4);
+}

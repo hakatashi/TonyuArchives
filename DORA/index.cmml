@@ -1,0 +1,26 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_map" src="map.bmp"/>
+<cpattern name="$pat_Q" src="–³‘è‚Q.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="dora1" name="$dora1" inst_p="$pat_Q+0" inst_x="290" inst_y="194"/>
+<generator className="me1" name="$me1" inst_x="290" inst_y="194" inst_p="$pat_Q+7"/>
+<generator className="me1" name="$me1_1" inst_p="$pat_Q+6" inst_x="450" inst_y="194"/>
+<generator className="me1" name="$me1_3" inst_p="$pat_Q+5" inst_x="130" inst_y="194"/>
+<generator className="dora1" name="$dora1_1" inst_p="$pat_Q+1" inst_y="54" inst_x="290"/>
+<generator className="dora1" name="$dora1_2" inst_p="$pat_Q+2" inst_x="290" inst_y="334"/>
+<generator className="dora1" name="$dora1_3" inst_p="$pat_Q+3" inst_x="290" inst_y="-86"/>
+<generator className="me1" name="$me1_4" inst_p="$pat_Q+7" inst_x="-30" inst_y="194"/>
+<generator className="ase" name="$ase" inst_x="50" inst_y="50" inst_pat="17"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="index.map" inst_width="16" inst_height="12" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

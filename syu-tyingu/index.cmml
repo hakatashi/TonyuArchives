@@ -1,0 +1,17 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="MyChar" name="$MyChar" inst_p="$pat_Sample+0" inst_x="122" inst_y="330"/>
+<generator className="Enemy" name="$Enemy" inst_p="$pat_Sample+2" inst_x="110" inst_y="14"/>
+<generator className="UFO" name="$UFO" inst_p="$pat_Sample+3" inst_x="114" inst_y="18"/>
+<generator className="Text" name="$Text" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="246" inst_y="350"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+</resourcelist>

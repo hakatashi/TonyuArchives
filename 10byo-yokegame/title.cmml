@@ -1,0 +1,17 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_" src="無題.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="title" name="$title" inst_p="$pat_+0" inst_x="480" inst_y="299"/>
+<generator className="title1" name="$title1" inst_pat="17" inst_x="506" inst_y="146"/>
+<generator className="game" name="$game" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="387" inst_y="234"/>
+<generator className="sousa" name="$sousa" inst_x="50" inst_y="50" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="1028"/>
+  <globalvalue name="$screenHeight" value="702"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,7 @@
+extends SecretChar;
+time=0;
+while(1) {
+  if(time%30==0) appear(new teki1(rnd(17)*32+16,-32,3));
+  time+=1;
+  update();
+}

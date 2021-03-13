@@ -1,0 +1,16 @@
+extends SecretChar;
+function toZahyo(a) {
+  return a/36%10;
+}
+while (1) {
+  y+=3;
+  $map.set(toZahyo(x),toZahyo(y),$pat_maze+0);
+  $map.set(toZahyo(x)+1,toZahyo(y)+1,$pat_maze+1);
+  $map.set(toZahyo(x)-1,toZahyo(y)-1,$pat_maze+1);
+  if (y>$screenHeight+36) {
+    $map.set(toZahyo(x),toZahyo(y),$pat_maze+1);
+    die();
+  }
+  if ($main1.zx==toZahyo(x) && toZahyo(y)==9) $main1.c=1;
+  update();
+}

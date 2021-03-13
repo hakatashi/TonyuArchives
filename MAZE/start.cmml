@@ -1,0 +1,14 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="PressSpace" name="$PressSpace" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_col="$clWhite" inst_size="20" inst_text="%22Press Space Key%22" inst_x="150" inst_y="126"/>
+<generator className="nihon" name="$nihon" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_col="$clWhite" inst_size="20" inst_text="%22SpaceƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢%22" inst_x="86" inst_y="166"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="556"/>
+  <globalvalue name="$screenHeight" value="380"/>
+ </resourcelist>
+</resourcelist>

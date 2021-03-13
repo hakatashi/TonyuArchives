@@ -1,0 +1,41 @@
+extends SpriteChar;
+randomize();
+time=0;
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+function tamamake2(a,b) {
+  c=new tama7(x,y,$pat_Rs+12);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  while(time<50) {
+    tamamake(rnd(360),2);
+    tamamake(rnd(360),2);
+    tamamake(rnd(360),1);
+        tamamake(rnd(360),1);
+    time+=1;
+    update();
+  }
+  for (t in $chars) {
+    if (t is tama1) {
+      t.k=0;
+      t.h=0;
+    }
+  }
+  wait(20);
+  time=0;
+  a=0;
+  b=10;
+  while(a<b) {
+    tamamake2(rnd(360),2);
+    a+=1;
+  }
+  wait(120);
+  time=0;
+}

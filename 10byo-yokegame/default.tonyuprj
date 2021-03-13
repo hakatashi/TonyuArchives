@@ -1,0 +1,210 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_stage1" src="stage1.cmml"/>
+<Page name="$page_stage10" src="stage10.cmml"/>
+<Page name="$page_stage11" src="stage11.cmml"/>
+<Page name="$page_stage12" src="stage12.cmml"/>
+<Page name="$page_stage13" src="stage13.cmml"/>
+<Page name="$page_stage14" src="stage14.cmml"/>
+<Page name="$page_stage15" src="stage15.cmml"/>
+<Page name="$page_stage16" src="stage16.cmml"/>
+<Page name="$page_stage17" src="stage17.cmml"/>
+<Page name="$page_stage18" src="stage18.cmml"/>
+<Page name="$page_stage19" src="stage19.cmml"/>
+<Page name="$page_stage2" src="stage2.cmml"/>
+<Page name="$page_stage20" src="stage20.cmml"/>
+<Page name="$page_stage21" src="stage21.cmml"/>
+<Page name="$page_stage22" src="stage22.cmml"/>
+<Page name="$page_stage23" src="stage23.cmml"/>
+<Page name="$page_stage24" src="stage24.cmml"/>
+<Page name="$page_stage25" src="stage25.cmml"/>
+<Page name="$page_stage26" src="stage26.cmml"/>
+<Page name="$page_stage27" src="stage27.cmml"/>
+<Page name="$page_stage28" src="stage28.cmml"/>
+<Page name="$page_stage29" src="stage29.cmml"/>
+<Page name="$page_stage3" src="stage3.cmml"/>
+<Page name="$page_stage30" src="stage30.cmml"/>
+<Page name="$page_stage31" src="stage31.cmml"/>
+<Page name="$page_stage32" src="stage32.cmml"/>
+<Page name="$page_stage33" src="stage33.cmml"/>
+<Page name="$page_stage34" src="stage34.cmml"/>
+<Page name="$page_stage35" src="stage35.cmml"/>
+<Page name="$page_stage36" src="stage36.cmml"/>
+<Page name="$page_stage37" src="stage37.cmml"/>
+<Page name="$page_stage38" src="stage38.cmml"/>
+<Page name="$page_stage39" src="stage39.cmml"/>
+<Page name="$page_stage4" src="stage4.cmml"/>
+<Page name="$page_stage40" src="stage40.cmml"/>
+<Page name="$page_stage41" src="stage41.cmml"/>
+<Page name="$page_stage42" src="stage42.cmml"/>
+<Page name="$page_stage43" src="stage43.cmml"/>
+<Page name="$page_stage5" src="stage5.cmml"/>
+<Page name="$page_stage6" src="stage6.cmml"/>
+<Page name="$page_stage7" src="stage7.cmml"/>
+<Page name="$page_stage8" src="stage8.cmml"/>
+<Page name="$page_stage9" src="stage9.cmml"/>
+<Page name="$page_title" src="title.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="619140"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+  <param name="mainPage" value="$page_title"/>
+  <param name="title" value="10byo-yokege-"/>
+  <param name="author" value=""/>
+  <param name="version" value=""/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+  <param name="cond" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="title" src="title.tonyu" category=""/>
+  <class name="teki1" src="teki1.tonyu" category=""/>
+  <class name="tama1" src="tama1.tonyu" category=""/>
+  <class name="time" src="time.tonyu" category=""/>
+  <class name="zki" src="zki.tonyu" category=""/>
+  <class name="kuria" src="kuria.tonyu" category=""/>
+  <class name="teki2" src="teki2.tonyu" category=""/>
+  <class name="teki3" src="teki3.tonyu" category=""/>
+  <class name="tama2" src="tama2.tonyu" category=""/>
+  <class name="teki4" src="teki4.tonyu" category=""/>
+  <class name="teki5" src="teki5.tonyu" category=""/>
+  <class name="teki6" src="teki6.tonyu" category=""/>
+  <class name="teki7" src="teki7.tonyu" category=""/>
+  <class name="tama3" src="tama3.tonyu" category=""/>
+  <class name="teki8" src="teki8.tonyu" category=""/>
+  <class name="teki9" src="teki9.tonyu" category=""/>
+  <class name="teki10" src="teki10.tonyu" category=""/>
+  <class name="teki11" src="teki11.tonyu" category=""/>
+  <class name="title1" src="title1.tonyu" category=""/>
+  <class name="game" src="game.tonyu" category=""/>
+  <class name="teki12" src="teki12.tonyu" category=""/>
+  <class name="tama4" src="tama4.tonyu" category=""/>
+  <class name="teki13" src="teki13.tonyu" category=""/>
+  <class name="teki14" src="teki14.tonyu" category=""/>
+  <class name="teki15" src="teki15.tonyu" category=""/>
+  <class name="tama5" src="tama5.tonyu" category=""/>
+  <class name="tama6" src="tama6.tonyu" category=""/>
+  <class name="teki16" src="teki16.tonyu" category=""/>
+  <class name="tama7" src="tama7.tonyu" category=""/>
+  <class name="teki17" src="teki17.tonyu" category=""/>
+  <class name="tama8" src="tama8.tonyu" category=""/>
+  <class name="teki18" src="teki18.tonyu" category=""/>
+  <class name="teki19" src="teki19.tonyu" category=""/>
+  <class name="teki20" src="teki20.tonyu" category=""/>
+  <class name="teki21" src="teki21.tonyu" category=""/>
+  <class name="teki22" src="teki22.tonyu" category=""/>
+  <class name="teki23" src="teki23.tonyu" category=""/>
+  <class name="teki24" src="teki24.tonyu" category=""/>
+  <class name="ziki2" src="ziki2.tonyu" category=""/>
+  <class name="replay" src="replay.tonyu" category=""/>
+  <class name="aa" src="aa.tonyu" category=""/>
+  <class name="teki25" src="teki25.tonyu" category=""/>
+  <class name="bomm" src="bomm.tonyu" category=""/>
+  <class name="sousa" src="sousa.tonyu" category=""/>
+  <class name="tuibi" src="tuibi.tonyu" category=""/>
+  <class name="teki26" src="teki26.tonyu" category=""/>
+  <class name="reiza" src="reiza.tonyu" category=""/>
+  <class name="teki27" src="teki27.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="stage1.cmml"/>
+<Page name="r_1" src="ƒRƒs[ ` –³‘è.bmp"/>
+<Page name="r_2" src="stage10.cmml"/>
+<Page name="r_3" src="stage11.cmml"/>
+<Page name="r_4" src="stage12.cmml"/>
+<Page name="r_5" src="stage13.cmml"/>
+<Page name="r_6" src="stage14.cmml"/>
+<Page name="r_7" src="stage15.cmml"/>
+<Page name="r_8" src="stage16.cmml"/>
+<Page name="r_9" src="stage17.cmml"/>
+<Page name="r_10" src="stage18.cmml"/>
+<Page name="r_11" src="stage19.cmml"/>
+<Page name="r_12" src="stage2.cmml"/>
+<Page name="r_13" src="stage20.cmml"/>
+<Page name="r_14" src="map.bmp"/>
+<Page name="r_15" src="stage20.map"/>
+<Page name="r_16" src="stage21.cmml"/>
+<Page name="r_17" src="stage22.cmml"/>
+<Page name="r_18" src="stage23.cmml"/>
+<Page name="r_19" src="stage24.cmml"/>
+<Page name="r_20" src="stage25.cmml"/>
+<Page name="r_21" src="stage26.cmml"/>
+<Page name="r_22" src="stage27.cmml"/>
+<Page name="r_23" src="stage28.cmml"/>
+<Page name="r_24" src="stage29.cmml"/>
+<Page name="r_25" src="stage3.cmml"/>
+<Page name="r_26" src="stage30.cmml"/>
+<Page name="r_27" src="stage31.cmml"/>
+<Page name="r_28" src="stage32.cmml"/>
+<Page name="r_29" src="stage33.cmml"/>
+<Page name="r_30" src="stage34.cmml"/>
+<Page name="r_31" src="stage35.cmml"/>
+<Page name="r_32" src="stage36.cmml"/>
+<Page name="r_33" src="stage37.cmml"/>
+<Page name="r_34" src="stage38.cmml"/>
+<Page name="r_35" src="stage39.cmml"/>
+<Page name="r_36" src="stage4.cmml"/>
+<Page name="r_37" src="stage40.cmml"/>
+<Page name="r_38" src="stage41.cmml"/>
+<Page name="r_39" src="stage42.cmml"/>
+<Page name="r_40" src="stage43.cmml"/>
+<Page name="r_41" src="stage5.cmml"/>
+<Page name="r_42" src="stage6.cmml"/>
+<Page name="r_43" src="stage7.cmml"/>
+<Page name="r_44" src="stage8.cmml"/>
+<Page name="r_45" src="stage9.cmml"/>
+<Page name="r_46" src="title.cmml"/>
+<Page name="r_47" src="–³‘è.bmp"/>
+<Page name="r_48" src="title.tonyu"/>
+<Page name="r_49" src="teki1.tonyu"/>
+<Page name="r_50" src="tama1.tonyu"/>
+<Page name="r_51" src="time.tonyu"/>
+<Page name="r_52" src="zki.tonyu"/>
+<Page name="r_53" src="kuria.tonyu"/>
+<Page name="r_54" src="teki2.tonyu"/>
+<Page name="r_55" src="teki3.tonyu"/>
+<Page name="r_56" src="tama2.tonyu"/>
+<Page name="r_57" src="teki4.tonyu"/>
+<Page name="r_58" src="teki5.tonyu"/>
+<Page name="r_59" src="teki6.tonyu"/>
+<Page name="r_60" src="teki7.tonyu"/>
+<Page name="r_61" src="tama3.tonyu"/>
+<Page name="r_62" src="teki8.tonyu"/>
+<Page name="r_63" src="teki9.tonyu"/>
+<Page name="r_64" src="teki10.tonyu"/>
+<Page name="r_65" src="teki11.tonyu"/>
+<Page name="r_66" src="title1.tonyu"/>
+<Page name="r_67" src="game.tonyu"/>
+<Page name="r_68" src="teki12.tonyu"/>
+<Page name="r_69" src="tama4.tonyu"/>
+<Page name="r_70" src="teki13.tonyu"/>
+<Page name="r_71" src="teki14.tonyu"/>
+<Page name="r_72" src="teki15.tonyu"/>
+<Page name="r_73" src="tama5.tonyu"/>
+<Page name="r_74" src="tama6.tonyu"/>
+<Page name="r_75" src="teki16.tonyu"/>
+<Page name="r_76" src="tama7.tonyu"/>
+<Page name="r_77" src="teki17.tonyu"/>
+<Page name="r_78" src="tama8.tonyu"/>
+<Page name="r_79" src="teki18.tonyu"/>
+<Page name="r_80" src="teki19.tonyu"/>
+<Page name="r_81" src="teki20.tonyu"/>
+<Page name="r_82" src="teki21.tonyu"/>
+<Page name="r_83" src="teki22.tonyu"/>
+<Page name="r_84" src="teki23.tonyu"/>
+<Page name="r_85" src="teki24.tonyu"/>
+<Page name="r_86" src="ziki2.tonyu"/>
+<Page name="r_87" src="replay.tonyu"/>
+<Page name="r_88" src="aa.tonyu"/>
+<Page name="r_89" src="teki25.tonyu"/>
+<Page name="r_90" src="bomm.tonyu"/>
+<Page name="r_91" src="sousa.tonyu"/>
+<Page name="r_92" src="tuibi.tonyu"/>
+<Page name="r_93" src="teki26.tonyu"/>
+<Page name="r_94" src="reiza.tonyu"/>
+<Page name="r_95" src="teki27.tonyu"/>
+ </resourcelist>
+</resourcelist>

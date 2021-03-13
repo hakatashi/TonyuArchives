@@ -1,0 +1,11 @@
+extends DxChar;
+if ($level=="e") times=2; //easy
+if ($level=="g") times=1.5; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=0.8; //hard
+if ($level=="d") times=0.7; //difficult
+if ($level=="u") times=0.5; //ultra
+p=$pat_Rs+18;
+wait(a*times);
+p=$pat_Rs+19;
+wait(b*times);

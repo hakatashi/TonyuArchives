@@ -1,0 +1,38 @@
+extends SpriteChar;
+time=0;
+f=180; //Œ»İ‚Ì–Ú“IŠp“x
+df=0;
+a=20; //•
+b=0; //‚¸‚ê
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  if (time%1==0) {
+    if (b%a<a/2) {
+      tamamake(f-(b%a),3);
+      tamamake(f+(b%a),3);
+    }
+    if (b%a>a/2) {
+      tamamake(f-a+(b%a),3);
+      tamamake(f+a-(b%a),3);
+    }
+  }
+  /*
+  if (time%40==0) {
+    k=0; //ŒJ‚è•Ô‚µ•Ï”
+    while(k*8<a) {
+      tamamake(f-(a/2)+k*8,3);
+      k+=1;
+    }
+  }
+  */
+  df+=0.6666666;
+  f+=df;
+  b+=9;
+  time+=1;
+  update();
+}

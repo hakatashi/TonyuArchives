@@ -1,0 +1,11 @@
+extends SpriteChar;
+while(1) {
+ if (getkey(39)>0) x+=3;
+ if (getkey(37)>0) x-=3;
+ if ($map.getAt(x,y+16)==$pat_Maze+1) y+=3;
+ if ($map.getAt(x,y)==$pat_maze+2) {
+   if (getkey(40)>0  && $map.getAt(x,y+16)!=$pat_Maze+0 ) y+=3; 
+   if (getkey(38)>0) y-=3;
+ }
+ update();
+}

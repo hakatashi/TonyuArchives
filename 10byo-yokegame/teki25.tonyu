@@ -1,0 +1,26 @@
+extends SpriteChar;
+randomize();
+a=0;
+b=0;
+d=0;
+e=0;
+time=0;
+function tamamake() {
+  c=new tama5(d,e,300);
+  c.tipe=3;
+  appear(c);
+}
+wait(50);
+while(1) {
+  for (t in $chars) {
+  if ( t is zki ) {
+    d=t.x;
+    e=t.y;
+  }
+}
+  if (time%90==0) {
+    tamamake();
+  }
+  time+=1;
+  update();
+}

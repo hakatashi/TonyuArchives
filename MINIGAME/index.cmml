@@ -1,0 +1,18 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_maze" src="maze.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="main1" name="$main1" inst_pat="17" inst_x="82" inst_y="74"/>
+<generator className="time" name="$time" inst_pat="18" inst_x="222" inst_y="102"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="320"/>
+  <globalvalue name="$screenHeight" value="320"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="index.map" inst_width="10" inst_height="10" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

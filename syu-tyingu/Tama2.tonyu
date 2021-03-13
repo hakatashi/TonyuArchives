@@ -1,0 +1,5 @@
+extends SpriteChar;
+while(y>0) {
+ y=y-8;
+ update();
+}

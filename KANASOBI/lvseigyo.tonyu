@@ -1,0 +1,41 @@
+extends TextChar;
+if ($zisize==null) $zisize=470;
+if ($level==null) $level=2.5;
+a=new Array();   // 配列の作成
+a.add(10);
+a.add(9);
+a.add(8);
+a.add(7);
+a.add(6);
+a.add(5);
+a.add(4);
+a.add(3);
+a.add(2.5);
+a.add(2);
+a.add(1.5);
+a.add(1);
+a.add(0);
+a.add(100);
+if ($now==null) $now=9;
+while(1) {
+  if (getkey(38)==1 && $now!=13) $now++;
+  if (getkey(40)==1 && $now!=0) $now--;
+  $level=a.get($now);
+  if ($level!=2.5 && $level!=1.5 && $level!=0)text="漢検"+$level+"級レベル";
+  if ($level==2.5) text="漢検準2級レベル";
+  if ($level==1.5) text="漢検準1級レベル";
+  if ($level==0) text="JIS第二水準のみ";
+  if ($level==100) text="謎";
+  drawText(x,y+100,"テキストサイズ："+$zisize);
+  if ($zisize>400) {
+    if (getkey(37)==1) $zisize--;
+    if (getkey(37)>30) $zisize-=4;
+  }
+  if ($zisize<500) {
+    if (getkey(39)==1) $zisize++;
+    if (getkey(39)>30) $zisize+=4;
+  }
+  if ($zisize<400) $zisize=400;
+  if ($zisize>500) $zisize=500;
+  update();
+}

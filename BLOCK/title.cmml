@@ -1,0 +1,12 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="691"/>
+  <globalvalue name="$screenHeight" value="575"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,7 @@
+extends DxChar;
+x=300;
+p=$pat_W+0;
+zOrder=100;
+while(1) {
+  update();
+}

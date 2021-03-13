@@ -1,0 +1,75 @@
+extends DXChar;
+function onUpdate() {
+  if (y<-50) die();
+}
+time=0;
+zOrder=20000000;
+alpha=70;
+while (tipe==0) {
+  while(y>-50) {
+    y-=a;
+    time++;
+    update();
+  }
+}
+mo=null;
+if (tipe==1 && y>-50) { //‚Â‚¢”ü’k
+  for(t in $chars) {
+    if (
+    t is stage1 || t is stage2 || t is stage3 || t is stage4 || t is stage5 || 
+    t is stage6 || t is stage7 || t is stage8 || t is stage9 || t is stage10 || 
+    t is stage11 || t is stage12 || t is stage13 || t is stage14 || t is stage15 || 
+    t is stage16 || t is stage17 || t is stage18 || t is stage19 || t is stage20
+    ) {
+      if (ttime>=150) mo=t;
+    }
+  }
+  while(y>-50) {
+    if (mo != null && mo.x==0 && mo.y==0) mo=null;
+    if (mo==null || time<7) {
+      x+=sin(k)*a;
+      y-=cos(k)*a;
+    } else {
+      kr=$math.angle(mo.x-x,mo.y-y)+90;
+      k=kr; //k=(k-kr)/3+kr;
+      x+=sin(k)*a;
+      y-=cos(k)*a;
+    }
+    if (time>50) die();
+    time++;
+    angle=k;
+    update();
+  }
+}
+/*if (tipe==2) {
+  scax=scaleX;
+  for(t in $chars) {
+    if (
+    t is stage1 || t is stage2 || t is stage3 || t is stage4 || t is stage5 || 
+    t is stage6 || t is stage7 || t is stage8 || t is stage9 || t is stage10 || 
+    t is stage11 || t is stage12 || t is stage13 || t is stage14 || t is stage15 || 
+    t is stage16 || t is stage17 || t is stage18 || t is stage19 || t is stage20
+    ) {
+       mo=t;
+    }
+  }
+  ndist=dist(mo.x-x,mo.y-y);
+  while(time<100) {
+    if (mo != null && mo.x==0 && mo.y==0) mo=null;
+    if (mo==null || time<7) {
+      x+=sin(k)*a;
+      y-=cos(k)*a;
+    } else {
+      kr=$math.angle(mo.x-x,mo.y-y)+90;
+      k-=(k-kr)/15;
+      x+=sin(k)*a;
+      y-=cos(k)*a;
+    }
+    scaleX=scax*(dist(mo.x-x,mo.y-y)/ndist);
+    time++;
+    angle=k;
+    if (scax>10) scax=10;
+    scaleX=scax;
+    update();
+  }
+}*/

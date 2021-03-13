@@ -1,0 +1,13 @@
+extends SpriteChar;
+$zikix=0;
+$zikiy=0;
+$zikiz=0;
+while(1) {
+  if (getkey(39)>0) $zikix=$zikix+3;
+  if (getkey(37)>0) $zikix=$zikix-3;
+  if (getkey(38)>0) $zikiy=$zikiy-3;
+  if (getkey(40)>0) $zikiy=$zikiy+3;
+  if (getkey(71)>0 || getkey(72)>0) $zikiz=$zikiz+3;
+  if (getkey(66)>0) $zikiz=$zikiz-3;
+  update();
+}

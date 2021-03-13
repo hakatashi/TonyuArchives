@@ -1,0 +1,10 @@
+extends SpriteChar;
+while(1) {
+  if (crashTo($ziki)) {
+    $ziki.die();
+        appear(new si($ziki.x,$ziki.y,$pat_Sample+4));
+  }
+  if(y>$screenHeight+100)die();
+  y=y+1.5;
+  update();
+}

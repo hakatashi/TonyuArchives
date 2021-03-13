@@ -1,0 +1,5 @@
+extends SecretChar;
+while(1) {
+  if (getkey(84)>0) $projectManager.loadPage($page_stage);
+  update();
+}

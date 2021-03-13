@@ -1,0 +1,141 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+
+  tei=0;
+  if ($level==1) {
+    su1=8;    //玉を出す間隔
+    su2=0.06;  //もとの球の速さ
+    su3=1.015; //玉の加速度
+  }
+  if ($level==2) {
+    su1=5;    //玉を出す間隔
+    su2=0.1;  //もとの球の速さ
+    su3=1.015; //玉の加速度
+  }
+  if ($level==3) {
+    su1=3;    //玉を出す間隔
+    su2=0.6;  //もとの球の速さ
+    su3=1.04; //玉の加速度
+  }
+  function tama1make(xx,yy,k,h) {
+    cc1=new tama1(xx,yy,$pat_S+32);
+    cc1.k=k;
+    cc1.h=h;
+    appear(cc1);
+  }
+  life=1000;
+  time=0;
+  x=$screenWidth/2;
+  y=74;
+  while(time<150) {
+    appear(new kan(rnd($screenHeight),rnd($screenWidth),"霜",$clBlue,12+rnd(150)));
+    time++;
+    update();
+  }
+  while(1) {
+    if (time%100==0) {tei=rnd(200)+50; rrn=rnd(30);}
+    if (time%su1==0) {
+      if (trunc(time/100)%2==0) tama1make($screenWidth/100*(time%100)+rrn,tei+rnd(150)-70,180,su2);
+            else tama1make($screenWidth-$screenWidth/100*(time%100)+rrn,tei+rnd(150)-70,180,su2);
+    }
+    for(t in $chars) {
+      if (t is tama1) {
+        t.h=t.h*su3;
+      }
+      if (t is tama) {
+        if (crashTo(t)) {
+          t.die();
+          $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+          life--;
+        }
+      }
+    }
+    if (life<1) {
+      for(t in $chars) {
+        if (t is ziki) {
+          t.stop=0;
+        }
+      }
+      $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+      die();
+    }
+    time++;
+    update();
+  }
+
+
+  tei=0;
+  if ($level==1) {
+    su1=8;    //玉を出す間隔
+    su2=0.06;  //もとの球の速さ
+    su3=1.015; //玉の加速度
+  }
+  if ($level==2) {
+    su1=5;    //玉を出す間隔
+    su2=0.1;  //もとの球の速さ
+    su3=1.015; //玉の加速度
+  }
+  if ($level==3) {
+    su1=2;    //玉を出す間隔
+    su2=0.5;  //もとの球の速さ
+    su3=1.03; //玉の加速度
+  }
+  function tama1make(xx,yy,k,h) {
+    cc1=new tama1(xx,yy,$pat_S+32);
+    cc1.k=k;
+    cc1.h=h;
+    appear(cc1);
+  }
+  life=1000;
+  time=0;
+  x=$screenWidth/2;
+  y=74;
+  while(time<=100) {
+    app=new kan2(0,0,"鬼",$clWhite,600-time*6);
+    app.ax=$screenWidth/2+rnd((100-time)*2)-(100-time);
+    app.ay=$screenHeight/2+rnd((100-time)*2)-(100-time);
+    app.trt=5;
+    appear(app);
+    time++;
+    update();
+  }
+  bx=500;
+  mx=$screenWidth/2;
+  while(time<200) {
+    app=new kan2(0,0,"瑞　　～邂逅的雷梦～",$clBlue,30);
+    app.ax=bx+rnd(50)-25;
+    app.ay=$screenHeight/2+rnd(50)-25;
+    app.trt=5;
+    appear(app);
+    bx=(bx-mx)*3/4+mx;
+    time++;
+    update();
+  }
+  while(1) {
+    if (time%100==0) {tei=rnd(200)+50; rrn=rnd(30);}
+    if (time%su1==0) {
+      tama1make($screenWidth/100*(time%100)+rrn,tei+rnd(150)-70,180,su2);
+    }
+    for(t in $chars) {
+      if (t is tama1) {
+        t.h=t.h*su3;
+      }
+      if (t is tama) {
+        if (crashTo(t)) {
+          t.die();
+          life--;
+        }
+      }
+    }
+    if (life<1) {
+      for(t in $chars) {
+        if (t is ziki) {
+          t.stop=0;
+        }
+      }
+      die();
+    }
+    time++;
+    update();
+  }

@@ -1,0 +1,21 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_maze" src="maze.bmp"/>
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki" inst_p="$pat_maze+3" inst_x="48" inst_y="48"/>
+<generator className="time" name="$time" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_time="0" inst_timex="0" inst_size="10" inst_x="34" inst_y="34"/>
+<generator className="teki1" name="$teki1" inst_p="3" inst_x="310" inst_y="110"/>
+<generator className="teki1_make" name="$teki1_make" inst_pat="17" inst_x="90" inst_y="82"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="560"/>
+  <globalvalue name="$screenHeight" value="381"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="stage1.map" inst_width="32" inst_height="24" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

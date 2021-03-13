@@ -1,0 +1,154 @@
+extends SpriteChar;
+$map.setBGColor($clBlack); // 背景色設定
+En=0;
+h2=4;
+h=h2;
+stop=1;
+to=0;
+time=0;
+mode=1;
+bomm=0;
+nbomm=3;//残ボム
+bmode=0;
+ntime=0;
+x=$screenWidth/2;
+/*if ($kiroku==null) {
+  $kiroku=new Matrix(1000);
+  $kiroku.addRows(2);
+}*/
+while(/*mode==0*/1) {
+  if (bmode==0) {
+    if (getkey(16)>0) h=2;
+    if (getkey(90)>0) {
+      nny=new tama(x,y,$pat_S+0);
+      nny.a=35+(En%10);
+      appear(nny);
+      En+=0.3;
+      h=h*0.6;
+    }
+    if (getkey(39)>0 && x+h<$screenWidth) x+=h;
+    if (getkey(37)>0 && x-h>0) x-=h;
+    if (getkey(40)>0 && y+h<$screenHeight) y+=h;
+    if (getkey(38)>0 && y-h>0) y-=h;
+    if (getkey(88)==1 && bomm<0 && nbomm>0) {
+      bomm=60;
+      nbomm-=1;
+    }
+    if (bomm>0) {
+      for (t=0;t<30;t++) {
+        drawLine(x+sin(t*12)*(60-bomm)*10,y-cos(t*12)*(60-bomm)*10,x+sin((t+1)*12)*(60-bomm)*10,y-cos((t+1)*12)*(60-bomm)*10,$clRed);
+        drawLine(x+sin(t*12)*(60-bomm)*8,y-cos(t*12)*(60-bomm)*8,x+sin((t+1)*12)*(60-bomm)*8,y-cos((t+1)*12)*(60-bomm)*8,$clRed);
+        drawLine(x+sin(t*12)*(60-bomm)*6,y-cos(t*12)*(60-bomm)*6,x+sin((t+1)*12)*(60-bomm)*6,y-cos((t+1)*12)*(60-bomm)*6,$clRed);
+      }
+      drawText($screenWidth/2-120,$screenHeight/2-(bomm*3),"残ボム："+nbomm,$clYellow,36);
+    }
+    h=h2;
+    for(t in $chars) {
+      if (t is tama1 && bomm>0 && dist(t.x-x,t.y-y)<(60-bomm)*10) {
+        t.die();
+      }
+      if (t is tama1 && crashToLine(t.x+sin(t.angle)*15,t.y-cos(t.angle)*15,t.x-sin(t.angle)*15,t.y+cos(t.angle)*15,7) && stop && bmode==0 && nbomm>=0) {
+        //時間をとめる
+        t2=timeStop();  
+        bmode=1;
+        ata=t;
+        ntime=40;
+        /*t.die();
+        die();
+        for(t in $chars) {
+          if (t is zikitu) {
+            t.p=9000;
+          }
+        }*/
+      }
+    }
+  }
+  time++;
+  /*if (time%6==0) {
+    $kiroku.set(to,0,x);
+    $kiroku.set(to,1,y);
+    to++;
+  }
+  for(t1=0;t1<50;t1++) {
+    for(t2=0;t2<2;t2++) {
+      drawText(t2*50,t1*10,$kiroku.get(t1,t2),$clWhite,12);
+    }
+  }
+  for(t1=0;t1<50;t1++) {
+    for(t2=0;t2<2;t2++) {
+      drawText(t2*50+100,t1*10,$kiroku.get(t1+50,t2),$clWhite,12);
+    }
+  }
+  for(t1=0;t1<50;t1++) {
+    for(t2=0;t2<2;t2++) {
+      drawText(t2*50+200,t1*10,$kiroku.get(t1+100,t2),$clWhite,12);
+    }
+  }
+  for(t1=0;t1<50;t1++) {
+    for(t2=0;t2<2;t2++) {
+      drawText(t2*50+300,t1*10,$kiroku.get(t1+150,t2),$clWhite,12);
+    }
+  }*/
+  if (bmode==1 && getkey(88)==1 && bomm<0 && nbomm>0) {
+    bmode=0;
+    bomm=60;
+    nbomm-=2;
+    if (nbomm<0) nbomm=0;
+    ata.die();
+    t2.releaseAll();
+    t2=null;
+    for(t in $chars) {
+      if (t is tama1 && dist(t.x-x,t.y-y)<80) {
+        t.die();
+      }
+    }
+  }
+  if (bmode==1) {
+    drawText($screenWidth/2-270,$screenHeight/2-130+(ntime*3),"CRASH!",color( 255, 0,0),140);
+  }
+  if (bmode==1 && ntime<0) {
+    ata.die();
+    die();
+    for(t in $chars) {
+      if (t is stage20) t.time=-60;
+      if (t is zikitu) {
+        t.p=9000;
+      }
+    }
+    t2.releaseAll();
+    t2=null;
+    appear(new bomb(x,y,$pat_bomb+0));
+  }
+  if (bmode==1 && nbomm==0) {
+    ata.die();
+    die();
+    for(t in $chars) {
+      if (t is stage20) t.time=-60;
+      if (t is zikitu) {
+        t.p=9000;
+      }
+    }
+    t2.releaseAll();
+    t2=null;
+    appear(new bomb(x,y,$pat_bomb+0));
+  }
+  bomm-=1;
+  ntime-=1;
+  /*$panel.fillRect(0,0,$screenWidth,$screenHeight,$clBlack,50);
+  $panel.drawSprite(x,y,$pat_S2+0,50);*/
+  update();
+}
+/*while(mode==1) {
+  if (time%3==0) {
+    x=$kiroku.get(to,0);
+    y=$kiroku.get(to,1);
+    to++;
+  }
+  for(t1=0;t1<100;t1++) {
+    for(t2=0;t2<2;t2++) {
+      drawText(t2*50,t1*10,$kiroku.get(t1,t2),$clWhite,12);
+    }
+  }
+  time++;
+  update();
+}*/

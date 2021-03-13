@@ -1,0 +1,68 @@
+//kで角度、hで速さを設定。
+extends DXChar;
+if ($nowbomm==1) die();
+randomize();
+zOrder=10;
+angle=k;
+time=0;
+rd1=rnd();
+auk=k;
+px=sin(k);
+py=cos(k);
+//if(rnd(1)==0)$mplayer.play($se_se_sad07,0,30);
+times=1;
+if ($hande1==2) times=1.2;
+if ($hande1==3) times=1.5;
+if ($hande1==4) times=2;
+p2=p;
+sx=x;
+sy=y;
+sinko=0;
+a=50; //スクリーンはみ出し死亡ライン
+while(x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) {
+  if (sw==null) {
+    x+=px*h;
+    y-=py*h;
+  }
+  if (auk!=k) {
+    px=sin(k);
+    py=cos(k);
+  }
+  if (p==$pat_S+32) angle=rnd(360); else angle=k;
+  if (h2==3) die();
+  if (bomdie==1) {
+    wait(30);
+    appear(new bomb(x,y,$pat_bomb+0));
+    die();
+  }
+  time++;
+  update();
+}
+while(1) {
+  if (sw==null && mod==null && stop==null) {
+    x+=px*h*times;
+    y-=py*h*times;
+  }
+  if (auk!=k) {
+    px=sin(k);
+    py=cos(k);
+  }
+  if (p==$pat_S+32) angle=rnd(360); else angle=k;
+  if (h2==3) die();
+  if (x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) die();
+  if (mod==1 && tims>=sinko && stop==null) {
+    sinka=tims-sinko;
+    x=sx+(1-(sinka*sinka)/(tims*tims))*(mx-sx);
+    y=sy+(1-(sinka*sinka)/(tims*tims))*(my-sy);
+    sinko++;
+  }
+  /*if (mode==null) p=p2;
+  if (mode==1) p=900;*/
+  if (bomdie==1) {
+    wait(30);
+    appear(new bomb(x,y,$pat_bomb+0));
+    die();
+  }
+  time++;
+  update();
+}

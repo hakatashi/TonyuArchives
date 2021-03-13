@@ -1,0 +1,15 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_kya" src="kya.bmp"/>
+<cpattern name="$pat_dou" src="dou.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="mykyara" name="$mykyara" inst_p="$pat_dou+0" inst_x="334" inst_y="230"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="641"/>
+  <globalvalue name="$screenHeight" value="461"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,18 @@
+extends SpriteChar;
+a=$tamanokakudo;
+v=5;
+while(1){
+  if(y>$screenHeight || y<0 || x<0 || x>$screenWidth ) die();
+  x+=sin(a)*v;
+  y-=cos(a)*v;
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ð1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+  update();
+}

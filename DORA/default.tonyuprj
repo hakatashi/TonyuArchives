@@ -1,0 +1,18 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_index" src="index.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="320625"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="dora1" src="dora1.tonyu" category=""/>
+  <class name="me1" src="me1.tonyu" category=""/>
+  <class name="me2" src="me2.tonyu" category=""/>
+  <class name="ase" src="ase.tonyu" category=""/>
+  <class name="aseo" src="aseo.tonyu" category=""/>
+  <class name="null" src="null.tonyu" category=""/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,98 @@
+extends SpriteChar;
+
+/*
+$MyKyatemoti=new Matrix(6);
+$MyKyatemoti.set(0,0,1);
+$MyKyatemoti.set(1,0,3);
+$MyKyatemoti.set(2,0,5);
+$MyKyatemoti.set(3,0,7);
+$MyKyatemoti.set(4,0,9);
+$MyKyatemoti.set(5,0,11);
+
+$YouKyatemoti=new Matrix(6);
+$YouKyatemoti.set(0,0,0);
+$YouKyatemoti.set(0,0,0);
+$YouKyatemoti.set(0,0,0);
+$YouKyatemoti.set(0,0,0);
+$YouKyatemoti.set(0,0,0);
+$YouKyatemoti.set(0,0,0);
+
+MyKyatemoti=0,1,4,6,8,10;
+YouKyatemoti=1,2,3,7,9,11;
+MyDoutemoti=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37;
+YouDoutemoti=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36;
+*/
+
+//キャラクターカードデータ作成
+
+$kya=new Matrix(12);  // 横12列の配列(カード数)を作成
+$kya.addRows(4);  // 縦に4行(名前,GP,TP,画像)追加
+
+//データ入力
+
+$kya.set(0,0,"nobi") ;$kya.set(0,1,250) ;$kya.set(0,2,45) ;$kya.set(0,3,$pat_kya+0);
+$kya.set(1,0,"dora") ;$kya.set(1,1,250) ;$kya.set(1,2,45) ;$kya.set(1,3,$pat_kya+1);
+$kya.set(2,0,"jaia") ;$kya.set(2,1,300) ;$kya.set(2,2,38) ;$kya.set(2,3,$pat_kya+2);
+$kya.set(3,0,"sune") ;$kya.set(3,1,180) ;$kya.set(3,2,45) ;$kya.set(3,3,$pat_kya+3);
+$kya.set(4,0,"sizu") ;$kya.set(4,1,250) ;$kya.set(4,2,45) ;$kya.set(4,3,$pat_kya+4);
+$kya.set(5,0,"deki") ;$kya.set(5,1,350) ;$kya.set(5,2,45) ;$kya.set(5,3,$pat_kya+5);
+$kya.set(6,0,"dorm") ;$kya.set(6,1,250) ;$kya.set(6,2,38) ;$kya.set(6,3,$pat_kya+6);
+$kya.set(7,0,"senn") ;$kya.set(7,1,200) ;$kya.set(7,2,60) ;$kya.set(7,3,$pat_kya+7);
+$kya.set(8,0,"tama") ;$kya.set(8,1,200) ;$kya.set(8,2,30) ;$kya.set(8,3,$pat_kya+8);
+$kya.set(9,0,"nobs") ;$kya.set(9,1,220) ;$kya.set(9,2,35) ;$kya.set(9,3,$pat_kya+9);
+$kya.set(10,0,"ki-b");$kya.set(10,1,500);$kya.set(10,2,25);$kya.set(10,3,$pat_kya+10);
+$kya.set(11,0,"tane");$kya.set(11,1,600);$kya.set(11,2,15);$kya.set(11,3,$pat_kya+11);
+
+
+
+//道具カードデータ作成
+
+$dou=new Matrix(38);  // 横38列の配列(カード数)を作成
+$dou.addRows(4);  // 縦に4行(名前,種類,消費TP,画像)追加 (種類は、１単攻、２特攻、３反撃、４防御、５特殊、６回復)
+
+//データ入力
+
+$dou.set(0,0,"nobi")  ;$dou.set(0,1,1)  ;$dou.set(0,2,4)  ;$dou.set(0,3,$pat_dou+0);
+$dou.set(1,0,"dora")  ;$dou.set(1,1,1)  ;$dou.set(1,2,5)  ;$dou.set(1,3,$pat_dou+1);
+$dou.set(2,0,"jaia")  ;$dou.set(2,1,1)  ;$dou.set(2,2,3)  ;$dou.set(2,3,$pat_dou+2);
+$dou.set(3,0,"sune")  ;$dou.set(3,1,1)  ;$dou.set(3,2,6)  ;$dou.set(3,3,$pat_dou+3);
+$dou.set(4,0,"sizu")  ;$dou.set(4,1,1)  ;$dou.set(4,2,6)  ;$dou.set(4,3,$pat_dou+4);
+$dou.set(5,0,"deki")  ;$dou.set(5,1,2)  ;$dou.set(5,2,20)  ;$dou.set(5,3,$pat_dou+5);
+$dou.set(6,0,"dorm")  ;$dou.set(6,1,2)  ;$dou.set(6,2,4)  ;$dou.set(6,3,$pat_dou+6);
+$dou.set(7,0,"senn")  ;$dou.set(7,1,2)  ;$dou.set(7,2,0)  ;$dou.set(7,3,$pat_dou+7);
+$dou.set(8,0,"tama")  ;$dou.set(8,1,2)  ;$dou.set(8,2,10)  ;$dou.set(8,3,$pat_dou+8);
+$dou.set(9,0,"nobs")  ;$dou.set(9,1,2)  ;$dou.set(9,2,4)  ;$dou.set(9,3,$pat_dou+9);
+$dou.set(10,0,"ki-b") ;$dou.set(10,1,3) ;$dou.set(10,2,2) ;$dou.set(10,3,$pat_dou+10);
+$dou.set(11,0,"tane") ;$dou.set(11,1,3) ;$dou.set(11,2,4) ;$dou.set(11,3,$pat_dou+11);
+$dou.set(12,0,"nobi") ;$dou.set(12,1,3) ;$dou.set(12,2,5) ;$dou.set(12,3,$pat_dou+12);
+$dou.set(13,0,"dora") ;$dou.set(13,1,4) ;$dou.set(13,2,3) ;$dou.set(13,3,$pat_dou+13);
+$dou.set(14,0,"jaia") ;$dou.set(14,1,4) ;$dou.set(14,2,2) ;$dou.set(14,3,$pat_dou+14);
+$dou.set(15,0,"sune") ;$dou.set(15,1,4) ;$dou.set(15,2,1) ;$dou.set(15,3,$pat_dou+15);
+$dou.set(16,0,"sizu") ;$dou.set(16,1,4) ;$dou.set(16,2,2) ;$dou.set(16,3,$pat_dou+16);
+$dou.set(17,0,"deki") ;$dou.set(17,1,4) ;$dou.set(17,2,4) ;$dou.set(17,3,$pat_dou+17);
+$dou.set(18,0,"dorm") ;$dou.set(18,1,5) ;$dou.set(18,2,0) ;$dou.set(18,3,$pat_dou+18);
+$dou.set(19,0,"senn") ;$dou.set(19,1,5) ;$dou.set(19,2,5) ;$dou.set(19,3,$pat_dou+19);
+$dou.set(20,0,"tama") ;$dou.set(20,1,5) ;$dou.set(20,2,0) ;$dou.set(20,3,$pat_dou+20);
+$dou.set(21,0,"nobs") ;$dou.set(21,1,5) ;$dou.set(21,2,15) ;$dou.set(21,3,$pat_dou+21);
+$dou.set(22,0,"ki-b") ;$dou.set(22,1,5) ;$dou.set(22,2,7) ;$dou.set(22,3,$pat_dou+22);
+$dou.set(23,0,"tane") ;$dou.set(23,1,5) ;$dou.set(23,2,6) ;$dou.set(23,3,$pat_dou+23);
+$dou.set(24,0,"nobi") ;$dou.set(24,1,5) ;$dou.set(24,2,8) ;$dou.set(24,3,$pat_dou+24);
+$dou.set(25,0,"dora") ;$dou.set(25,1,5) ;$dou.set(25,2,2) ;$dou.set(25,3,$pat_dou+25);
+$dou.set(26,0,"jaia") ;$dou.set(26,1,5) ;$dou.set(26,2,15) ;$dou.set(26,3,$pat_dou+26);
+$dou.set(27,0,"sune") ;$dou.set(27,1,5) ;$dou.set(27,2,0) ;$dou.set(27,3,$pat_dou+27);
+$dou.set(28,0,"sizu") ;$dou.set(28,1,6) ;$dou.set(28,2,0) ;$dou.set(28,3,$pat_dou+28);
+$dou.set(29,0,"deki") ;$dou.set(29,1,6) ;$dou.set(29,2,3) ;$dou.set(29,3,$pat_dou+29);
+$dou.set(30,0,"dorm") ;$dou.set(30,1,6) ;$dou.set(30,2,25) ;$dou.set(30,3,$pat_dou+30);
+$dou.set(31,0,"senn") ;$dou.set(31,1,6) ;$dou.set(31,2,0) ;$dou.set(31,3,$pat_dou+31);
+$dou.set(32,0,"tama") ;$dou.set(32,1,6) ;$dou.set(32,2,0) ;$dou.set(32,3,$pat_dou+32);
+$dou.set(33,0,"nobs") ;$dou.set(33,1,1) ;$dou.set(33,2,11) ;$dou.set(33,3,$pat_dou+33);
+$dou.set(34,0,"ki-b") ;$dou.set(34,1,2) ;$dou.set(34,2,6) ;$dou.set(34,3,$pat_dou+34);
+$dou.set(35,0,"tane") ;$dou.set(35,1,3) ;$dou.set(35,2,8) ;$dou.set(35,3,$pat_dou+35);
+$dou.set(36,0,"ki-b") ;$dou.set(36,1,4) ;$dou.set(36,2,3) ;$dou.set(36,3,$pat_dou+36);
+$dou.set(37,0,"tane") ;$dou.set(37,1,5) ;$dou.set(37,2,10) ;$dou.set(37,3,$pat_dou+37);
+
+mode=1; //現在の状態。(１ゲームセット、２)
+
+while(mode==1) {
+  update();
+}

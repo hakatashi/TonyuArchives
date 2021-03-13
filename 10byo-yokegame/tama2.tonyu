@@ -1,0 +1,28 @@
+extends SpriteChar;
+// h‚Å‘¬‚³‚ğİ’è
+a=0; //‚±‚±‚Éziki‚Ì‚h‚c‚ªŠi”[‚³‚ê‚éB
+b=20; //ƒXƒNƒŠ[ƒ“‚Í‚İo‚µ€–Sƒ‰ƒCƒ“
+for (t in $chars) {
+  if (t is zki) a=t;
+}
+if (a==0) die();
+update();
+b=dist(x-a.x, y-a.y); //zki‚Ü‚Å‚Ì‹——£
+c=x-a.x; //zki‚Ü‚Å‚Ì‚˜‹——£
+d=y-a.y; //zki‚Ü‚Å‚Ì‚™‹——£
+dx=-c/b;
+dy=-d/b;
+
+if ($level=="e") times=0.8; //easy
+if ($level=="g") times=0.9; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=1.2; //hard
+if ($level=="d") times=1.5; //difficult
+if ($level=="u") times=2; //ultra
+
+while(1) {
+  x+=dx*h*times;
+  y+=dy*h*times;
+  if (x<-b || x>$screenWidth+b || y<-b || y>$screenHeight+b) die();
+  update();
+}

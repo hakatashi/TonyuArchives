@@ -1,0 +1,19 @@
+extends SpriteChar;
+a=6; //Ž©‹@‚Ì‘‚³
+b=0; //‹…‚ð‘Å‚ÂŠÔŠu
+while(1) {
+  if (x>$screenWidth) x=$screenWidth;
+  if (x<0) x=0;
+  if (y>$screenHeight) y=$screenHeight;
+  if (y<0) y=0;
+  if (getkey(37)>0) x-=a;
+  if (getkey(38)>0) y-=a;
+  if (getkey(39)>0) x+=a;
+  if (getkey(40)>0) y+=a;
+  if (getkey(32)>0 && b<0) {
+    appear(new tama(x,y,$pat_tekibuhinn1+4));
+    b=5;
+  }
+  b-=1;
+  update();
+}

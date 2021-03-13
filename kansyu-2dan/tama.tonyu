@@ -1,0 +1,7 @@
+extends DXChar;
+zOrder=20;
+alpha=70;
+while(y>-50) {
+  y-=a;
+  update();
+}

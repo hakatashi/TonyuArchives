@@ -1,0 +1,93 @@
+extends PanelChar;
+randomize();
+$map.setBGColor($clWhite);
+wait(5);
+resize(300,300);
+if (kind==1) {
+  x=150;
+  y=150;
+  sx=-75;
+  sy=-75;
+}
+if (kind==2) {
+  x=450;
+  y=150;
+  sx=225;
+  sy=-75;
+}
+if (kind==3) {
+  x=150;
+  y=450;
+  sx=-75;
+  sy=225;
+}
+if (kind==4) {
+  x=450;
+  y=450;
+  sx=225;
+  sy=225;
+}
+ar=0;
+time=0;
+mod=1;
+zOrder=100;
+while(1) {
+  if (time%250==1 || getkey(65)>0 && time%250<200) {
+    angle=0;
+    xx=rnd(450)-70;
+    yy=rnd(450)-70;
+    xx1=xx;
+    yy1=yy;
+    kai=rnd(18);
+    if (kai==0) angle=90;
+    if (kai==1) angle=180;
+    if (kai==2) angle=-90;
+    age=angle;
+    panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    panel.drawText(-xx-10,-yy-10,$kl.get($ar),$clBlack,450);
+  }
+  if (time%250==0 && kind==1 || getkey(66)>0) {
+    $ar=rnd($kl.size());
+    panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    panel.drawText(-xx-10,-yy-10,$kl.get($ar),$clBlack,450);
+  }
+  if (time%250<150 && getkey(32)>0 && ar<50) {
+    xx-=(xx1-sx-50)/50;
+    yy-=(yy1-sy-50)/50;
+    angle-=age/50;
+    time--;
+    ar++;
+    panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    panel.drawText(-xx-10,-yy-10,$kl.get($ar),$clBlack,450);
+  }
+  if (time%250>=150 && time%250<=200) {
+    age=angle;
+    panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    panel.drawText((-xx)/50*(200-time%250)-10,(-yy)/50*(200-time%250)-10,$kl.get($ar),$clBlack,220/50*(200-time%250)+230);
+  }
+  if (time%250>=200 && time%250<=220) {
+    angle=age/20*(220-time%250);
+  }
+  if (time%250>=180 && getkey(16)>0) angle+=26;
+  if (time%250==210) {
+    $panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    $panel.drawText(600,50+rnd(550),"“š‚¦F"+$kl.get($ar),color(rnd(180),rnd(180),rnd(180)),45);
+    ar=0;
+  }
+  if (getkey(75)==1 && mod==0) mod=1; else if (getkey(75)==1 && mod==1) mod=0;
+  if (1) {
+    ars=mod;
+    ap=new textchoose(-100,-100,"—á",$clBlack,30);
+    if (ars==0) ap.font="‚l‚r –¾’©";
+    if (ars==1) ap.font="‚l‚r ƒSƒVƒbƒN";
+    if (ars==2) ap.font="HGs‘‘Ì";
+    if (ars==3) ap.font="HG‚Ğ‚°•¶š";
+    if (ars==4) ap.font="‚`‚q—ê‘‘Ì‚l";
+    if (ars==5) ap.font="‚`‚qŠÛƒSƒVƒbƒN‘Ì‚l";
+    if (ars==6) ap.font="‚`‚qƒyƒ“²‘‘Ì‚l";
+    appear(ap);
+  }
+  if (time%250==249) panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+  time++;
+  update();
+}

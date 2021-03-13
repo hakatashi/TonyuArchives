@@ -1,0 +1,7 @@
+extends SpriteChar;
+a=0;
+while(1) {
+  if ($time%24==a) appear(new tama2(x,y,$pat_Sample+15));
+  if ($tekix.f==300) die();
+  update();
+}

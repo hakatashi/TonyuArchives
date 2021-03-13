@@ -1,0 +1,3 @@
+extends TextChar;
+font="‚l‚r –¾’©";
+wait(5);

@@ -1,0 +1,15 @@
+extends TextChar;
+text="‘g‹È";
+ox=218;
+oy=66;
+size=40;
+time=0;
+while(time<50) {
+  x=ox+rate*1*(50-time);
+  y=oy;
+  time++;
+  update();
+}
+while(rate==0) {
+  update();
+}

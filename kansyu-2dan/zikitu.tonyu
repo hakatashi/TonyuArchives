@@ -1,0 +1,115 @@
+extends SpriteChar;
+$tokuten=0;
+randomize();
+$mplayer.play($se_HARDCOREMIX,1);
+//背景：宇宙
+
+su1=50; //星の数
+su2=5000; //星の速さ
+su3=2;   //星の長さ
+
+//背景：道
+
+su4=3; //四角と四角の間隔
+su5=0.6;  //四角が迫る速さ
+su6=20; //四角を表示する数
+kaan=20;
+
+utipe=rnd(5)+1;
+
+if (utipe==3) {
+  appear(new kanList(0,0));
+  ars=new kanlis(0,0);
+  ars.mode=1;
+  appear(ars);
+}
+if (utipe==4) {
+  appear(new kanList(0,0));
+  ars=new kanlis(0,0);
+  ars.mode=2;
+  appear(ars);
+}
+if (utipe==5) {
+  appear(new kanList(0,0));
+  ars=new kanlis(0,0);
+  ars.mode=3;
+  appear(ars);
+}
+starx=new array();
+stary=new array();
+starvy=new array();
+$screenWidth=560;
+$screenHeight=528;
+t2=null;
+for(i=0;i<su1;i++){
+  starx.add(rnd($screenWidth));
+  stary.add(rnd($screenHeight));
+  starvy.add(1+rnd(su2)/80+2.5);
+}
+$kiroku=new Matrix(600);  // 横10列の配列を作成
+$kiroku.addRows(2);  // 縦に5行追加
+time=0;
+kirokuch=0;
+stoper=1;
+k1=100;
+while(1) {
+  if (p==$pat_Sample+0) {
+    for(t in $chars) {
+      if (t is ziki) {
+        x=t.x;
+        y=t.y-10;
+      }
+    }
+  }
+  
+  if (utipe==1) {
+    for(i=0;i<su1;i++){
+      stary.set(i,stary.get(i)+starvy.get(i));
+      if(stary.get(i)>$screenHeight){
+        starx.set(i,rnd($screenWidth));
+        stary.set(i,0);
+        starvy.set(i,1+rnd(su2)/80+2.5);
+      }
+      drawline(starx.get(i),stary.get(i)
+      ,starx.get(i),stary.get(i)+starvy.get(i)*su3,color(90,90,90),16777215);
+    }
+  }
+  if (utipe==2) {
+    //su5+=0.05;
+    if (kaan>0) kaanp-=0.06; else kaanp+=0.06;
+    kaan+=kaanp;
+    for(t=0;t<su6;t++) {
+      drawRectDx($screenWidth/2,$screenHeight/2,$math.angle(su4*t-k1,1)*60,$math.angle(su4*t-k1,1)*60,color(90,90,90),kaan,10000);
+    }
+    k1+=su5;
+    if (k1>su4) k1=0;
+  }
+  /*if (utipe==3 && time>3) {
+    ksa=rnd(60);
+    for(t=0;t<5;t++) {
+      $panel.drawText(rnd($screenWidth+100)-50,rnd($screenHeight+100)-50,$kl.get(rnd(1946)),color(ksa,ksa,ksa),24);
+    }
+  }*/
+  if (t2==null) {// まだ時間をとめていなければ
+    if (getkey(32)==1 || getkey(67)==1) { //スペースキーが押されたら時間をとめる
+      t2=timeStop();  
+    }          
+  } else {
+    // すでに時間をとめていたら
+    if (getkey(32)==1 || getkey(67)==1) { //スペースキーが押されたら時間を動かす
+      t2.releaseAll();
+      t2=null;
+    }
+    drawText($screenWidth/2-230,$screenHeight/2-130,"PAUSE",color( 100, 0,255),140);
+  }
+  if (getkey(65)==1) $projectManager.loadPage($page_title);
+  print("得点："+$tokuten);
+  time++;
+  //画面揺らす処理↓
+  if ($hande1==1) {
+    $map.scrollTo(scx1*nowt,scy1*nowt);
+    if (rnd(25)==0) {scx1=rnd(100)-50;scy1=rnd(100)-50;nowt=1;}
+    if (nowt>0)nowt-=0.04;
+  }
+  update();
+}

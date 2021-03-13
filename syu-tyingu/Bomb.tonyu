@@ -1,0 +1,8 @@
+extends SpriteChar;
+wait(5);
+p=p+1;
+wait(5);
+p=p+1;
+wait(5);
+p=p+1;
+wait(5);

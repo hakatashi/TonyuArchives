@@ -1,0 +1,90 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+ntx=0;
+nty=0;
+atx=0;//atx=rnd($screenWidth);
+aty=0;//aty=rnd($screenHeight);
+function tama1make(k,h,pp2) {
+  cc1=new tama1(nowx,nowy,$pat_S+pp2);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1300;
+time=0;
+x=$screenWidth/2;
+y=74;
+if ($level==1) {
+  su1=150; //弾を出す間隔
+  su2=140; //移動に費やす時間
+  su3=20; //全方位弾の数
+  su4=2; //全方位弾の速さ
+  su5=1; //１コマにランダム弾を出す数
+  su6=1.5; //ランダム弾の速さ
+}
+if ($level==2) {
+  su1=100; //弾を出す間隔
+  su2=80; //移動に費やす時間
+  su3=20; //全方位弾の数
+  su4=4; //全方位弾の速さ
+  su5=2; //１コマにランダム弾を出す数
+  su6=3; //ランダム弾の速さ
+}
+if ($level==3) {
+  su1=80; //弾を出す間隔
+  su2=50; //移動に費やす時間
+  su3=40; //全方位弾の数
+  su4=6; //全方位弾の速さ
+  su5=2; //１コマにランダム弾を出す数
+  su6=4; //ランダム弾の速さ
+}
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"標",$clBlue,12+rnd(150)));
+  time++;
+  update();
+}
+while(1) {
+  if (time%su1==0) {
+    ntx=atx;
+    nty=aty;
+    atx=rnd($screenWidth);
+    aty=rnd($screenHeight);
+  }
+  if (time%su1<su2) {
+    nowx=ntx+(atx-ntx)*(1-(1/su2/su2*(su2-time%su1)*(su2-time%su1)));
+    nowy=nty+(aty-nty)*(1-(1/su2/su2*(su2-time%su1)*(su2-time%su1)));
+  }
+  drawLine(0,nowy,$screenWidth,nowy,$clGreen,6);
+  drawLine(nowx,0,nowx,$screenHeight,$clGreen,6);
+  if (time%su1>su2) {
+    for(t=0;t<su5;t++) {
+      tama1make(rnd(360),su6,2);
+    }
+  }
+  if (time%su1==su2) {
+    for(t=0;t<su3;t++) {
+      tama1make(360/su3*t,su4,4);
+    }
+  }
+  for(t in $chars) {
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+        life--;
+      }
+    }
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+    die();
+  }
+  time++;
+  update();
+}

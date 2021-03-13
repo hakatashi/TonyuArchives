@@ -1,0 +1,24 @@
+//kで角度、hで速さを設定。
+extends SpriteChar;
+a=5; //スクリーンはみ出し死亡ライン
+d=0;
+g=7;
+
+if ($level=="e") times=0.8; //easy
+if ($level=="g") times=0.9; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=1.2; //hard
+if ($level=="d") times=1.5; //difficult
+if ($level=="u") times=2; //ultra
+
+while(d<g) {
+  while(x>-a && x<$screenWidth+a && y>-a && y<$screenHeight+a) {
+    x+=sin(k)*h*times;
+    y-=cos(k)*h*times;
+    update();
+  }
+  k+=180;
+  x+=sin(k)*h*times;
+  y-=cos(k)*h*times;
+  d+=1;
+}

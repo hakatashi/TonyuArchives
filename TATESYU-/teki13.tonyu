@@ -1,0 +1,21 @@
+extends SpriteChar;
+kakudo=0;
+ax=x-$teki12.x;
+ay=y-$teki12.y;
+sx=ax;
+sy=ay;
+while(1) {
+  ax=(-sin(kakudo)*sy)+(cos(kakudo)*sx);
+  ay=(cos(kakudo)*sy)+(sin(kakudo)*sx);
+  x=$teki12.x+ax;
+  y=$teki12.y+ay;
+  for (t in $chars ) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_good);
+    }
+  }
+  kakudo+=2;
+  update();
+}

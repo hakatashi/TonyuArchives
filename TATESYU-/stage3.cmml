@@ -1,0 +1,23 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki_2" inst_p="$pat_Sample+0" inst_x="306" inst_y="442"/>
+<generator className="life" name="$life_1" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clred" inst_size="40" inst_x="448" inst_y="497"/>
+<generator className="base1" name="$base1_1" inst_pat="17" inst_x="150" inst_y="94"/>
+<generator className="gamec" name="$gamec_1" inst_pat="17" inst_x="86" inst_y="142"/>
+<generator className="teki6" name="$teki6" inst_angle="0" inst_alpha="255" inst_p="$pat_Sample+3" inst_scaleX="2" inst_x="330" inst_y="42"/>
+<generator className="teki6_1" name="$teki6_1" inst_p="$pat_Sample+10" inst_x="662" inst_y="558"/>
+<generator className="teki6_2" name="$teki6_2" inst_p="$pat_Sample+10" inst_x="18" inst_y="554"/>
+<generator className="teki6_life" name="$teki6_life" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="334" inst_y="102"/>
+<generator className="tekitama2" name="$tekitama2" inst_alpha="255" inst_f="90" inst_angle="90" inst_scaleX="1" inst_p="$pat_Sample+1" inst_x="530" inst_y="330"/>
+<generator className="tekitama2_1" name="$tekitama2_1" inst_scaleX="1" inst_p="$pat_Sample+1" inst_f="90" inst_angle="90" inst_x="102" inst_y="414"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="692"/>
+  <globalvalue name="$screenHeight" value="575"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,53 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(xx,yy,k,h) {
+  sx=$screenWidth/100*xx;
+  sy=$screenHeight/100*yy;
+  kk=$Math.angle($ziki.x-sx,$ziki.y-sy)+90;
+  cc1=new tama1(sx,sy,$pat_S+9);
+  cc1.k=kk;
+  cc1.h=h;
+  appear(cc1);
+}
+life=500;
+time=0;
+x=$screenWidth/2;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"’×",$clRed,12+rnd(100)));
+  time++;
+  update();
+}
+time=0;
+kk=90;
+while(1) {
+  if (time%200<30) {
+    tama1make(time%200*3.333,-1,kk,10);
+  }
+  if (time%200>=50 && time%200<80) tama1make(-1,(time%200*187)%1000/10,90,10);
+  if (time%200>=100 && time%200<130) tama1make(101,(time%200*187)%1000/10,90,10);
+  if (time%200>=150 && time%200<180) tama1make((time%200-150)*3.333,101,kk,10);
+  for(t in $chars) {
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+        life--;
+      }
+    }
+    if (t is tama1 && t.time<25) t.h=2+8*(25-t.time)/25;
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+      if (t is tama1) t.bomdie=1;
+    }
+    $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+    die();
+    $stageend=1;
+  }
+  time++;
+  update();
+}

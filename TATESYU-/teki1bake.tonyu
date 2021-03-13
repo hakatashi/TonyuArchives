@@ -1,0 +1,5 @@
+extends SecretChar;
+while(1) {
+  $base=$base-1;
+  update();
+}

@@ -1,0 +1,7 @@
+extends SpriteChar;
+a=16; //‹Ê‚Ì‘¬‚³
+while(1) {
+  if(y>$screenHeight) die();
+  y+=a;
+  update();
+}

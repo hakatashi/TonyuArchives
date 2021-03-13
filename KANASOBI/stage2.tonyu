@@ -1,0 +1,84 @@
+extends PanelChar;
+randomize();
+$map.setBGColor($clWhite);
+wait(5);
+resize(600,600);
+x=300;
+y=300;
+mouse=0;
+time=0;
+tr=0;
+zOrder=100;
+panel.fillRect(0,0,$screenWidth,$screenHeight,$clBlack);
+ars=1;
+goll=1;
+mod=0;
+while(1) {
+  ap=new textchoose(-100,-100,"—á",$clBlack,30);
+  if (ars==0) ap.font="‚l‚r –¾’©";
+  if (ars==1) ap.font="‚l‚r ƒSƒVƒbƒN";
+  if (ars==2) ap.font="HGs‘‘Ì";
+  if (ars==3) ap.font="HG‚Ğ‚°•¶š";
+  if (ars==4) ap.font="‚`‚q—ê‘‘Ì‚l";
+  if (ars==5) ap.font="‚`‚qŠÛƒSƒVƒbƒN‘Ì‚l";
+  if (ars==6) ap.font="‚`‚qƒyƒ“²‘‘Ì‚l";
+  appear(ap);
+  if (go<50) drawText(300-textWidth($kl.get(ar),$zisize)/2,300-textHeight($kl.get(ar),$zisize)/2,$kl.get(ar),$clBlack,$zisize);
+  if (go<110 && go>=50) drawText(300-textWidth($kl.get(ar),$zisize)/2,300-textHeight($kl.get(ar),$zisize)/2,$kl.get(ar),color(8,8,16+(go-50)*4),$zisize);
+  if (go>=110) drawText(300-textWidth($kl.get(ar),$zisize)/2,300-textHeight($kl.get(ar),$zisize)/2,$kl.get(ar),$clBlue,$zisize);
+  if (getkey(1)==1 && mouse<8) {
+    for (i=0  ; i<36 ; i++) {
+      sz=110-mouse*11;
+      setPolygon(i,sin(i*10)*sz,cos(i*10)*sz);
+    }
+    panel.fillPolygon($mouseX,$mouseY,36,color(0,0,0),zOrder+1);
+    if (getkey(16)==0) mouse++;
+  }
+  if (getkey(32)==1 && mouse==0) {
+    xg=new Array();   // ”z—ñ‚Ìì¬
+    yg=new Array();
+    for(t=0;t<8;t++) {
+      for (i=0  ; i<36 ; i++) {
+        sz=110-mouse*11;
+        setPolygon(i,sin(i*10)*sz,cos(i*10)*sz);
+      }
+      ky=0;
+      xa=rnd(600);
+      ya=rnd(600);
+/*      for(t=0;t<mouse;t++) {
+        aaa=110-t*11+sz+300;
+        while(ky<aaa) {
+          xa=rnd(600);
+          ya=rnd(600);
+          ky=dist(xa-xg.get(t),ya-yg.get(t));
+        }
+      }*/
+      xg.add(xa);
+      yg.add(ya);
+      panel.fillPolygon(xa,ya,36,color(0,0,0),zOrder+1);
+      if (getkey(16)==0) mouse++;
+    }
+    xg.save("xg.txt");
+    yg.save("yg.txt");
+    go=-50;
+  }
+  drawText(0,600,"‚ ‚Æ"+(8-mouse)+"‰ñ‚­‚ç‚¢ƒNƒŠƒbƒN‚Å‚«‚Ü‚·",color(rnd(180),rnd(180),rnd(180)),45);
+  if (go>150) {
+    go=0;
+    ar=rnd($kl.size());
+    panel.fillRect(0,0,$screenWidth,$screenHeight,$clBlack);
+    mouse=0;
+    ars=rnd(7);
+    goll=0;
+  }
+  if (getkey(75)==1 && mod==0) mod=1; else if (getkey(75)==1 && mod==1) mod=0;
+  if (mod==1) ars=rnd(7);
+  if (mouse==8 && go==60) {
+    $panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+    $panel.drawText(600,50+rnd(550),"“š‚¦F"+$kl.get(ar),color(rnd(180),rnd(180),rnd(180)),45);
+  }
+  if (getkey(2)==1) mouse=8;
+  if (mouse==8) go++;
+  time++;
+  update();
+}

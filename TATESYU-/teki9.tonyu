@@ -1,0 +1,59 @@
+extends SpriteChar;
+
+//1‚Â‚¾‚¯‚ª–{•¨‚Ì“G‚Ì–{•¨
+
+$a=3;      //‰¡‚É“®‚­‘¬“x
+$b=100;    //“G“¯Žm‚ÌŠÔŠu
+$c=$b/$a;
+x=350;
+y=70;
+life=50;  //ƒ‰ƒCƒt
+base=10;    //–³“GŽžŠÔ
+base2=base;
+iti=rnd(4)+1;
+while(1) {
+  if ($time%30==0) appear(new tama2(x,y,$pat_Sample+15));
+  if (iti==1 && $time/$c%4==0) x=x+(2*$a);
+  if (iti==1 && $time/$c%4==3) x=x-(2*$a);
+  if (iti==2 && $time/$c%4==0) x=x+$a;
+  if (iti==2 && $time/$c%4==3) x=x-$a;
+  if (iti==3 && $time/$c%4==0) x=x-$a;
+  if (iti==3 && $time/$c%4==3) x=x+$a;
+  if (iti==4 && $time/$c%4==0) x=x-(2*$a);
+  if (iti==4 && $time/$c%4==3) x=x+(2*$a);
+  //tama‚Æ“–‚½‚Á‚½‚çlife‚ð1Œ¸‚ç‚·
+  for (t in $chars ) {
+    if ( t is tama && crashTo(t) && base<=0 ) {
+      life=life-1;
+      base=base2;
+      $mplayer.play($se_good);
+    }
+  }
+  //ƒ‰ƒCƒt‚ª0‚æ‚è¬‚³‚©‚Á‚½‚ç
+  if (life<=0) {
+    //ƒ‰ƒCƒt‚ðƒ[ƒ‚É–ß‚µ‚Ä
+    life=0;
+    //‚â‚ç‚ê‚é
+    die();
+    $teki9_2.die();
+    $teki9_3.die();
+    $teki9_4.die();
+    $teki9_2_life.die();
+    $teki9_3_life.die();
+    $teki9_4_life.die();
+    appear(new stageclear(18,154,"STAGECLEAR",$clWhite,70));
+    for (t in $chars) {
+      if ( t is teki9_life ) {
+        t.die();
+      }
+    }
+    appear(new bakuhatu(x,y,$pat_Sample+11));
+    appear(new bakuhatu($teki9_2.x,$teki9_2.y,$pat_Sample+11));
+    appear(new bakuhatu($teki9_3.x,$teki9_3.y,$pat_Sample+11));
+    appear(new bakuhatu($teki9_4.x,$teki9_4.y,$pat_Sample+11));
+    $mplayer.play($se_good);
+  }
+  base=base-1;
+  if(x==350) iti=rnd(4)+1;
+  update();
+}

@@ -1,0 +1,94 @@
+extends PanelChar;
+randomize();
+time=0;
+resize(200,200);
+$map.setBGColor($clWhite);
+wait(1);
+if (kind==1) {
+  x=100;
+  y=100;
+}
+if (kind==2) {
+  x=300;
+  y=100;
+}
+if (kind==3) {
+  x=500;
+  y=100;
+}
+if (kind==4) {
+  x=100;
+  y=300;
+}
+if (kind==5) {
+  x=300;
+  y=300;
+}
+if (kind==6) {
+  x=500;
+  y=300;
+}
+if (kind==7) {
+  x=100;
+  y=500;
+}
+if (kind==8) {
+  x=300;
+  y=500;
+}
+if (kind==9) {
+  x=500;
+  y=500;
+}
+if (jun==1) {
+  sx=100;
+  sy=100;
+  panel.drawText(-10,-10,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==2) {
+  sx=300;
+  sy=100;
+  panel.drawText(-210,-10,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==3) {
+  sx=500;
+  sy=100;
+  panel.drawText(-410,-10,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==4) {
+  sx=100;
+  sy=300;
+  panel.drawText(-10,-210,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==5) {
+  sx=300;
+  sy=300;
+  panel.drawText(-210,-210,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==6) {
+  sx=500;
+  sy=300;
+  panel.drawText(-410,-210,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==7) {
+  sx=100;
+  sy=500;
+  panel.drawText(-10,-410,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==8) {
+  sx=300;
+  sy=500;
+  panel.drawText(-210,-410,$kl.get($ar),$clBlack,$zisize);
+}
+if (jun==9) {
+  sx=500;
+  sy=500;
+  panel.drawText(-410,-410,$kl.get($ar),$clBlack,$zisize);
+}
+ax=x;
+ay=y;
+while(1) {
+  if (time>150 && time<=250) {x=ax+(sx-ax)*(time-150)/100; y=ay+(sy-ay)*(time-150)/100;}
+  time++;
+  update();
+}

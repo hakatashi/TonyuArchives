@@ -1,0 +1,90 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(k,h,hx,hy,cl) {
+  cc1=new tama1(hx,hy,$pat_S+13);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+x=$screenWidth/2;
+life=1000;
+time=0;
+if ($level==1) {
+  pp1=50; //囲む幅
+  pp2=30; //囲い弾の速さ
+  pp3=60; //一回で全方位弾を出す数
+  pp4=150; //全方位弾を出す間隔
+  pp5=1.5;  //全方位弾の速さ
+  pp6=1;    //囲い弾を出す間隔
+}
+if ($level==2) {
+  pp1=30; //囲む幅
+  pp2=30; //囲い弾の速さ
+  pp3=120; //一回で全方位弾を出す数
+  pp4=200; //全方位弾を出す間隔
+  pp5=3;  //全方位弾の速さ
+  pp6=2;  //囲い弾を出す間隔
+}
+if ($level==3) {
+  pp1=30; //囲む幅
+  pp2=40; //囲い弾の速さ
+  pp3=80; //一回で全方位弾を出す数
+  pp4=100; //全方位弾を出す間隔
+  pp5=3;  //全方位弾の速さ
+  pp6=1;  //囲い弾を出す間隔
+}
+s=1;
+while(time<150) {
+  appear(new kan(rnd($screenWidth),rnd($screenHeight),"囲",$clBlue,12+rnd(150)));
+  time++;
+  update();
+}
+while(1) {
+  if (time%pp6==0) {
+    tama1make(180,pp2,vx+pp1,-49);
+    tama1make(0,pp2,vx-pp1,$screenHeight+49);
+    tama1make(90,pp2,-49,vy+pp1);
+    tama1make(270,pp2,$screenWidth+49,vy-pp1);
+  }
+  if (time%pp4==0) {
+    a=rnd(360/pp3*5)/5;
+    s++;
+    if (s%2==0) {
+      dd1=1;
+    } else {
+      dd1=-1;
+    }
+    ssi=rnd(150);
+    ss2=rnd(40)+90;
+    for(t=0;t<pp3;t++) {
+      tama1make(360/pp3*t+a+(ss2*dd1),pp5,x+sin(360/pp3*t+a)*ssi,y-cos(360/pp3*t+a)*ssi);
+      tama1make(360/pp3*t+a-(ss2*dd1),pp5,x+sin(360/pp3*t+a)*ssi,y-cos(360/pp3*t+a)*ssi);
+    }
+  }
+  for(t in $chars) {
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+        life--;
+      }
+    }
+    if (t is ziki) {
+      k=t;
+      vx=t.x;
+      vy=t.y;
+    }
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+    die();
+  }
+  time++;
+  update();
+}

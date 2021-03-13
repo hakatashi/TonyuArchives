@@ -1,0 +1,29 @@
+extends SpriteChar;
+randomize();
+time=0;
+a=0;
+b=0;
+kakudo=0;
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+12);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+function tamamake2(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  if (time%4==0) {
+    tamamake(kakudo,1.5);
+    kakudo+=26;
+  }
+  if (time%7==0) {
+    tamamake2(rnd(360),4);
+  }
+  time+=1;
+  update();
+}

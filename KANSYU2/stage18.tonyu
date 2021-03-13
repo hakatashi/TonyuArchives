@@ -1,0 +1,74 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(k,h,ax,ay) {
+  cc1=new tama1(ax,ay,$pat_S+1);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1300;
+time=0;
+x=$screenWidth/2;
+if ($level==1) {
+su1=7; //¯‚ğì‚é”
+su2=300; //¯‚ğì‚éŠÔŠu
+
+}
+if ($level==2) {
+su1=12; //¯‚ğì‚é”
+su2=300; //¯‚ğì‚éŠÔŠu
+
+}
+if ($level==3) {
+su1=17; //¯‚ğì‚é”
+su2=300; //¯‚ğì‚éŠÔŠu
+
+}
+vx==0;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"¯",$clYellow,12+rnd(150)));
+  time++;
+  update();
+}
+while(1) {
+  if (time%su2==160) {
+    for (t=0;t<su1;t++) {
+      atx=rnd($screenWidth);
+      aty=rnd($screenHeight/2);
+      if ($level==3) aty=rnd($screenHeight);
+      kk=rnd(72);
+      for (t2=0;t2<5;t2++) {
+        tama1make(72*t2+180+kk,15,atx+sin(72*t2+kk)*750,aty-cos(72*t2+kk)*750);
+      }
+    }
+  }
+  for(t in $chars) {
+    if (t is tama1) {
+      if (time%su2<50) t.h-=0.3;
+      if (time%su2==50) t.h=0;
+      if (time%su2==80) t.h=15;
+      if (time%su2>80 && time%su2<130) t.h-=0.29;
+      if (time%su2==130) t.h=0;
+      if (time%su2==160) t.h=10;
+      if (time%su2>=160 && time%su2<su2) t.k-=(su2-time%su2)/30;
+    }
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        life--;
+      }
+    }
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    die();
+  }
+  vx+=0.1;
+  time++;
+  update();
+}

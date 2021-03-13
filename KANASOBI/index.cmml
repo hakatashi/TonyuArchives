@@ -1,0 +1,17 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="kanlist" name="$kanlist" inst_pat="17" inst_x="86" inst_y="62"/>
+<generator className="seigyo" name="$seigyo" inst_pat="18" inst_x="90" inst_y="210"/>
+<generator className="kanlist2" name="$kanlist2" inst_pat="17" inst_x="82" inst_y="106"/>
+<generator className="lvseigyo" name="$lvseigyo" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_size="20" inst_x="598" inst_y="294" inst_col="$clBlack"/>
+<generator className="kanlist3" name="$kanlist3" inst_pat="17" inst_x="82" inst_y="162"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="854"/>
+  <globalvalue name="$screenHeight" value="656"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,15 @@
+extends TextChar;
+
+//サイドから敵を表示させる敵のライフを表示
+
+a=30;  //表示を右下にずらすx,yの距離
+while(1) {
+  for (t in $chars) {
+    if ( t is teki6 ) {
+      x=t.x+a;
+      y=t.y+a;
+      text=t.life;
+    }
+  }
+  update();
+}

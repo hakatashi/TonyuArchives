@@ -1,0 +1,13 @@
+extends SecretChar;
+while(1) {
+  if (getkey(49)==1 || getkey(97)==1) $projectManager.loadPage($page_stage1);
+  if (getkey(50)==1 || getkey(98)==1) $projectManager.loadPage($page_stage10);
+  if (getkey(51)==1 || getkey(99)==1) $projectManager.loadPage($page_stage3);
+  if (getkey(52)==1 || getkey(100)==1) $projectManager.loadPage($page_stage4);
+  if (getkey(53)==1 || getkey(101)==1) $projectManager.loadPage($page_stage5);
+  if (getkey(54)==1 || getkey(102)==1) $projectManager.loadPage($page_stage6);
+  if (getkey(55)==1 || getkey(103)==1) $projectManager.loadPage($page_stage7);
+  if (getkey(56)==1 || getkey(104)==1) $projectManager.loadPage($page_stage8);
+  if (getkey(57)==1 || getkey(105)==1) $projectManager.loadPage($page_stage9);
+  update();
+}

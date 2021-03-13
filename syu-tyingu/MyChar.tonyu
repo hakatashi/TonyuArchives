@@ -1,0 +1,12 @@
+extends SpriteChar;
+ 
+function onDie() {
+  appear(new Bomb($myChar.x , $myChar.y ,$pat_Sample+4));
+}
+
+while(1) {
+ if (getkey(39)>0 && x<$screenWidth ) x=x+3;
+ if (getkey(37)>0 && x>0) x=x-3;
+ if (getkey(32)==1) appear(new Tama(x,y,$pat_Sample+1));
+ update();
+}

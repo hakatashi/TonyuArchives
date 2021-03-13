@@ -1,0 +1,12 @@
+extends SecretChar;
+$map.setBGColor($clBlack);
+nx=210;
+ny=106;
+nn=new anime(200,100,3);
+appear(new anime(200,100,3));
+for(t2=0;t2<9;t2++) {
+  nn.px=210;
+  nn.py=106;
+  nn.kai=45;
+  appear(nn);
+}

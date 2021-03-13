@@ -1,0 +1,10 @@
+extends SecretChar;
+zikiLives=1;
+while (zikiLives==1) {
+  zikiLives=0;
+  for (e in $chars) {
+    if (e is ziki) zikiLives=1;
+  }
+  update();
+}
+appear(new gamec_text(10,130,"GAMEOVER",color(0,0,0),80));

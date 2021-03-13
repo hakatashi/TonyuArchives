@@ -1,0 +1,10 @@
+extends TextChar;
+font="‚l‚r –¾’©";
+ax=ax;
+ay=ay;
+trt=trt;
+function onUpdate() {
+  x=ax-textWidth(text,size)/2;
+  y=ay-textHeight(text,size)/2;
+}
+updateEx(trt);

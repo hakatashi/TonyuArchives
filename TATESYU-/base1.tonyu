@@ -1,0 +1,7 @@
+extends SecretChar;
+$time=0;
+while(1) {
+  $time=$time+1;
+  $base=$base-1;
+  update();
+}

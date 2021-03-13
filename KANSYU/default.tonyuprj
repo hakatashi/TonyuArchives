@@ -1,0 +1,179 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_settei" src="settei.cmml"/>
+<Page name="$page_stage1" src="stage1.cmml"/>
+<Page name="$page_stage10" src="stage10.cmml"/>
+<Page name="$page_stage11" src="stage11.cmml"/>
+<Page name="$page_stage12" src="stage12.cmml"/>
+<Page name="$page_stage13" src="stage13.cmml"/>
+<Page name="$page_stage14" src="stage14.cmml"/>
+<Page name="$page_stage15" src="stage15.cmml"/>
+<Page name="$page_stage16" src="stage16.cmml"/>
+<Page name="$page_stage17" src="stage17.cmml"/>
+<Page name="$page_stage18" src="stage18.cmml"/>
+<Page name="$page_stage19" src="stage19.cmml"/>
+<Page name="$page_stage2" src="stage2.cmml"/>
+<Page name="$page_stage20" src="stage20.cmml"/>
+<Page name="$page_stage3" src="stage3.cmml"/>
+<Page name="$page_stage4" src="stage4.cmml"/>
+<Page name="$page_stage5" src="stage5.cmml"/>
+<Page name="$page_stage6" src="stage6.cmml"/>
+<Page name="$page_stage7" src="stage7.cmml"/>
+<Page name="$page_stage8" src="stage8.cmml"/>
+<Page name="$page_stage9" src="stage9.cmml"/>
+<Page name="$page_start" src="start.cmml"/>
+<Page name="$page_title" src="title.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="12398000"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+  <param name="mainPage" value="$page_start"/>
+  <param name="cond" value="再配布、改造は不可"/>
+  <param name="title" value="打段弾"/>
+  <param name="author" value="koyi"/>
+  <param name="version" value="0.1"/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="ziki" src="ziki.tonyu" category=""/>
+  <class name="tama" src="tama.tonyu" category=""/>
+  <class name="tama1" src="tama1.tonyu" category=""/>
+  <class name="stage1" src="stage1.tonyu" category=""/>
+  <class name="zikitu" src="zikitu.tonyu" category=""/>
+  <class name="kan" src="kan.tonyu" category=""/>
+  <class name="title" src="title.tonyu" category=""/>
+  <class name="stage2" src="stage2.tonyu" category=""/>
+  <class name="stage3" src="stage3.tonyu" category=""/>
+  <class name="stage4" src="stage4.tonyu" category=""/>
+  <class name="stage5" src="stage5.tonyu" category=""/>
+  <class name="stage6" src="stage6.tonyu" category=""/>
+  <class name="stage6_1" src="stage6_1.tonyu" category=""/>
+  <class name="stage7" src="stage7.tonyu" category=""/>
+  <class name="stage8" src="stage8.tonyu" category=""/>
+  <class name="stage9" src="stage9.tonyu" category=""/>
+  <class name="stage10" src="stage10.tonyu" category=""/>
+  <class name="stage11" src="stage11.tonyu" category=""/>
+  <class name="stage12" src="stage12.tonyu" category=""/>
+  <class name="stage13" src="stage13.tonyu" category=""/>
+  <class name="stage14" src="stage14.tonyu" category=""/>
+  <class name="stage15" src="stage15.tonyu" category=""/>
+  <class name="stage16" src="stage16.tonyu" category=""/>
+  <class name="stage17" src="stage17.tonyu" category=""/>
+  <class name="stage18" src="stage18.tonyu" category=""/>
+  <class name="bomb" src="bomb.tonyu" category=""/>
+  <class name="stage19" src="stage19.tonyu" category=""/>
+  <class name="stage20" src="stage20.tonyu" category=""/>
+  <class name="gtitle" src="gtitle.tonyu" category=""/>
+  <class name="start" src="start.tonyu" category=""/>
+  <class name="write" src="write.tonyu" category=""/>
+  <class name="write2" src="write2.tonyu" category=""/>
+  <class name="ttl" src="ttl.tonyu" category=""/>
+  <class name="settei" src="settei.tonyu" category=""/>
+  <class name="main_settei" src="main_settei.tonyu" category=""/>
+  <class name="setumei" src="setumei.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+<SoundEffect name="$se_wa_001" src="wa_001.wav"/>
+<SoundEffect name="$se_be04" src="be04.wav"/>
+<SoundEffect name="$se_se_sad05" src="se_sad05.wav"/>
+<SoundEffect name="$se_se_sad07" src="se_sad07.wav"/>
+<SoundEffect name="$se_se_saa08" src="se_saa08.wav"/>
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="settei.cmml"/>
+<Page name="r_1" src="stage1.cmml"/>
+<Page name="r_2" src="Sample.bmp"/>
+<Page name="r_3" src="S.bmp"/>
+<Page name="r_4" src="コピー ～ 無題.bmp"/>
+<Page name="r_5" src="S2.bmp"/>
+<Page name="r_6" src="bomb.bmp"/>
+<Page name="r_7" src="stage10.cmml"/>
+<Page name="r_8" src="stage11.cmml"/>
+<Page name="r_9" src="stage12.cmml"/>
+<Page name="r_10" src="stage13.cmml"/>
+<Page name="r_11" src="stage14.cmml"/>
+<Page name="r_12" src="stage15.cmml"/>
+<Page name="r_13" src="stage16.cmml"/>
+<Page name="r_14" src="stage17.cmml"/>
+<Page name="r_15" src="stage18.cmml"/>
+<Page name="r_16" src="stage19.cmml"/>
+<Page name="r_17" src="stage2.cmml"/>
+<Page name="r_18" src="stage20.cmml"/>
+<Page name="r_19" src="stage3.cmml"/>
+<Page name="r_20" src="stage4.cmml"/>
+<Page name="r_21" src="stage5.cmml"/>
+<Page name="r_22" src="stage6.cmml"/>
+<Page name="r_23" src="stage7.cmml"/>
+<Page name="r_24" src="stage8.cmml"/>
+<Page name="r_25" src="stage9.cmml"/>
+<Page name="r_26" src="start.cmml"/>
+<Page name="r_27" src="write.bmp"/>
+<Page name="r_28" src="WS000034.BMP"/>
+<Page name="r_29" src="WS000035.BMP"/>
+<Page name="r_30" src="W.BMP"/>
+<Page name="r_31" src="title.cmml"/>
+<Page name="r_32" src="1.BMP"/>
+<Page name="r_33" src="2.BMP"/>
+<Page name="r_34" src="3.BMP"/>
+<Page name="r_35" src="5.BMP"/>
+<Page name="r_36" src="4.BMP"/>
+<Page name="r_37" src="6.BMP"/>
+<Page name="r_38" src="7.BMP"/>
+<Page name="r_39" src="8.BMP"/>
+<Page name="r_40" src="10.BMP"/>
+<Page name="r_41" src="11.BMP"/>
+<Page name="r_42" src="9.BMP"/>
+<Page name="r_43" src="12.BMP"/>
+<Page name="r_44" src="13.BMP"/>
+<Page name="r_45" src="14.BMP"/>
+<Page name="r_46" src="15.BMP"/>
+<Page name="r_47" src="16.BMP"/>
+<Page name="r_48" src="17.BMP"/>
+<Page name="r_49" src="18.BMP"/>
+<Page name="r_50" src="19.BMP"/>
+<Page name="r_51" src="20.BMP"/>
+<Page name="r_52" src="ziki.tonyu"/>
+<Page name="r_53" src="tama.tonyu"/>
+<Page name="r_54" src="tama1.tonyu"/>
+<Page name="r_55" src="stage1.tonyu"/>
+<Page name="r_56" src="zikitu.tonyu"/>
+<Page name="r_57" src="kan.tonyu"/>
+<Page name="r_58" src="title.tonyu"/>
+<Page name="r_59" src="stage2.tonyu"/>
+<Page name="r_60" src="stage3.tonyu"/>
+<Page name="r_61" src="stage4.tonyu"/>
+<Page name="r_62" src="stage5.tonyu"/>
+<Page name="r_63" src="stage6.tonyu"/>
+<Page name="r_64" src="stage6_1.tonyu"/>
+<Page name="r_65" src="stage7.tonyu"/>
+<Page name="r_66" src="stage8.tonyu"/>
+<Page name="r_67" src="stage9.tonyu"/>
+<Page name="r_68" src="stage10.tonyu"/>
+<Page name="r_69" src="stage11.tonyu"/>
+<Page name="r_70" src="stage12.tonyu"/>
+<Page name="r_71" src="stage13.tonyu"/>
+<Page name="r_72" src="stage14.tonyu"/>
+<Page name="r_73" src="stage15.tonyu"/>
+<Page name="r_74" src="stage16.tonyu"/>
+<Page name="r_75" src="stage17.tonyu"/>
+<Page name="r_76" src="stage18.tonyu"/>
+<Page name="r_77" src="bomb.tonyu"/>
+<Page name="r_78" src="stage19.tonyu"/>
+<Page name="r_79" src="stage20.tonyu"/>
+<Page name="r_80" src="gtitle.tonyu"/>
+<Page name="r_81" src="start.tonyu"/>
+<Page name="r_82" src="write.tonyu"/>
+<Page name="r_83" src="write2.tonyu"/>
+<Page name="r_84" src="ttl.tonyu"/>
+<Page name="r_85" src="settei.tonyu"/>
+<Page name="r_86" src="main_settei.tonyu"/>
+<Page name="r_87" src="setumei.tonyu"/>
+<Page name="r_88" src="wa_001.wav"/>
+<Page name="r_89" src="be04.wav"/>
+<Page name="r_90" src="se_sad05.wav"/>
+<Page name="r_91" src="se_sad07.wav"/>
+<Page name="r_92" src="se_saa08.wav"/>
+ </resourcelist>
+</resourcelist>

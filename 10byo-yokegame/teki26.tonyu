@@ -1,0 +1,35 @@
+extends SpriteChar;
+time=0;
+n1=0;
+n2=0;
+function tamamake(a) {
+  a=a%($screenWidth*2);
+  if (a<$screenWidth) {
+    c=new tama1(a,0,$pat_Rs+9);
+    c.k=180;
+    c.h=3;
+    appear(c);
+  }
+  if (a>$screenWidth) {
+    c=new tama1(-a+$screenWidth*2,0,$pat_Rs+9);
+    c.k=180;
+    c.h=3;
+    appear(c);
+  }
+}
+while(1) {
+  if (time%7==0) {
+    tamamake(n1);
+    n1+=43;
+  }
+  if (time%9==0) {
+    tamamake(n2);
+    n2+=31;
+  }
+    if (time%10==0) {
+    tamamake(n3);
+    n3+=11;
+  }
+  time+=1;
+  update();
+}

@@ -1,0 +1,9 @@
+extends SecretChar;
+a=10000;     //•\¦‚·‚é“G‚Ì”
+b=6;     //“G‚ğ•\¦‚·‚éŠÔŠu
+loop1=0;
+while(loop1<=a) {
+  loop1=loop1+1;
+  appear(new teki1(rnd($screenHeight),rnd(100),$pat_Sample+2));
+  wait(b);
+}

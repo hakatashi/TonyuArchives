@@ -1,0 +1,11 @@
+extends DxChar;
+zOrder=0;
+alpha=100;
+time2=0;
+su=8;
+while(alpha>0) {
+  alpha-=1;
+  if (getkey(90)>0) {k2=su;} else {k2=1;}
+  if (time2%k2==0) update();
+  time2++;
+}

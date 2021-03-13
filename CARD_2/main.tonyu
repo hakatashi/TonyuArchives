@@ -1,0 +1,147 @@
+extends SecretChar;
+randomize();
+$system.setFrameRate(30,2);
+time=0;
+xs=new array();
+ys=new array();
+num=new array();
+nxnum=new array();
+red=rnd(256);
+blue=rnd(256);
+green=rnd(256);
+for (i=0;i<5;i++) {
+  xs.add(i*120);
+  ys.add(0);
+  num.add(i);
+  nxnum.add(i);
+}
+function onUpdate() {
+  $panel.fillRect(0,0,$screenWidth,$screenHeight,color(0,0,0));
+  /*$panel.drawText(100,100,ii,$clWhite,24);
+  for(i=0;i<5;i++) {
+    $panel.drawText(150+i*50,10,trunc(xs.get(i)),$clWhite,24);
+    $panel.drawText(150+i*50,60,trunc(ys.get(i)),$clWhite,24);
+    $panel.drawText(150+i*50,110,num.get(i),$clWhite,24);
+    $panel.drawText(150+i*50,160,nxnum.get(i),$clWhite,24);
+  }*/
+  for (i=0;i<5;i++) {
+    $panel.drawSprite(xs.get(i)+120,ys.get(i)+300,$pat_card+0);
+    //drawText(xs.get(i)+120,ys.get(i)+300,i,$clBlack,24);
+  }
+  red+=rnd(17)-8;
+  blue+=rnd(17)-8;
+  green+=rnd(17)-8;
+  if (red<0) red=0;
+  if (blue<0) blue=0;
+  if (green<0) green=0;
+  if (255<red) red=255;
+  if (255<blue) blue=255;
+  if (255<green) green=255;
+  $map.setBGColor(color(red,blue,green));
+  time++;
+}
+ii=0;
+for(j=0;j<50;j++) {
+  drawText(num.get(2)*120+90,300,"³‰ð",$clRed,24);
+  update();
+}
+while(ii<10) {
+  time=0;
+  tp=rnd(5);
+  speed=50;
+  while(time<speed) {
+    if (tp==0) {
+      for (i=0;i<5;i++) {
+        if (num.get(i)==0) {
+          if (time<(speed/5)) ys.set(i,ys.get(i)-(120/(speed/5)));
+          else if (time<(speed/5*4)) xs.set(i,xs.get(i)+(480/(speed/5*3)));
+          else ys.set(i,ys.get(i)+(120/(speed/5)));
+          nxnum.set(i,4);
+        } else {
+          xs.set(i,xs.get(i)-120/speed);
+          nxnum.set(i,num.get(i)-1);
+        }
+      }
+    } else if (tp==1) {
+      for (i=0;i<5;i++) {
+        xs.set(i,sin(90+180/speed*time)*(num.get(i)-2)*120+240);
+        ys.set(i,-cos(90+180/speed*time)*(num.get(i)-2)*120);
+        nxnum.set(i,-num.get(i)+4);
+      }
+    } else if (tp==2) {
+      for (i=0;i<5;i++) {
+        if (num.get(i)==4) {
+          if (time<(speed/5)) ys.set(i,ys.get(i)-(120/(speed/5)));
+          else if (time<(speed/5*4)) xs.set(i,xs.get(i)-(480/(speed/5*3)));
+          else ys.set(i,ys.get(i)+(120/(speed/5)));
+          nxnum.set(i,0);
+        } else {
+          xs.set(i,xs.get(i)+120/speed);
+          nxnum.set(i,num.get(i)+1);
+        }
+      }
+    } else if (tp==3) {
+      for (i=0;i<5;i++) {
+        if (num.get(i)%2==0) {
+          if (time<(speed/5)) ys.set(i,ys.get(i)-(120/(speed/5)));
+          else if (time<(speed/5*4)) {
+            if (num.get(i)==0) xs.set(i,xs.get(i)-(0/(speed/5*3)));
+            if (num.get(i)==2) xs.set(i,xs.get(i)-(120/(speed/5*3)));
+            if (num.get(i)==4) xs.set(i,xs.get(i)-(240/(speed/5*3)));
+          }
+          else ys.set(i,ys.get(i)+(120/(speed/5)));
+          nxnum.set(i,num.get(i)/2);
+        } else {
+          if (time<(speed/5)) ys.set(i,ys.get(i)+(120/(speed/5)));
+          else if (time<(speed/5*4)) {
+            if (num.get(i)==1) {
+              xs.set(i,xs.get(i)+(240/(speed/5*3)));
+              nxnum.set(i,3);
+            }
+            if (num.get(i)==3) {
+              xs.set(i,xs.get(i)+(120/(speed/5*3)));
+              nxnum.set(i,4);
+            }
+          }
+          else ys.set(i,ys.get(i)-(120/(speed/5)));
+        }
+      }
+    } else if (tp==4) {
+      for (i=0;i<5;i++) {
+        if (num.get(i)%2==0) {
+          if (time<(speed/5)) ys.set(i,ys.get(i)-(120/(speed/5)));
+          else if (time<(speed/5*4)) {
+            if (num.get(i)==0) xs.set(i,xs.get(i)+(240/(speed/5*3)));
+            if (num.get(i)==2) xs.set(i,xs.get(i)+(120/(speed/5*3)));
+            if (num.get(i)==4) xs.set(i,xs.get(i)+(0/(speed/5*3)));
+          }
+          else ys.set(i,ys.get(i)+(120/(speed/5)));
+          nxnum.set(i,num.get(i)/2);
+        } else {
+          if (time<(speed/5)) ys.set(i,ys.get(i)+(120/(speed/5)));
+          else if (time<(speed/5*4)) {
+            if (num.get(i)==1) {
+              xs.set(i,xs.get(i)-(120/(speed/5*3)));
+              nxnum.set(i,3);
+            }
+            if (num.get(i)==3) {
+              xs.set(i,xs.get(i)-(240/(speed/5*3)));
+              nxnum.set(i,4);
+            }
+          }
+          else ys.set(i,ys.get(i)-(120/(speed/5)));
+        }
+      }
+    }
+    update();
+  }
+  for (i=0;i<5;i++) {
+    num.set(i,nxnum.get(i));
+    xs.set(i,num.get(i)*120);
+    ys.set(i,0);
+  }
+  ii++;
+  update();
+}
+wait(70);
+$panel.drawText(num.get(2)*120+90,300,"³‰ð",$clRed,24);

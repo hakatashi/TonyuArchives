@@ -1,0 +1,21 @@
+extends TextChar;
+timeing=0;
+font="‚l‚r –¾’©";
+text="test";
+tt2=50;
+haba=10;
+at=1;
+px=200;
+py=200;
+/*kai=6;*/
+kai-=5;
+p=0;
+while(timeing<tt2) {
+  p2=trunc(255/tt2*timeing);
+  col=color(p2,p2,p2);
+  x=px+at*(tt2-timeing)*kai;
+  y=py;
+  timeing+=1;
+  text=timeing;
+  update();
+}

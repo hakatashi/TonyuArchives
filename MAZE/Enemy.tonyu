@@ -1,0 +1,22 @@
+extends SpriteChar;
+vx=2;
+while(1) {
+  x+=vx;
+  if (x<0) vx=2; if (x>$screenWidth) vx=-2; if (rnd(500)==0) vx=-vx;
+  if (crashTo($myChar)) {
+  //↑敵と自機がぶつかったときに
+    if ((vx>0 && $myChar.x<x) || (vx<0 && $myChar.x>x)) {
+    //↑敵が右方向、自機が左　または 敵が左方向、自機が右
+      die();
+      //↑ならば、敵が死ぬ
+    } else {
+      $myChar.die();
+      //↑そうでなければ自機が死ぬ」
+      $projectManager.loadPage($page_start);
+    }
+  }
+  if (vx<0) f=1; else f=0;
+  update();
+}
+ 
+

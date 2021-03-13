@@ -1,0 +1,28 @@
+extends SpriteChar;
+a=0;
+b=0;
+k=0;
+k2=0;
+time=0;
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  if (time%2==0) {
+    k+=23;
+    c=new tama1(x+sin(k)*60,y-cos(k)*60,$pat_Rs+9);
+    c.k=k;
+    c.h=1;
+    appear(c);
+    k2+=31;
+    c=new tama1(x+sin(k2)*60,y-cos(k2)*60,$pat_Rs+9);
+    c.k=k+180;
+    c.h=1;
+    appear(c);
+  }
+  time+=1;
+  update();
+}

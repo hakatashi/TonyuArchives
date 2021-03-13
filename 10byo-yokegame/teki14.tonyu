@@ -1,0 +1,33 @@
+extends SpriteChar;
+randomize();
+time=0;
+w=3;
+c=180;
+function tamamake(n,m) {
+  pp=new tama1(x,y,$pat_Rs+9);
+  pp.k=n;
+  pp.h=m;
+  appear(pp);
+}
+
+if ($level=="e") times=0.8; //easy
+if ($level=="g") times=0.9; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=1.2; //hard
+if ($level=="d") times=1.5; //difficult
+if ($level=="u") times=2; //ultra
+
+while(1) {
+  a=15; //‹Ê‚ðo‚·”
+  b=0; //ŒJ‚è•Ô‚µ•Ï”
+  c+=rnd(30)*times+15;
+  while(a>b) {
+    pp=new tama1(x+(sin(360/a*b)*20),y+(cos(360/a*b)*20),$pat_Rs+9);
+    pp.k=c;
+    pp.h=3;
+    appear(pp);
+    b++;
+  }
+  wait(5);
+  time=0;
+}

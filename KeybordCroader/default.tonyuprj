@@ -1,0 +1,13 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_title" src="title.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="1160781"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1240"/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="xmake" src="xmake.tonyu" category=""/>
+ </resourcelist>
+</resourcelist>

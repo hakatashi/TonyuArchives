@@ -1,0 +1,64 @@
+extends SpriteChar;
+randomize();
+time=0;
+w=0.5;
+function tamamake(n,m) {
+  pp=new tama1(x,y,$pat_Rs+9);
+  pp.k=n;
+  pp.h=m;
+  appear(pp);
+}
+while(1) {
+  while(time<30) {
+    tamamake(rnd(360),w);
+    time+=1;
+    for (t in $chars) {
+      if (t is tama1) {
+        t.h=t.h*1.03;
+      }
+    }
+    update();
+  }
+  time=0;
+  a=25; //ã ÇèoÇ∑êî
+  b=0; //åJÇËï‘Çµïœêî
+  c=rnd(360/a);
+  while(a>b) {
+    tamamake(360/a*b+c,1);
+    b+=1;
+  }
+  r=rnd(45);
+  a=rnd(72); //ÇÀÇ∂ÇÍïœêî
+  while(time<60) {
+    if (time%5==0) {
+      tamamake(a,w);
+      tamamake(a+72,w);
+      tamamake(a+144,w);
+      tamamake(a-144,w);
+      tamamake(a-72,w);
+      a+=13;
+    }
+    for (t in $chars) {
+      if (t is tama1) {
+        t.h=t.h*1.04;
+      }
+    }
+    time+=1;
+    update();
+  }
+  a=20; //ã ÇèoÇ∑êî
+  b=0; //åJÇËï‘Çµïœêî
+  c=rnd(360/a);
+  while(a>b) {
+    tamamake(360/a*b+c,3);
+    b+=1;
+  }
+  wait(10);
+  for (t in $chars) {
+    if (t is tama1) {
+      t.k=180;
+      t.h=0.2;
+    }
+  }
+  time=0;
+}

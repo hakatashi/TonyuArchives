@@ -1,0 +1,41 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_index" src="index.cmml"/>
+<Page name="$page_ok" src="ok.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="1371843"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+  <param name="mainPage" value="$page_ok"/>
+  <param name="cond" value="Ä”z•zA‰ü‘¢‚Æ‚à‚É–³’f‚Å‹–‰Â"/>
+  <param name="title" value="syu-1"/>
+  <param name="author" value="koyi"/>
+  <param name="version" value="1.0"/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="MyChar" src="MyChar.tonyu" category=""/>
+  <class name="Tama" src="Tama.tonyu" category=""/>
+  <class name="Enemy" src="Enemy.tonyu" category=""/>
+  <class name="UFO" src="UFO.tonyu" category=""/>
+  <class name="Tama2" src="Tama2.tonyu" category=""/>
+  <class name="Bomb" src="Bomb.tonyu" category=""/>
+  <class name="Text" src="Text.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="index.cmml"/>
+<Page name="r_1" src="Sample.bmp"/>
+<Page name="r_2" src="ok.cmml"/>
+<Page name="r_3" src="MyChar.tonyu"/>
+<Page name="r_4" src="Tama.tonyu"/>
+<Page name="r_5" src="Enemy.tonyu"/>
+<Page name="r_6" src="UFO.tonyu"/>
+<Page name="r_7" src="Tama2.tonyu"/>
+<Page name="r_8" src="Bomb.tonyu"/>
+<Page name="r_9" src="Text.tonyu"/>
+ </resourcelist>
+</resourcelist>

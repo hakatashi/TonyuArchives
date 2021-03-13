@@ -1,0 +1,28 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+<cpattern name="$pat_Rs" src="ƒRƒs[ ` –³‘è.bmp"/>
+<cpattern name="$pat_S" src="S.bmp"/>
+<cpattern name="$pat_bomb" src="bomb.bmp"/>
+<cpattern name="$pat_tr" src="tr.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki" inst_x="233" inst_y="493" inst_p="$pat_S+6"/>
+<generator className="zikitu" name="$zikitu" inst_p="$pat_Sample+0" inst_x="286" inst_y="494"/>
+<generator className="title" name="$title" inst_col="$clWhite" inst_font="%22‚l‚r –¾’©%22" inst_size="60" inst_x="6" inst_y="198" inst_text="%22“ø%22"/>
+<generator className="stage6" name="$stage6" inst_x="262" inst_y="78" inst_p="$pat_Rs+0"/>
+<generator className="stage6_1" name="$stage6_1" inst_x="226" inst_y="186" inst_kind="1" inst_p="$pat_S+19"/>
+<generator className="stage6_1" name="$stage6_2" inst_kind="6" inst_p="$pat_S+18" inst_x="354" inst_y="258"/>
+<generator className="stage6_1" name="$stage6_3" inst_kind="3" inst_p="$pat_S+15" inst_x="378" inst_y="202"/>
+<generator className="stage6_1" name="$stage6_4" inst_x="186" inst_y="242" inst_kind="4" inst_p="$pat_S+25"/>
+<generator className="stage6_1" name="$stage6_5" inst_x="266" inst_y="258" inst_kind="5" inst_p="$pat_S+16"/>
+<generator className="stage6_1" name="$stage6_6" inst_x="322" inst_y="282" inst_kind="7" inst_p="$pat_S+23"/>
+<generator className="stage6_1" name="$stage6_7" inst_kind="2" inst_p="$pat_S+17" inst_x="298" inst_y="114"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="557"/>
+  <globalvalue name="$screenHeight" value="557"/>
+ </resourcelist>
+</resourcelist>

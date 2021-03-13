@@ -1,0 +1,46 @@
+//kで角度、hで速さを設定。
+extends DXChar;
+randomize();
+zOrder=10;
+angle=k;
+time=0;
+rd1=rnd();
+auk=k;
+px=sin(k);
+py=cos(k);
+//if(rnd(1)==0)$mplayer.play($se_se_sad07,0,30);
+times=1;
+if ($hande1==2) times=1.2;
+if ($hande1==3) times=1.5;
+if ($hande1==4) times=2;
+p2=p;
+a=50; //スクリーンはみ出し死亡ライン
+/*while(x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) {
+  x+=px*h;
+  y-=py*h;
+  if (auk!=k) {
+    px=sin(k);
+    py=cos(k);
+  }
+  angle=k;
+  if (h2==3) die();
+  time++;
+  update();
+}*/
+while(1) {
+  /*x+=px*h*times;
+  y-=py*h*times;*/
+  x+=sin(k)*h;
+  y-=cos(k)*h;
+  if (auk!=k) {
+    px=sin(k);
+    py=cos(k);
+  }
+  angle=k;
+  if (h2==3) die();
+  if (x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) die();
+  /*if (mode==null) p=p2;
+  if (mode==1) p=900;*/
+  time++;
+  update();
+}

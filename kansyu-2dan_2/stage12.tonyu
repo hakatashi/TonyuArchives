@@ -1,0 +1,119 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+function tama1make(k,h) {
+  cc1=new tama1(x,y,$pat_S+3);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+life=1000;
+time=0;
+if ($level==1) {
+  su1=8; //‘‚¢‚Ù‚¤‚Ì’e‚ğˆê“x‚Éo‚·”
+  su2=30; //•Ç‚Ì‘¬‚³
+  su3=15; //•Ç‚ÌŠJ‚«•û
+  su4=12; //ƒ‰ƒ“ƒ_ƒ€’e‚ğo‚·ŠÔŠu
+  su5=2; //ƒ‰ƒ“ƒ_ƒ€’e‚Ì‘¬‚³
+  su6=50; //©‹@‘_‚¢’e‚ğo‚·ŠÔŠu
+  su7=1; //©‹@‘_‚¢’e‚Ì‘¬‚³
+  su8=250; //î’e‚ğo‚·ŠÔŠu
+  su9=3; //î’e‚Ì‘¬‚³
+
+}
+if ($level==2) {
+  su1=12; //‘‚¢‚Ù‚¤‚Ì’e‚ğˆê“x‚Éo‚·”
+  su2=30; //•Ç‚Ì‘¬‚³
+  su3=10; //•Ç‚ÌŠJ‚«•û
+  su4=10; //ƒ‰ƒ“ƒ_ƒ€’e‚ğo‚·ŠÔŠu
+  su5=2; //ƒ‰ƒ“ƒ_ƒ€’e‚Ì‘¬‚³
+  su6=50; //©‹@‘_‚¢’e‚ğo‚·ŠÔŠu
+  su7=1; //©‹@‘_‚¢’e‚Ì‘¬‚³
+  su8=200; //î’e‚ğo‚·ŠÔŠu
+  su9=5; //î’e‚Ì‘¬‚³
+
+}
+if ($level==3) {
+  su1=10; //‘‚¢‚Ù‚¤‚Ì’e‚ğˆê“x‚Éo‚·”
+  su2=30; //•Ç‚Ì‘¬‚³
+  su3=8; //•Ç‚ÌŠJ‚«•û
+  su4=10; //ƒ‰ƒ“ƒ_ƒ€’e‚ğo‚·ŠÔŠu
+  su5=3; //ƒ‰ƒ“ƒ_ƒ€’e‚Ì‘¬‚³
+  su6=40; //©‹@‘_‚¢’e‚ğo‚·ŠÔŠu
+  su7=1; //©‹@‘_‚¢’e‚Ì‘¬‚³
+  su8=150; //î’e‚ğo‚·ŠÔŠu
+  su9=8; //î’e‚Ì‘¬‚³
+
+}
+t3=null;
+x=$screenWidth/2;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"‹·",$clRed,12+rnd(150)));
+  time++;
+  update();
+}
+for(t in $chars) {
+  if (t is ziki) {
+    k1=angle(t.x-x,t.y-y)+90;
+  }
+}
+while(1) {
+  x=$screenWidth/2;
+  if (time%1==0) {
+    tama1make(k1+su3,su2);
+    tama1make(k1-su3,su2);
+  }
+  if (time%su4==0) {
+    tama1make(k1-su3+rnd(su3*2),su5);
+  }
+  if (time%su6==0) {
+    for(t in $chars) {
+      if (t is ziki) {
+        tama1make(angle(t.x-x,t.y-y)+90,su7);
+      }
+    }
+  }
+  if (time%su8==0) {
+    for(t=0;t<su1;t++) {
+      tama1make(su3*2/su1*t+k1-su3,su9);
+    }
+  }
+  for(t in $chars) {
+    
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        $tokuten+=trunc(10000/(abs(y-$ziki.y)+1)-$ziki.bomm/3);
+        life--;
+      }
+    }
+  }
+  /*if (time%30==0 && $screenWidth>200 && $screenHeight>200) {
+    $screenWidth-=1;
+    $screenHeight-=1;
+  }*/
+  if (time%su8==trunc(450/su9)) {
+    t3=timeStop();
+    for (a in $chars) {
+      if (a is zikitu || a is ziki) t3.release(a);
+    }
+  }
+  if (time%su8==trunc(450/su9)+20 && t3!=null) {
+    t3.releaseAll();
+    t3=null;
+  }
+  if (life<1) {
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+    $tokuten+=trunc(300000000/time-$ziki.bomm/3+$ziki.nbomm*30000);
+    die();
+    $stageend=1;
+  }
+  time++;
+  
+  update();
+  
+}

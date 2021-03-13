@@ -1,0 +1,23 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+<cpattern name="$pat_S" src="S.bmp"/>
+<cpattern name="$pat_Rs" src="ƒRƒs[ ` –³‘è.bmp"/>
+<cpattern name="$pat_S2" src="S2.bmp"/>
+<cpattern name="$pat_bomb" src="bomb.bmp"/>
+<cpattern name="$pat_tr" src="tr.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki" inst_x="233" inst_y="493" inst_p="$pat_S+6"/>
+<generator className="stage1" name="$stage1" inst_p="$pat_Rs+0" inst_x="266" inst_y="106"/>
+<generator className="zikitu" name="$zikitu" inst_p="$pat_Sample+0" inst_x="196" inst_y="247"/>
+<generator className="title" name="$title" inst_col="$clWhite" inst_font="%22‚l‚r –¾’©%22" inst_size="60" inst_text="%22‘š%22" inst_x="1" inst_y="192"/>
+<generator className="kan2" name="$kan2" inst_font="%22‚l‚r ƒSƒVƒbƒN%22" inst_text="%22ƒeƒLƒXƒg%22" inst_col="$clWhite" inst_size="20" inst_x="90" inst_y="114"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="839"/>
+  <globalvalue name="$screenHeight" value="562"/>
+ </resourcelist>
+</resourcelist>

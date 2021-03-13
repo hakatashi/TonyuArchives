@@ -1,0 +1,175 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_stage1" src="stage1.cmml"/>
+<Page name="$page_stage10" src="stage10.cmml"/>
+<Page name="$page_stage2" src="stage2.cmml"/>
+<Page name="$page_stage3" src="stage3.cmml"/>
+<Page name="$page_stage4" src="stage4.cmml"/>
+<Page name="$page_stage5" src="stage5.cmml"/>
+<Page name="$page_stage6" src="stage6.cmml"/>
+<Page name="$page_stage7" src="stage7.cmml"/>
+<Page name="$page_stage8" src="stage8.cmml"/>
+<Page name="$page_stage9" src="stage9.cmml"/>
+<Page name="$page_test" src="test.cmml"/>
+<Page name="$page_title" src="title.cmml"/>
+<Page name="$page_コピー (9) ～ stage1" src="コピー (9) ～ stage1.cmml"/>
+<Page name="$page_コピー ～ stage1" src="コピー ～ stage1.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="140750"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+  <param name="mainPage" value="$page_title"/>
+  <param name="title" value="tateshu-"/>
+  <param name="author" value=""/>
+  <param name="version" value=""/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+  <param name="cond" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="ziki" src="ziki.tonyu" category=""/>
+  <class name="tama" src="tama.tonyu" category=""/>
+  <class name="teki1" src="teki1.tonyu" category=""/>
+  <class name="life" src="life.tonyu" category=""/>
+  <class name="base1" src="base1.tonyu" category=""/>
+  <class name="teki1make" src="teki1make.tonyu" category=""/>
+  <class name="teki2" src="teki2.tonyu" category=""/>
+  <class name="tekitama" src="tekitama.tonyu" category=""/>
+  <class name="bakuhatu" src="bakuhatu.tonyu" category=""/>
+  <class name="gamec" src="gamec.tonyu" category=""/>
+  <class name="gamec_text" src="gamec_text.tonyu" category=""/>
+  <class name="teki2_life" src="teki2_life.tonyu" category=""/>
+  <class name="teki3" src="teki3.tonyu" category=""/>
+  <class name="tama2" src="tama2.tonyu" category=""/>
+  <class name="teki3_2" src="teki3_2.tonyu" category=""/>
+  <class name="teki3life" src="teki3life.tonyu" category=""/>
+  <class name="teki3_2life" src="teki3_2life.tonyu" category=""/>
+  <class name="tekimake" src="tekimake.tonyu" category=""/>
+  <class name="stageclear" src="stageclear.tonyu" category=""/>
+  <class name="newlife" src="newlife.tonyu" category=""/>
+  <class name="teki4" src="teki4.tonyu" category=""/>
+  <class name="teki4_life" src="teki4_life.tonyu" category=""/>
+  <class name="tama3" src="tama3.tonyu" category=""/>
+  <class name="teki5" src="teki5.tonyu" category=""/>
+  <class name="teki5_life" src="teki5_life.tonyu" category=""/>
+  <class name="teki6" src="teki6.tonyu" category=""/>
+  <class name="teki6_1" src="teki6_1.tonyu" category=""/>
+  <class name="teki6_2" src="teki6_2.tonyu" category=""/>
+  <class name="teki6_life" src="teki6_life.tonyu" category=""/>
+  <class name="tekitama2" src="tekitama2.tonyu" category=""/>
+  <class name="tekitama2_1" src="tekitama2_1.tonyu" category=""/>
+  <class name="teki7" src="teki7.tonyu" category=""/>
+  <class name="teki8" src="teki8.tonyu" category=""/>
+  <class name="teki8_life" src="teki8_life.tonyu" category=""/>
+  <class name="teki9" src="teki9.tonyu" category=""/>
+  <class name="teki9_2" src="teki9_2.tonyu" category=""/>
+  <class name="teki9_3" src="teki9_3.tonyu" category=""/>
+  <class name="teki9_4" src="teki9_4.tonyu" category=""/>
+  <class name="teki9_life" src="teki9_life.tonyu" category=""/>
+  <class name="teki9_2_life" src="teki9_2_life.tonyu" category=""/>
+  <class name="teki9_3_life" src="teki9_3_life.tonyu" category=""/>
+  <class name="teki9_4_life" src="teki9_4_life.tonyu" category=""/>
+  <class name="tama4" src="tama4.tonyu" category=""/>
+  <class name="teki10" src="teki10.tonyu" category=""/>
+  <class name="teki10_life" src="teki10_life.tonyu" category=""/>
+  <class name="tama5" src="tama5.tonyu" category=""/>
+  <class name="teki11" src="teki11.tonyu" category=""/>
+  <class name="teki11_life" src="teki11_life.tonyu" category=""/>
+  <class name="tekix" src="tekix.tonyu" category=""/>
+  <class name="tekix_life" src="tekix_life.tonyu" category=""/>
+  <class name="tekix_tama1" src="tekix_tama1.tonyu" category=""/>
+  <class name="tekix_1" src="tekix_1.tonyu" category=""/>
+  <class name="tekix_tama2" src="tekix_tama2.tonyu" category=""/>
+  <class name="title_idou" src="title_idou.tonyu" category=""/>
+  <class name="tekix_tama3" src="tekix_tama3.tonyu" category=""/>
+  <class name="tama6" src="tama6.tonyu" category=""/>
+  <class name="teki12_life" src="teki12_life.tonyu" category=""/>
+  <class name="teki12" src="teki12.tonyu" category=""/>
+  <class name="text" src="text.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+<SoundEffect name="$se_good" src="good.wav"/>
+<SoundEffect name="$se_die" src="die.wav"/>
+<SoundEffect name="$se_bad" src="bad.wav"/>
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="stage1.cmml"/>
+<Page name="r_1" src="Sample.bmp"/>
+<Page name="r_2" src="stage10.cmml"/>
+<Page name="r_3" src="stage2.cmml"/>
+<Page name="r_4" src="stage3.cmml"/>
+<Page name="r_5" src="stage4.cmml"/>
+<Page name="r_6" src="stage5.cmml"/>
+<Page name="r_7" src="stage6.cmml"/>
+<Page name="r_8" src="stage7.cmml"/>
+<Page name="r_9" src="stage8.cmml"/>
+<Page name="r_10" src="stage9.cmml"/>
+<Page name="r_11" src="test.cmml"/>
+<Page name="r_12" src="title.cmml"/>
+<Page name="r_13" src="コピー (9) ～ stage1.cmml"/>
+<Page name="r_14" src="コピー ～ stage1.cmml"/>
+<Page name="r_15" src="ziki.tonyu"/>
+<Page name="r_16" src="tama.tonyu"/>
+<Page name="r_17" src="teki1.tonyu"/>
+<Page name="r_18" src="life.tonyu"/>
+<Page name="r_19" src="base1.tonyu"/>
+<Page name="r_20" src="teki1make.tonyu"/>
+<Page name="r_21" src="teki2.tonyu"/>
+<Page name="r_22" src="tekitama.tonyu"/>
+<Page name="r_23" src="bakuhatu.tonyu"/>
+<Page name="r_24" src="gamec.tonyu"/>
+<Page name="r_25" src="gamec_text.tonyu"/>
+<Page name="r_26" src="teki2_life.tonyu"/>
+<Page name="r_27" src="teki3.tonyu"/>
+<Page name="r_28" src="tama2.tonyu"/>
+<Page name="r_29" src="teki3_2.tonyu"/>
+<Page name="r_30" src="teki3life.tonyu"/>
+<Page name="r_31" src="teki3_2life.tonyu"/>
+<Page name="r_32" src="tekimake.tonyu"/>
+<Page name="r_33" src="stageclear.tonyu"/>
+<Page name="r_34" src="newlife.tonyu"/>
+<Page name="r_35" src="teki4.tonyu"/>
+<Page name="r_36" src="teki4_life.tonyu"/>
+<Page name="r_37" src="tama3.tonyu"/>
+<Page name="r_38" src="teki5.tonyu"/>
+<Page name="r_39" src="teki5_life.tonyu"/>
+<Page name="r_40" src="teki6.tonyu"/>
+<Page name="r_41" src="teki6_1.tonyu"/>
+<Page name="r_42" src="teki6_2.tonyu"/>
+<Page name="r_43" src="teki6_life.tonyu"/>
+<Page name="r_44" src="tekitama2.tonyu"/>
+<Page name="r_45" src="tekitama2_1.tonyu"/>
+<Page name="r_46" src="teki7.tonyu"/>
+<Page name="r_47" src="teki8.tonyu"/>
+<Page name="r_48" src="teki8_life.tonyu"/>
+<Page name="r_49" src="teki9.tonyu"/>
+<Page name="r_50" src="teki9_2.tonyu"/>
+<Page name="r_51" src="teki9_3.tonyu"/>
+<Page name="r_52" src="teki9_4.tonyu"/>
+<Page name="r_53" src="teki9_life.tonyu"/>
+<Page name="r_54" src="teki9_2_life.tonyu"/>
+<Page name="r_55" src="teki9_3_life.tonyu"/>
+<Page name="r_56" src="teki9_4_life.tonyu"/>
+<Page name="r_57" src="tama4.tonyu"/>
+<Page name="r_58" src="teki10.tonyu"/>
+<Page name="r_59" src="teki10_life.tonyu"/>
+<Page name="r_60" src="tama5.tonyu"/>
+<Page name="r_61" src="teki11.tonyu"/>
+<Page name="r_62" src="teki11_life.tonyu"/>
+<Page name="r_63" src="tekix.tonyu"/>
+<Page name="r_64" src="tekix_life.tonyu"/>
+<Page name="r_65" src="tekix_tama1.tonyu"/>
+<Page name="r_66" src="tekix_1.tonyu"/>
+<Page name="r_67" src="tekix_tama2.tonyu"/>
+<Page name="r_68" src="title_idou.tonyu"/>
+<Page name="r_69" src="tekix_tama3.tonyu"/>
+<Page name="r_70" src="tama6.tonyu"/>
+<Page name="r_71" src="teki12_life.tonyu"/>
+<Page name="r_72" src="teki12.tonyu"/>
+<Page name="r_73" src="text.tonyu"/>
+<Page name="r_74" src="good.wav"/>
+<Page name="r_75" src="die.wav"/>
+<Page name="r_76" src="bad.wav"/>
+ </resourcelist>
+</resourcelist>

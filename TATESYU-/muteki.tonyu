@@ -1,0 +1,9 @@
+extends DxChar;
+base=$base;
+while(1) {
+  $base--;
+  x=$ziki.x;
+  y=$ziki.y;
+  scaleX=2/base*$base;
+  update();
+}

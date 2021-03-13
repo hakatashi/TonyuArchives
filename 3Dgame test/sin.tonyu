@@ -1,0 +1,8 @@
+extends TextChar;
+a=rnd(360);
+b=sin(a);
+c=cos(b);
+if (1-c>-0.1 && 1-c<0.1) text="“¯‚¶";
+while(1) {
+  update();
+}

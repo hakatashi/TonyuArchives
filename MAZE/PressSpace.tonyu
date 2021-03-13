@@ -1,0 +1,5 @@
+extends TextChar;
+while(1) {
+  if (getkey(32)>0) $projectManager.loadPage($page_index);
+  update();
+}

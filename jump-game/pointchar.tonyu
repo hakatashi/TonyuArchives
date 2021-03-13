@@ -1,8 +1,0 @@
-extends TextChar;
-//$highpoint=0;
-//if ($highpoint==null) $highpoint=0;
-while(1) {
-  text="“¾“_‚Í"+trunc($point)+"“_";
-  if ($highpoint<$point) $highpoint=$point;
-  update();
-}

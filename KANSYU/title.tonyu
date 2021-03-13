@@ -1,0 +1,13 @@
+extends TextChar;
+if ($level==1) an="EASY";
+if ($level==2) an="NORMAL";
+if ($level==3) an="HARD";
+text="ステージ名:"+text+" "+an;
+time=0;
+size=40;
+dd2=150;
+while(time<dd2) {
+  time++;
+  col=color(time/dd2*255,time/dd2*255,time/dd2*255);
+  update();
+}

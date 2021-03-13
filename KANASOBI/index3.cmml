@@ -1,0 +1,20 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="kanlist" name="$kanlist_1" inst_pat="17" inst_x="82" inst_y="82"/>
+<generator className="kanlist2" name="$kanlist2_1" inst_pat="18" inst_x="102" inst_y="102"/>
+<generator className="kanlist3" name="$kanlist3_1" inst_pat="19" inst_x="121" inst_y="121"/>
+<generator className="lvseigyo" name="$lvseigyo_2" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_size="20" inst_col="$clBlack" inst_x="605" inst_y="273"/>
+<generator className="stage3" name="$stage3" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clWhite" inst_size="12" inst_x="270" inst_y="198" inst_kind="1"/>
+<generator className="stage3" name="$stage3_1" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clWhite" inst_size="12" inst_x="270" inst_y="246" inst_kind="3"/>
+<generator className="stage3" name="$stage3_2" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clWhite" inst_size="12" inst_x="318" inst_y="246" inst_kind="4"/>
+<generator className="stage3" name="$stage3_3" inst_width="50" inst_height="50" inst_angle="0" inst_alpha="255" inst_col="$clWhite" inst_size="12" inst_x="318" inst_y="198" inst_kind="2"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="854"/>
+  <globalvalue name="$screenHeight" value="656"/>
+ </resourcelist>
+</resourcelist>

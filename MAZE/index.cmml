@@ -1,0 +1,23 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_maze" src="maze.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="MyChar" name="$MyChar" inst_p="$pat_maze+3" inst_x="11" inst_y="19"/>
+<generator className="Enemy" name="$Enemy" inst_p="$pat_maze+4" inst_x="50" inst_y="51"/>
+<generator className="Enemy" name="$Enemy_1" inst_p="$pat_maze+4" inst_x="410" inst_y="242"/>
+<generator className="Enemy" name="$Enemy_2" inst_p="$pat_maze+4" inst_x="106" inst_y="242"/>
+<generator className="Enemy" name="$Enemy_3" inst_p="$pat_maze+4" inst_x="194" inst_y="338"/>
+<generator className="Enemy" name="$Enemy_4" inst_p="$pat_maze+4" inst_x="170" inst_y="146"/>
+<generator className="Stage1" name="$Stage1" inst_x="90" inst_y="90" inst_pat="17"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="556"/>
+  <globalvalue name="$screenHeight" value="380"/>
+ </resourcelist>
+ <resourcelist name="mappat">
+<generator className="Map" name="$map" src="index.map" inst_width="16" inst_height="12" inst_pwidth="32" inst_pheight="32" inst_mpfx="0" inst_mpfy="0"/>
+ </resourcelist>
+</resourcelist>

@@ -1,0 +1,37 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Sample" src="Sample.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="ziki" name="$ziki_2" inst_p="$pat_Sample+0" inst_x="306" inst_y="442"/>
+<generator className="life" name="$life_1" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clred" inst_size="40" inst_x="448" inst_y="497"/>
+<generator className="base1" name="$base1_1" inst_pat="17" inst_x="294" inst_y="126"/>
+<generator className="gamec" name="$gamec_1" inst_pat="17" inst_x="86" inst_y="142"/>
+<generator className="teki9" name="$teki9" inst_p="$pat_Sample+9" inst_x="256" inst_y="64"/>
+<generator className="teki9_2" name="$teki9_2" inst_p="$pat_Sample+9" inst_x="339" inst_y="66"/>
+<generator className="teki9_3" name="$teki9_3" inst_p="$pat_Sample+9" inst_x="366" inst_y="62"/>
+<generator className="teki9_4" name="$teki9_4" inst_p="$pat_Sample+9" inst_x="434" inst_y="58"/>
+<generator className="teki9_life" name="$teki9_life" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="6" inst_y="22"/>
+<generator className="teki9_2_life" name="$teki9_2_life" inst_p="12" inst_text="%22text%22" inst_x="98" inst_y="98"/>
+<generator className="teki9_3_life" name="$teki9_3_life" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="18" inst_y="18"/>
+<generator className="teki9_4_life" name="$teki9_4_life" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="94" inst_y="78"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="692"/>
+  <globalvalue name="$screenHeight" value="575"/>
+  <globalvalue name="$clAqua" value="16776960"/>
+  <globalvalue name="$_tmp_cur_select" value="0"/>
+  <globalvalue name="$_tmp" value="0"/>
+  <globalvalue name="$_soundAdded" value="0"/>
+  <globalvalue name="$_secretChar_seq" value="1"/>
+  <globalvalue name="$_seamLessLoad" value="0"/>
+  <globalvalue name="$_mouse_event" value=""/>
+  <globalvalue name="$_mappen_width" value=""/>
+  <globalvalue name="$base1_1" value=""/>
+  <globalvalue name="$a" value="2"/>
+  <globalvalue name="$_tmp_val2" value="2"/>
+  <globalvalue name="$chars" value=""/>
+ </resourcelist>
+</resourcelist>

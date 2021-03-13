@@ -1,0 +1,150 @@
+extends DXChar;
+$screenHeight=528;
+$map.setBGColor($clBlack); // îwåiêFê›íË
+a=$cry;
+if (a==null) a=1;
+idou=0;
+time=0;
+x=$screenWidth/2;
+y=$screenHeight/2;
+su1=15; //êØÇÃêî
+su2=500; //êØÇÃë¨Ç≥
+su3=2;   //êØÇÃí∑Ç≥
+starx=new array();
+stary=new array();
+starvy=new array();
+if ($level==null) $level=2;
+t2=null;
+for(i=0;i<su1;i++){
+  starx.add(rnd($screenWidth));
+  stary.add(rnd($screenHeight));
+  starvy.add(1+rnd(su2)/80+2.5);
+}
+while(1) {
+  if (a==1) o=$page_stage1;
+  if (a==2) o=$page_stage2;
+  if (a==3) o=$page_stage3;
+  if (a==4) o=$page_stage4;
+  if (a==5) o=$page_stage5;
+  if (a==6) o=$page_stage6;
+  if (a==7) o=$page_stage7;
+  if (a==8) o=$page_stage8;
+  if (a==9) o=$page_stage9;
+  if (a==10) o=$page_stage10;
+  if (a==11) o=$page_stage11;
+  if (a==12) o=$page_stage12;
+  if (a==13) o=$page_stage13;
+  if (a==14) o=$page_stage14;
+  if (a==15) o=$page_stage15;
+  if (a==16) o=$page_stage16;
+  if (a==17) o=$page_stage17;
+  if (a==18) o=$page_stage18;
+  if (a==19) o=$page_stage19;
+  if (a==20) o=$page_stage20;
+  if (a==1) n="ëö";
+  if (a==2) n="ï«";
+  if (a==3) n="ïS";
+  if (a==4) n="êØ";
+  if (a==5) n="âQ";
+  if (a==6) n="í◊";
+  if (a==7) n="éR";
+  if (a==8) n="Ë¬";
+  if (a==9) n="àÕ";
+  if (a==10) n="ïW";
+  if (a==11) n="è¡";
+  if (a==12) n="ã∑";
+  if (a==13) n="ó÷";
+  if (a==14) n="âÛ";
+  if (a==15) n="ì˙";
+  if (a==16) n="ã»";
+  if (a==17) n="íÜ";
+  if (a==18) n="êØ";
+  if (a==19) n="âÒ";
+  if (a==20) n="ã≤";
+    if (a==1) p=$pat_1;
+  if (a==2) p=$pat_2;
+  if (a==3) p=$pat_3;
+  if (a==4) p=$pat_4;
+  if (a==5) p=$pat_5;
+  if (a==6) p=$pat_6;
+  if (a==7) p=$pat_7;
+  if (a==8) p=$pat_8;
+  if (a==9) p=$pat_9;
+  if (a==10) p=$pat_10;
+  if (a==11) p=$pat_11;
+  if (a==12) p=$pat_12;
+  if (a==13) p=$pat_13;
+  if (a==14) p=$pat_14;
+  if (a==15) p=$pat_15;
+  if (a==16) p=$pat_16;
+  if (a==17) p=$pat_17;
+  if (a==18) p=$pat_18;
+  if (a==19) p=$pat_19;
+  if (a==20) p=$pat_20;
+  if (getkey(38)%10==1 && a<=20 && a>=2) {
+    a-=1;
+    idou=10;
+    mae=n;
+    mode=0;
+  }
+  if (getkey(40)%10==1 && a<=19 && a>=1) {
+    a+=1;
+    idou=10;
+    mae=n;
+    mode=1;
+  }
+  if (getkey(27)==1 || getkey(8)==1 || getkey(46)==1) $System.exit();
+  if (getkey(39)==1 && $level<3) $level+=1; 
+  if (getkey(37)==1 && $level>1) $level-=1; 
+  if (getkey(17)==1) {$projectManager.loadPage(o); $cry=a;}
+  if (getkey(66)==1) {$projectManager.loadPage($page_settei);}
+  if (idou>0) idou-=1;
+  k1=65;
+  if (idou==0) {
+    drawText($screenWidth/2-k1,40,"STAGE"+a,$clWhite,30);
+    drawText($screenWidth/2-k1,100,n,$clGreen,100);
+  }
+  drawText($screenWidth/2-k1,400,"ìÔà’ìx",$clRed,30);
+  if ($level==1) drawText($screenWidth/2-k1,450,"EASY",$clGreen,20);
+  if ($level==2) drawText($screenWidth/2-k1,450,"NORMAL",$clGreen,20);
+  if ($level==3) drawText($screenWidth/2-k1,450,"HARD",$clGreen,20);
+  if (idou>0 && mode==1)     {
+    drawText($screenWidth/2-k1+$screenWidth/10*idou,40,"STAGE"+a,$clWhite,30);
+    drawText($screenWidth/2-k1+$screenWidth/10*idou,100,n,$clGreen,100);
+    drawText($screenWidth/2-k1-$screenWidth/10*idou,40,"STAGE"+a,$clWhite,30);
+    drawText($screenWidth/2-k1-$screenWidth/10*idou,100,n,$clGreen,100);
+    drawText($screenWidth/2-k1,40+50*(10-idou),"STAGE"+(a-1),$clWhite,30);
+    drawText($screenWidth/2-k1,100+50*(10-idou),mae,$clGreen,100);
+  }
+  if (idou>0 && mode==0)     {
+    drawText($screenWidth/2-k1+$screenWidth/10*idou,40,"STAGE"+a,$clWhite,30);
+    drawText($screenWidth/2-k1+$screenWidth/10*idou,100,n,$clGreen,100);
+    drawText($screenWidth/2-k1-$screenWidth/10*idou,40,"STAGE"+a,$clWhite,30);
+    drawText($screenWidth/2-k1-$screenWidth/10*idou,100,n,$clGreen,100);
+    drawText($screenWidth/2-k1,40-50*(10-idou),"STAGE"+(a-1),$clWhite,30);
+    drawText($screenWidth/2-k1,100-50*(10-idou),mae,$clGreen,100);
+  }
+  for(i=0;i<su1;i++){
+    stary.set(i,stary.get(i)+starvy.get(i));
+    if(stary.get(i)>$screenHeight){
+      starx.set(i,rnd($screenWidth));
+      stary.set(i,0);
+      starvy.set(i,1+rnd(su2)/80+2.5);
+    }
+    time2=time%(255*5);
+    if (time%(255*5)<255) {
+      drawText(starx.get(i),stary.get(i),n,color(time2,time2,time2),25);
+    } else if (time%(255*5)<(255*2)) {
+      drawText(starx.get(i),stary.get(i),n,color(255,255,255*2-time2),25);
+    } else if (time%(255*5)<(255*3)) {
+      drawText(starx.get(i),stary.get(i),n,color(255,255*3-time2,0),25);
+    } else if (time%(255*5)<(255*4)) {
+      drawText(starx.get(i),stary.get(i),n,color(255*4-time2,0,time2-(255*3)),25);
+    } else {
+      drawText(starx.get(i),stary.get(i),n,color(0,0,255*5-time2),25);
+    }
+  }
+  $thepage=a;
+  time++;
+  update();
+}

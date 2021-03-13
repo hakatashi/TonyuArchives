@@ -1,0 +1,22 @@
+extends DxChar;
+p=$pat_Sample+rnd(20);
+scaleX=rnd(10)/14+0.5;
+a=rnd(10)+3;
+kakudo=rnd(360);
+vx=sin(kakudo)*a;
+vy=-cos(kakudo)*a;
+while (1) {
+  x+=vx;
+  y+=vy;
+  if (x<0 || x>$screenWidth || y<0 || y>$screenHeight) die();
+  //ziki‚Æ‚ ‚½‚Á‚½‚ç$ziki.life‚ð1Œ¸‚ç‚·
+  for (t in $chars) {
+    if ( t is ziki && crashTo(t) && t.base<0) {
+      t.life=t.life-1;
+      t.base=t.base2;
+      $mplayer.play($se_bad);
+      appear(new newlife(606,526,t.life,$clWhite,150));
+    }
+  }
+  update();
+}

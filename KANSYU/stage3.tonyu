@@ -1,0 +1,78 @@
+extends SpriteChar;
+randomize();
+zOrder=5;
+if ($level==1) {
+  su1=30; //一回に出す弾の数
+  su1_2=3; //球の速さ
+  su2=5;  //変化した後の球の速さ
+  su3=30; //玉を出す間隔
+}
+if ($level==2) {
+  su1=50; //一回に出す弾の数
+  su1_2=10; //球の速さ
+  su2=5;  //変化した後の球の速さ
+  su3=20; //玉を出す間隔
+}
+if ($level==3) {
+  su1=60; //一回に出す弾の数
+  su1_2=12; //球の速さ
+  su2=6;  //変化した後の球の速さ
+  su3=15; //玉を出す間隔
+}
+function tama1make(k,h) {
+  cc1=new tama1(x,y,$pat_S+pop);
+  cc1.k=k;
+  cc1.h=h;
+  appear(cc1);
+}
+pop=3;
+life=500;
+time=0;
+x=$screenWidth/2;
+while(time<150) {
+  appear(new kan(rnd($screenHeight),rnd($screenWidth),"花",$clRed,12+rnd(100)));
+  time++;
+  update();
+}
+while(1) {
+  if (time%su3==0) {
+    coo=rnd(360/su1);
+    if (iu%4==0) {
+      pop=3;
+    }
+    if (iu%4==1) {
+      pop=4;
+    }
+    if (iu%4==2) {
+      pop=10;
+    }
+    if (iu%4==3) {
+      pop=12;
+    }
+    for(i=0 ; i<su1 ; i++) {
+      tama1make(i*(360/su1)+coo,su1_2);
+    }
+    iu++;
+  }
+  for(t in $chars) {
+    if (t is tama1 && dist(t.x-x,t.y-y)>248 && dist(t.x-x,t.y-y)<260) {
+      t.h=rnd((su2-3)*2)+3;
+    }
+    if (t is tama) {
+      if (crashTo(t)) {
+        t.die();
+        life--;
+      }
+    }
+  }
+  if (life<1) {
+    die();
+    for(t in $chars) {
+      if (t is ziki) {
+        t.stop=0;
+      }
+    }
+  }
+  time++;
+  update();
+}

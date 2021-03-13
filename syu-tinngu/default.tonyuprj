@@ -1,0 +1,38 @@
+<resourcelist name="project">
+ <resourcelist name="pages">
+<Page name="$page_stage1" src="stage1.cmml"/>
+ </resourcelist>
+ <resourcelist name="params">
+  <param name="commentID" value="266468"/>
+  <param name="sound_stopOnPageLoad" value="1"/>
+  <param name="savedVersion" value="1230"/>
+  <param name="mainPage" value="$page_stage1"/>
+  <param name="title" value="shu-tingu"/>
+  <param name="author" value=""/>
+  <param name="version" value=""/>
+  <param name="mail" value=""/>
+  <param name="web" value=""/>
+  <param name="cond" value=""/>
+ </resourcelist>
+ <resourcelist name="classes">
+  <class name="teki1" src="teki1.tonyu" category=""/>
+  <class name="houdai1" src="houdai1.tonyu" category=""/>
+  <class name="ziki" src="ziki.tonyu" category=""/>
+  <class name="tama" src="tama.tonyu" category=""/>
+  <class name="bomu" src="bomu.tonyu" category=""/>
+ </resourcelist>
+ <resourcelist name="sounds">
+ </resourcelist>
+ <resourcelist name="filelist">
+<Page name="r_0" src="stage1.cmml"/>
+<Page name="r_1" src="teki.bmp"/>
+<Page name="r_2" src="tekibuhinn1.bmp"/>
+<Page name="r_3" src="ziki.bmp"/>
+<Page name="r_4" src="bomb.bmp"/>
+<Page name="r_5" src="teki1.tonyu"/>
+<Page name="r_6" src="houdai1.tonyu"/>
+<Page name="r_7" src="ziki.tonyu"/>
+<Page name="r_8" src="tama.tonyu"/>
+<Page name="r_9" src="bomu.tonyu"/>
+ </resourcelist>
+</resourcelist>

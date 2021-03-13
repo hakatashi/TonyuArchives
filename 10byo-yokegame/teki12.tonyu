@@ -1,0 +1,53 @@
+extends SpriteChar;
+randomize();
+time=0;
+f=180; //Œ»Ý‚Ì–Ú“IŠp“x
+df=0;
+a=20; //•
+b=0; //‚¸‚ê
+function tamamake(a,b,c,d) {
+  rr=new tama4(x,y,$pat_Rs+10);
+  rr.k=a;
+  rr.h=b;
+  rr.n=c;
+  rr.th=d;
+  appear(rr);
+}
+while(1) {
+  da=9; //’e‚ðo‚·”
+  db=0; //ŒJ‚è•Ô‚µ•Ï”
+  while(da>db) {
+    tamamake(90/da*db-45,2.5,75,1.1);
+    db+=1;
+  }
+  while(time<150) {
+    y-=0.5;
+    time+=1;
+    update();
+  }
+  da=12; //’e‚ðo‚·”
+  db=0; //ŒJ‚è•Ô‚µ•Ï”
+  while(da>db) {
+    dc=rnd(4)+1;
+    tamamake(rnd(360),dc,dc*20,1);
+    db+=1;
+  }
+  time=0;
+  while(time<150) {
+    time+=1;
+    update();
+  }
+  da=20; //’e‚ðo‚·”
+  db=0; //ŒJ‚è•Ô‚µ•Ï”
+  while(da>db) {
+    tamamake(360/da*db-45,2.5,75,1.1);
+    db+=1;
+  }
+  time=0;
+  while(time<150) {
+    y+=0.5;
+    time+=1;
+    update();
+  }
+  time=0;
+}
