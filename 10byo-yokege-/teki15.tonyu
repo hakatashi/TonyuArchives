@@ -1,0 +1,20 @@
+extends SpriteChar;
+a=0;
+b=0;
+time=0;
+k=0;
+function tamamake(a,b) {
+  c=new tama5(x,y,$pat_Rs+6);
+  c.k=a;
+  c.h=b;
+  c.tipe=1;
+  appear(c);
+}
+while(1) {
+  if (time%15==0) {
+    tamamake(k,2);
+    k+=37;
+  }
+  time+=1;
+  update();
+}

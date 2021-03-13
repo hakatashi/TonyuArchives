@@ -1,0 +1,58 @@
+extends DXChar;
+//tipe‚Åƒ{ƒ€‚ÌŽí—Þ‚ðÝ’èB
+function tama(d) {
+  b=crashToLine(x-sin(angle+90)*350,y+cos(angle+90)*350,x+sin(angle+90)*350,y-cos(angle+90)*350,10,d.x,d.y);
+}
+for (t in $chars) {
+  if ( t is zki ) a=t;
+  if ( t is time ) t.rr=1;
+}
+if (tipe==0) {
+  p=$pat_Rs+14;
+}
+if (tipe==1) {
+  p=$pat_Rs+13;
+}
+time=0;
+while(1) {
+  if (tipe==0) {
+    x=a.x;
+    y=a.y;
+    if (time>90) die();
+    for (t in $chars) {
+      if (t is tama1 && crashTo(t) || t is tama2 && crashTo(t) 
+      || t is tama3 && crashTo(t) || t is tama4 && crashTo(t)
+      || t is tama5 && crashTo(t) || t is tama6 && crashTo(t)
+      || t is tama7 && crashTo(t) || t is tama8 && crashTo(t)
+      || t is tama3 && crashTo(t) || t is tama6 && crashTo(t)
+      ) {
+        t.die();
+      }
+    }
+  }
+  if (tipe==1) {
+    if (h1==0) {
+      angle+=2;
+    }
+    if (h1==1) {
+      angle-=2;
+    }
+    for (t in $chars) {
+      tama(t);
+      if (t is tama1 && b || t is tama2 && b 
+      || t is tama3 && b || t is tama4 && b
+      || t is tama5 && b || t is tama6 && b
+      || t is tama7 && b || t is tama8 && b
+      || t is tama3 && b || t is tama6 && b
+      ) {
+        t.die();
+      }
+    }
+    if (crashToLine(x+sin(angle)*144,y-cos(angle)*144,x-sin(angle)*144,y+cos(angle)*144,10,a.x,a.y)) {
+      
+    } 
+    if (time>90) die();
+  }
+  time+=1;
+  update();
+}

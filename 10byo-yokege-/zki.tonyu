@@ -1,0 +1,72 @@
+extends SpriteChar;
+a=2*times;
+u=0;
+yu=0;
+for (t in $chars) {
+  if (t is time ) {
+    yo=t;
+  }
+}
+
+if ($level=="e") times=1.7; //easy
+if ($level=="g") times=1.3; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=0.9; //hard
+if ($level=="d") times=0.8; //difficult
+if ($level=="u") times=0.7; //ultra
+
+if ($level=="e") p=$pat_Rs+17;
+if ($level=="g") p=$pat_Rs+17;
+if ($level=="n") p=$pat_Rs+16;
+if ($level=="h") p=$pat_Rs+16;
+if ($level=="d") p=$pat_Rs+15;
+if ($level=="u") p=$pat_Rs+15;
+
+while(1) {
+  if (getkey(16)>0) a=0.4;
+  if (getkey(37)>0 && x-a>0) x-=a;
+  if (getkey(38)>0 && y-a>0) y-=a;
+  if (getkey(39)>0 && x+a<$screenWidth) x+=a;
+  if (getkey(40)>0 && y+a<$screenHeight) y+=a;
+  if (getkey(66)==1 && u==0) {
+    c=new bomm(x,y,300);
+    c.tipe=0;
+    c.h1=0;
+    appear(c);
+    e=rnd(1)+1;
+    c=new bomm(x,y,300);
+    c.tipe=e;
+    c.h1=0;
+    appear(c);
+    if (e==1) {
+      c=new bomm(x,y,300);
+      c.tipe=e;
+      c.h1=1;
+      appear(c);
+    }
+    u=0;
+    yo.time+=3.5;
+  }
+  a=2;
+  for (t in $chars) {
+    if (t is tama1 && crashTo(t) || t is tama2 && crashTo(t) 
+    || t is tama1 && crashTo(t) || t is tama6 && crashTo(t)
+    || t is tama8 && crashTo(t)
+    || t is reiza && t.p==$pat_Rs+19 && crashToLine(t.x+sin(t.angle+90)*168,t.y-cos(t.angle+90)*168,t.x-sin(t.angle+90)*168,t.y+cos(t.angle+90)*168,11)) {
+      die();
+      for (t in $chars) {
+        if ( t is time ) t.stop=1;
+        if (t is tuibi) {
+          t.die();
+        }
+      }
+      appear(new kuria(50,52,"GAMEOVER",$clRed,30));
+    }
+    
+    if (t is tuibi) {
+      t.x=x;
+      t.y=y;
+    }
+  }
+  update();
+}

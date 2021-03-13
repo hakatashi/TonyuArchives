@@ -1,0 +1,13 @@
+extends SpriteChar;
+kakudo=0;
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  tamamake(kakudo,3);
+  kakudo+=22;
+  update();
+}

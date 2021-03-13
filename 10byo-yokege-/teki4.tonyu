@@ -1,0 +1,21 @@
+extends SpriteChar;
+randomize();
+time=0;
+a=13; //©‹@—U“±’e‚ğ‘Å‚ÂŠÔŠu(ŠÔ)
+b=5; //ã‚©‚ç—‚¿‚Ä‚­‚é’e‚ğ‘Å‚ÂŠÔŠu
+function tama2make(g) {
+  gg=new tama2(x,y,$pat_Rs+11);
+  gg.h=g;
+  appear(gg);
+}
+while(1) {
+  if (time%b==0) {
+    c=new tama1(rnd($screenWidth),0,$pat_Rs+9);
+    c.k=180;
+    c.h=3;
+    appear(c);
+  }
+  if (time%a==0) tama2make(3);
+  time+=1;
+  update();
+}

@@ -1,0 +1,60 @@
+extends SpriteChar;
+randomize();
+a=0;
+b=0;
+time=0;
+ko=0;
+e=15; //玉と玉との間隔(角度)
+f=40; //玉を作る場所
+g=0; //偶数なら右回転
+function tamamake(a,b) {
+  if (ko%2==0) {
+    c=new tama1(x,y,$pat_map+8);
+  }
+  if (ko%2==1) {
+    c=new tama1(x,y,$pat_map+9);
+  }
+  c.k=a;
+  c.h=b;
+  ko+=1;
+  appear(c);
+}
+while(1) {
+  if (time%30==0) {
+    d=20; //玉を出す数
+    b=0; //繰り返し変数
+    q=rnd(360/d);
+    while(d>b) {
+      tamamake(360/d*b+q,2);
+      b+=1;
+    }
+  }
+  if (time%30==0) {
+    b=0; //繰り返し関数リセット
+    h=rnd(e);
+    while(b*e<360) {
+      if (ko%2==0) {
+        c=new tama1(x-(sin(e*b+h)*f),y+(cos(e*b+h)*f),$pat_map+8);
+      }
+      if (ko%2==1) {
+        c=new tama1(x-(sin(e*b+h)*f),y+(cos(e*b+h)*f),$pat_map+9);
+      }
+      if (g%4==0) {
+        c.k=(e*b)+25;
+      } else if (g%4==1) {
+        c.k=(e*b)-33;
+      } else if (g%4==2) {
+        c.k=(e*b)+40;
+      } else if (g%4==3) {
+        c.k=(e*b)-20;
+      }
+      c.h=2;
+      appear(c);
+      b+=1;
+      ko+=1;
+    }
+    g+=1;
+  }
+  time+=1;
+  update();
+}

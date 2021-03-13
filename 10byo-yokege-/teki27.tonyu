@@ -1,0 +1,29 @@
+extends SpriteChar;
+randomize();
+a=0;
+b=0;
+time=0;
+function reizamake(a,b,d) {
+  c=new reiza(x+sin(a+90)*168,y-cos(a+90)*168,$pat_Rs+9);
+  c.angle=a;
+  c.a=b;
+  c.b=d;
+  appear(c);
+}
+for(t in $chars) {
+  if (t is zki) {
+    ki=t;
+  }
+}
+while(1) {
+  if (time%90==0) {
+    rd1=rnd(360);
+    for (kk1=0;kk1<360;kk1+=5) {
+      reizamake(kk1+rd1,71,1);
+        wait(1);
+    }
+    //reizamake(angle(ki.x-x,ki.y-y),50,1);
+  }
+  time++;
+  update();
+}

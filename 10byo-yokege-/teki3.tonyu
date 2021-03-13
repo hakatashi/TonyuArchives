@@ -1,0 +1,23 @@
+extends SpriteChar;
+randomize();
+a=15; //玉の間隔(角度)
+d=20; //玉を出す間隔(時間)
+time=0;
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  if (time%d==0) {
+    b=0; //繰り返し回数をリセット
+    e=rnd(a); //ずれを作る(角度)
+    while(b*a<360) {
+      tamamake(a*b+e,3);
+      b+=1;
+    }
+  }
+  time+=1;
+  update();
+}

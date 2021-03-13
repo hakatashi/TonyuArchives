@@ -1,0 +1,43 @@
+extends SpriteChar;
+time=0;
+function tamamake(n,m) {
+  pp=new tama3(x,y,$pat_Rs+8);
+  pp.g=n;
+  pp.h=m;
+  appear(pp);
+}
+while(1) {
+  a=0; //ŒJ‚è•Ô‚µ‰ñ”
+  b=40; //Å‰‹Ê‚ğo‚·”
+  c=18;
+  while(a<b) {
+    tamamake(c*a,3);
+    a+=1;
+  }
+  while(time<50) {
+    time+=1;
+    update();
+  }
+  a=0;
+  while(a<b) {
+    tamamake(c*a,5);
+    a+=1;
+  }
+  time=0;
+  while(time<40) {
+    time+=1;
+    update();
+  }
+  time=0;
+  a=0; //‹Ê”­ËŠî’ê
+  b=40; //‹Ê‚Æ‹Ê‚ÌŠÔŠu(‹——£)
+  while(time<150) {
+    if (time%2==0) {
+      tamamake(b*a,3);
+      a+=1;
+    }
+    time+=1;
+    update();
+  }
+  time=0;
+}

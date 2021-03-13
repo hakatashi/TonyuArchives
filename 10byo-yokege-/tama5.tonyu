@@ -1,0 +1,62 @@
+//kで角度、hで速さを設定。
+//tipeで弾のタイプを設定。
+//1なら周りを弾が回る。2なら円形弾がだんだん大きくなる。
+//3なら玉が一周する。
+extends SpriteChar;
+time=0;
+a=70; //スクリーンはみ出し死亡ライン
+b=0; //玉を表示する角度
+c=30;
+d=0; //円形弾の大きさ
+
+if ($level=="e") times=0.8; //easy
+if ($level=="g") times=0.9; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=1.2; //hard
+if ($level=="d") times=1.5; //difficult
+if ($level=="u") times=2; //ultra
+
+while(1) {
+  while(tipe==3) {
+    b=rnd(360);
+    while(time<80) {
+      if (time%4==0) {
+        o=new tama1(x+sin(b)*15,y-cos(b)*15,$pat_Rs+9);
+        o.k=b-180;
+        o.h=0;
+        appear(o);
+        b+=18*times;
+      }
+      time+=1;
+      update();
+    }
+    for (t in $chars) {
+      if ( t is tama1 ) {
+        t.h=1;
+      }
+    }
+    die();
+  }
+  x+=sin(k)*h*times;
+  y-=cos(k)*h*times;
+  if (x<-a || x>$screenWidth+a || y<-a || y>$screenHeight+a) die();
+  if (tipe==1) {
+    appear(new tama6(x+sin(b)*c,y-cos(b)*c,$pat_Rs+9));
+    appear(new tama6(x+sin(b)*c*2,y-cos(b)*c*2,$pat_Rs+9));
+    appear(new tama6(x+sin(b)*c*3,y-cos(b)*c*3,$pat_Rs+9));
+    appear(new tama6(x+sin(b)*-c,y-cos(b)*-c,$pat_Rs+9));
+    appear(new tama6(x+sin(b)*-c*2,y-cos(b)*-c*2,$pat_Rs+9));
+    appear(new tama6(x+sin(b)*-c*3,y-cos(b)*-c*3,$pat_Rs+9));
+    b+=1*times;
+  }
+  if (tipe==2) {
+    e=0;
+    f=10;
+    while(e<f) {
+      appear(new tama6(x+sin(360/f*e)*d,y-cos(360/f*e)*d,$pat_Rs+9));
+      e+=1;
+    }
+    d+=0.7*times;
+  }
+  update();
+}

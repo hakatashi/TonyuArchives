@@ -1,0 +1,16 @@
+<resourcelist name="usr">
+ <resourcelist name="patterns">
+<cpattern name="$pat_Rs" src="コピー ～ 無題.bmp"/>
+ </resourcelist>
+ <resourcelist name="classes">
+ </resourcelist>
+ <resourcelist name="gen">
+<generator className="time" name="$time_2" inst_font="%22ＭＳ ゴシック%22" inst_text="%22テキスト%22" inst_col="$clWhite" inst_size="20" inst_x="-2" inst_y="166"/>
+<generator className="zki" name="$zki_3" inst_p="$pat_Rs+8" inst_x="154" inst_y="197"/>
+<generator className="teki3" name="$teki3" inst_p="$pat_Rs+2" inst_x="150" inst_y="30"/>
+ </resourcelist>
+ <resourcelist name="global">
+  <globalvalue name="$screenWidth" value="300"/>
+  <globalvalue name="$screenHeight" value="210"/>
+ </resourcelist>
+</resourcelist>

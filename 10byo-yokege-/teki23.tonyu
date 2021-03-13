@@ -1,0 +1,25 @@
+extends SpriteChar;
+time=0;
+w=3;
+kakudo=0;
+function tamamake(n,m) {
+  pp=new tama1(x,y,$pat_Rs+9);
+  pp.k=n;
+  pp.h=m;
+  appear(pp);
+}
+function tamamake2(N,M) {
+  tt=0;
+  while(tt<M) {
+    tamamake(N,5/M*(tt+1));
+    tt+=1;
+  }
+}
+while(1) {
+  if (time%5==0) {
+    tamamake2(i,6);
+    i+=43;
+  }
+  time+=1;
+  update();
+}

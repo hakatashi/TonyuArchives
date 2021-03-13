@@ -1,0 +1,31 @@
+extends SpriteChar;
+randomize();
+//kで角度、hで速さ、nで爆発する距離、thで弾の速さを設定する。
+time=0;
+
+if ($level=="e") times=0.8; //easy
+if ($level=="g") times=0.9; //general
+if ($level=="n") times=1; //normal
+if ($level=="h") times=1.2; //hard
+if ($level=="d") times=1.5; //difficult
+if ($level=="u") times=2; //ultra
+
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(time<n) {
+  x+=sin(k)*h*times;
+  y-=cos(k)*h*times;
+  time+=h;
+  update();
+}
+da=15;
+db=0; //繰り返し変数
+dc=rnd(360/da);
+while(da>db) {
+  tamamake(360/da*db+dc,th);
+  db+=1;
+}

@@ -1,0 +1,93 @@
+extends TextChar;
+randomize();
+a=0;
+time=10;
+stop=0; //1ならストップ
+size=18;
+p=0;
+s=0;
+h=rnd(1000) / 1000000;
+rr=0;
+appear(new tuibi(x,y,$pat_Rs+8));
+while(1) {
+  if (a==0 && stop==0)time-=0.01484543234+h;
+  text="残りタイム:0:00:0"+time;
+  if (time<0){
+    a=1;
+    time=0.00000000000000;
+  }
+  if (time==0 && stop==0) {
+    appear(new kuria(150,102,"CLEAR!",$clRed,30));
+    stop=1;
+    for (t in $chars) {
+      if ( t is teki1 || t is teki2 || t is teki3 || t is teki4 || t is teki5 
+      || t is teki6 || t is teki7 || t is teki8 || t is teki9 || t is teki10 
+      || t is teki11 || t is teki12 || t is teki13 || t is teki14 || t is teki15 
+      || t is teki16 || t is teki17 || t is teki18 || t is teki19 || t is teki20
+      || t is teki21 || t is teki22 || t is teki23 || t is teki24 || t is teki25
+      || t is teki26 || t is teki27
+      || t is tama1 || t is tama2 || t is tama3 || t is tama4 || t is tama5 
+      || t is tama6 || t is tama7 || t is tama8
+      || t is reiza
+      ) t.die();
+    }
+    if ($page==1) nno="1.txt";
+    if ($page==2) nno="2.txt";
+    if ($page==3) nno="3.txt";
+    if ($page==4) nno="4.txt";
+    if ($page==5) nno="5.txt";
+    if ($page==6) nno="6.txt";
+    if ($page==7) nno="7.txt";
+    if ($page==8) nno="8.txt";
+    if ($page==9) nno="9.txt";
+    if ($page==10) nno="10.txt";
+    if ($page==11) nno="11.txt";
+    if ($page==12) nno="12.txt";
+    if ($page==13) nno="13.txt";
+    if ($page==14) nno="14.txt";
+    if ($page==15) nno="15.txt";
+    if ($page==16) nno="16.txt";
+    if ($page==17) nno="17.txt";
+    if ($page==18) nno="18.txt";
+    if ($page==19) nno="19.txt";
+    if ($page==20) nno="20.txt";
+    if ($page==21) nno="21.txt";
+    if ($page==22) nno="22.txt";
+    if ($page==23) nno="23.txt";
+    if ($page==24) nno="24.txt";
+    if ($page==25) nno="25.txt";
+    if ($page==26) nno="26.txt";
+    if ($page==27) nno="27.txt";
+    if ($page==28) nno="28.txt";
+    if ($page==29) nno="29.txt";
+    if ($page==30) nno="30.txt";
+    if ($page==31) nno="31.txt";
+    if ($page==32) nno="32.txt";
+    if ($page==33) nno="33.txt";
+    if ($page==34) nno="34.txt";
+    if ($page==35) nno="35.txt";
+    if ($level=="e") tyt=1;
+    if ($level=="g") tyt=2;
+    if ($level=="n") tyt=3;
+    if ($level=="h") tyt=4;
+    if ($level=="d") tyt=5;
+    if ($level=="u") tyt=6;
+    Cr=new FileReader(nno);
+    uuy=Cr.readLn();
+    Cr.close();
+    if (rr==0 && tyt>uuy) {
+      yu=new FileWriter(nno);
+      yu.writeLn(tyt);
+      yu.close();
+    }
+    s=1;
+  }
+  if (s==1) {
+    text="残りタイム:0:00:00.00000000000000";
+  }
+  
+  if (getkey(13)==1){
+    $projectManager.loadPage($page_title);
+  }
+  update();
+}

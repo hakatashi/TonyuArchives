@@ -1,0 +1,35 @@
+extends SpriteChar;
+randomize();
+a=45; //‹Ê‚ÌŠÔŠu(Šp“x)
+d=50; //‹Ê‚ğo‚·ŠÔŠu(ŠÔ)
+time=0;
+function tamamake(a,b) {
+  c=new tama1(x,y,$pat_Rs+9);
+  c.k=a;
+  c.h=b;
+  appear(c);
+}
+while(1) {
+  if (time%50==0) {
+    f=0;
+    if (time%150==0) {
+      f=0;
+      while(f<15) {
+        e=new tama2(f*30,$screenHeight,$pat_Rs+11);
+        e.h=1;
+        appear(e);
+        f+=1;
+      }
+    }
+  }
+  if (time%d==0) {
+    b=0; //ŒJ‚è•Ô‚µ‰ñ”‚ğƒŠƒZƒbƒg
+    e=rnd(a); //‚¸‚ê‚ğì‚é(Šp“x)
+    while(b*a<360) {
+      tamamake(a*b+e,3);
+      b+=1;
+    }
+  }
+  time+=1;
+  update();
+}

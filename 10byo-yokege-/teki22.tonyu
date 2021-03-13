@@ -1,0 +1,15 @@
+extends SpriteChar;
+randomize();
+time=0;
+w=3;
+kakudo=0;
+function tamamake(n,m) {
+  pp=new tama1(x,y,$pat_Rs+9);
+  pp.k=n;
+  pp.h=m;
+  appear(pp);
+}
+while(1) {
+  tamamake(rnd(360),(rnd(230)+50)/50);
+  update();
+}
